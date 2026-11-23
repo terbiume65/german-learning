@@ -150,14 +150,31 @@
     };
   }
 
+  function speechKey(text) {
+    return String(text || "")
+      .replace(/<br\s*\/?>/gi, " ")
+      .replace(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g, "$1")
+      .replace(/[„“”]/g, '"')
+      .replace(/\s*\/\s*/g, " oder ")
+      .replace(/[()]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function audioFor(text) {
+    var key = speechKey(text);
+    var map = root.SPEECH_AUDIO || {};
+    return (key && map[key]) || null;
+  }
+
   function wordAudio(c) {
-    return "tts:" + c.word;
+    return audioFor(c.word) || audioFor(c.lemma) || "tts:" + c.word;
   }
   function exampleAudio(c) {
-    return "tts:" + c.example_ko;
+    return audioFor(c.example_ko) || "tts:" + c.example_ko;
   }
   function fullAudio(c) {
-    return "tts:" + c.word + ". " + c.example_ko;
+    return audioFor(c.word + ". " + c.example_ko) || "tts:" + c.word + ". " + c.example_ko;
   }
 
   function search(query) {
@@ -219,6 +236,8 @@
     wordAudio: wordAudio,
     exampleAudio: exampleAudio,
     fullAudio: fullAudio,
+    speechKey: speechKey,
+    audioFor: audioFor,
     search: search,
     status: status,
     statusLabel: statusLabel,

@@ -4686,3 +4686,23 @@ a:focus-visible {
 
 .vis-compare-legend .c2::before { background: var(--gold); }
 .vis-compare-legend .c3::before { background: var(--accent); }
+
+.field-voice {
+  align-items: flex-start;
+}
+
+.field-voice select {
+  width: 300px;
+  max-width: 55%;
+}
+
+@media (max-width: 640px) {
+  .field-voice {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .field-voice select {
+    width: 100%;
+    max-width: none;
+  }
+}

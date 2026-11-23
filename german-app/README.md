@@ -14,7 +14,7 @@ python3 serve.py
 
 On macOS you can double-click `start.command`. It starts the same server and opens the app on port **8766**.
 
-There is no build step and no external service. Open the folder with any static web server if you prefer.
+The app itself is static. The fixed German speech is pre-generated and checked in, so playback needs no API key or external service at runtime.
 
 ## What is inside
 
@@ -22,8 +22,9 @@ There is no build step and no external service. Open the folder with any static 
 - **FSRS scheduling** for long-term retention. Recognition (German → Chinese) and recall (Chinese → German) have separate schedules.
 - **28 visual grammar lessons** in 7 units, covering a curated A1–A2 core path: gender and articles, plurals, the present tense, cases, negation, questions, possessives, adjective endings, modals, separable verbs, the imperative, reflexives, the dative, prepositions, the perfect tense, word order, subordinate and relative clauses, comparison, the future and Konjunktiv II.
 - **Original grammar diagrams**: gender columns, case tables, verb grids, sentence flows, two-way preposition diagrams, timelines and comparison bars. Many elements are tappable.
-- **9 original graded reader texts** from first introductions to longer stories, with hover/tap glosses, Chinese translation on demand, line-by-line and whole-text German TTS, new-word lists and grammar links.
-- **German TTS** through the browser's `de-DE` voice. No audio files are required.
+- **9 original graded reader texts** from first introductions to longer stories, with hover/tap glosses, Chinese translation on demand, line-by-line and whole-text recorded German audio, new-word lists and grammar links.
+- **Recorded neural German audio**: 2,445 short clips generated with the `de-DE-TanjaNeural` voice cover every word, example, grammar sentence and reader line. Playback is consistent across browsers and devices.
+- **Browser voice fallback** for any text without a recorded clip, with a voice picker in Settings. Installed Premium/Enhanced voices are preferred and novelty voices are ranked last.
 - **Weihnachtsmarkt**: reviews earn Taler; Taler buy wooden stalls, fairy lights, Glühwein, gingerbread, a tree, a carousel and more. Completing a grammar unit earns a star; stars plus Taler synthesize permanent study charms for the market wall.
 - **Progress, streaks, forecasts, a searchable word list and local export/import.**
 
@@ -44,6 +45,27 @@ This rewrites:
 - `data/translation_cache.json` — cached machine translations
 
 Hand-written overrides for ambiguous machine translations and the few entries without a natural example live in `MANUAL_ZH` and `MANUAL_EXAMPLES` inside `pipeline/build_deck.py`. The deck contains a few official subentries and variants, which is why the count is higher than the round “circa 650” figure in the PDF.
+
+## Audio
+
+The app ships with pre-generated MP3s rather than relying on the visitor's system voice. The voice is **Tanja**, a German neural voice. Files live in `german-app/audio/text/`; `german-app/data/speech.js` maps each normalized text to its clip.
+
+Rebuild the audio pack after changing vocabulary, grammar examples or reader lines:
+
+```bash
+cd german-learning
+node pipeline/export_speech.js
+pipeline/.venv/bin/python pipeline/build_audio.py
+```
+
+If the virtual environment does not exist yet:
+
+```bash
+python3 -m venv pipeline/.venv
+pipeline/.venv/bin/pip install -r pipeline/requirements-audio.txt
+```
+
+The generator is resumable and skips existing clips. It needs network access while generating; the finished app does not. Any string missing from the manifest falls back to the browser's `de-DE` voice.
 
 ## Grammar
 
@@ -82,18 +104,23 @@ Markup in a line uses `[[surface|w:lemma]]` for vocabulary and `[[surface|g:less
 | `index.html` | Page shell and script order |
 | `css/styles.css` | Design system, visual grammar, market scene |
 | `js/app.js` | Routing, study sessions, grammar, reader, glosses, TTS, UI |
-| `js/data.js` | Deck helpers, search, multiple-choice generation, TTS paths |
+| `js/data.js` | Deck helpers, search, multiple-choice generation, recorded-audio lookup, TTS fallback |
 | `js/store.js` | Local progress, FSRS state, streaks, Taler, stars, export/import |
 | `js/fsrs.js` | FSRS scheduler |
 | `js/cafe.js` | Market catalog, charms and SVG scene |
 | `data/vocab.js` | Generated 804-card deck |
 | `data/grammar-de.js` | 28 visual grammar lessons |
 | `data/reader-de.js` | 9 graded texts, glossary and levels |
+| `data/speech.js` | Generated text → MP3 manifest |
+| `audio/text/` | 2,445 recorded neural German clips |
+| `pipeline/export_speech.js` | Collects the fixed strings that need audio |
+| `pipeline/build_audio.py` | Generates the MP3 pack and `speech.js` |
 
 ## Notes
 
 - Progress is stored under the localStorage key `deutsch-a1-v1`.
 - **Settings → Reset all progress** clears the deck, grammar, reader and market while keeping the app installed.
 - Export produces `deutsch-a1-progress.json`; import accepts that file.
-- German audio depends on a German voice being installed in the browser/OS. Chrome, Edge and Safari usually provide one.
+- Recorded audio works without a German system voice. The browser voice picker is only a fallback for strings that have no clip.
+- The audio pack adds roughly 37 MB to the app; it is still well under the GitHub Pages 1 GB site limit.
 - The market and charms are cosmetic and never change scheduling or review load.

@@ -166,6 +166,11 @@
         if (app.state.settings.theme === "system") applyTheme();
       });
     }
+    if (window.speechSynthesis) {
+      window.speechSynthesis.onvoiceschanged = function () {
+        if (app.view === "settings") render();
+      };
+    }
     document.addEventListener("click", onClick);
     document.addEventListener("change", onChange);
     document.addEventListener("input", onInput);
@@ -328,40 +333,88 @@
     if (location.hash === "#/summary") render();
   }
 
+  var NOVELTY_VOICES = /eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley|albert|bahh|bells|boing|bubbles|cellos|jester|organ|superstar|trinoids|whisper|wobble|zarvox/i;
+
+  function germanVoices() {
+    if (!window.speechSynthesis || !window.speechSynthesis.getVoices) return [];
+    return window.speechSynthesis
+      .getVoices()
+      .filter(function (voice) {
+        return /^de([-_]|$)/i.test(voice.lang || "");
+      })
+      .sort(function (a, b) {
+        return voiceScore(b) - voiceScore(a) || String(a.name).localeCompare(String(b.name));
+      });
+  }
+
+  function voiceScore(voice) {
+    var name = String(voice.name || "");
+    var score = 0;
+    if (voice.localService) score += 5;
+    if (/premium/i.test(name)) score += 120;
+    else if (/enhanced/i.test(name)) score += 90;
+    else if (/siri/i.test(name)) score += 80;
+    else if (/google/i.test(name)) score += 70;
+    else if (/neural|natural/i.test(name)) score += 60;
+    else if (/anna/i.test(name)) score += 35;
+    else if (/helena|martin|petra|markus/i.test(name)) score += 20;
+    if (NOVELTY_VOICES.test(name)) score -= 120;
+    if (String(voice.lang || "").toLowerCase() === "de-de") score += 6;
+    return score;
+  }
+
   function germanVoice() {
-    if (!window.speechSynthesis || !window.speechSynthesis.getVoices) return null;
-    return window.speechSynthesis.getVoices().filter(function (voice) {
-      return (voice.lang || "").toLowerCase().indexOf("de") === 0;
-    })[0] || null;
+    var voices = germanVoices();
+    var uri = app.state.settings.voiceURI;
+    if (uri) {
+      for (var i = 0; i < voices.length; i++) {
+        if (voices[i].voiceURI === uri) return voices[i];
+      }
+    }
+    return voices[0] || null;
   }
 
   function speakGerman(text, rate, onend) {
     if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
       toast("Speech audio is not available in this browser.");
+      if (onend) onend();
       return;
     }
-    var u = new window.SpeechSynthesisUtterance(String(text || ""));
+    var clean = String(text || "").replace(/\s+/g, " ").trim();
+    if (!clean) {
+      if (onend) onend();
+      return;
+    }
+    var u = new window.SpeechSynthesisUtterance(clean);
     u.lang = "de-DE";
-    u.rate = Number(rate) || 0.9;
+    u.rate = rate == null ? 0.94 : Number(rate) || 0.94;
+    u.pitch = 1;
+    u.volume = 1;
     var voice = germanVoice();
     if (voice) u.voice = voice;
     if (onend) u.onend = onend;
     window.speechSynthesis.speak(u);
   }
 
-  function playAudio(src) {
+  function playAudio(src, rate, onend) {
     if (!src) return;
+    if (window.speechSynthesis) window.speechSynthesis.cancel();
     if (String(src).indexOf("tts:") === 0) {
-      window.speechSynthesis.cancel();
-      speakGerman(String(src).slice(4), Number(app.state.settings.audioRate) || 0.9);
+      speakGerman(
+        String(src).slice(4),
+        rate == null ? Number(app.state.settings.audioRate) || 0.94 : rate,
+        onend
+      );
       return;
     }
     try {
       app.audio.pause();
       app.audio.onended = null;
+      app.audio.onerror = null;
       app.audio.src = src;
       app.audio.currentTime = 0;
-      app.audio.playbackRate = Number(app.state.settings.audioRate) || 1;
+      app.audio.playbackRate = rate == null ? Number(app.state.settings.audioRate) || 1 : Number(rate) || 1;
+      app.audio.onended = onend || null;
       var p = app.audio.play();
       if (p && p.catch) {
         p.catch(function () {
@@ -379,14 +432,13 @@
   function playSequence(paths) {
     var list = (paths || []).filter(Boolean);
     if (!list.length) return;
-    window.speechSynthesis.cancel();
     var i = 0;
     function next() {
-      if (i >= list.length) return;
-      var src = list[i++];
-      if (String(src).indexOf("tts:") === 0) {
-        speakGerman(String(src).slice(4), Number(app.state.settings.audioRate) || 0.9, next);
+      if (i >= list.length) {
+        app.audio.onended = null;
+        return;
       }
+      playAudio(list[i++], null, next);
     }
     next();
   }
@@ -1196,6 +1248,22 @@
 
   function renderSettings() {
     var s = app.state.settings;
+    var voices = germanVoices();
+    var voiceOptions =
+      '<option value="">Auto — best installed voice</option>' +
+      voices
+        .map(function (voice) {
+          return (
+            '<option value="' + esc(voice.voiceURI) + '"' +
+            (s.voiceURI === voice.voiceURI ? " selected" : "") + ">" +
+            esc(voice.name) + (voice.localService ? " · on device" : " · online") +
+            "</option>"
+          );
+        })
+        .join("");
+    if (!voices.length) {
+      voiceOptions = '<option value="">No German voice detected yet</option>';
+    }
     function toggle(key, label, desc) {
       return (
         '<div class="field"><div><label>' + label + '</label><span class="desc">' + desc + "</span></div>" +
@@ -1210,10 +1278,12 @@
       '<div class="field"><div><label>Review limit per day</label><span class="desc">Per mode. Stops the queue from becoming overwhelming.</span></div><input type="number" min="0" max="500" value="' + Number(s.reviewsPerDay) + '" data-setting="reviewsPerDay" /></div>' +
       '<div class="field"><div><label>Daily goal</label><span class="desc">Total answers across both modes that earns the Christmas market bonus.</span></div><input type="number" min="1" max="300" value="' + Number(s.dailyGoal || 20) + '" data-setting="dailyGoal" /></div>' +
       "</div>" +
-      '<div class="settings-panel"><h2>Audio</h2><p>German words and sentences are spoken by your browser’s German voice. Autoplay is on by default.</p>' +
+      '<div class="settings-panel"><h2>Audio</h2><p>Words and examples use recorded Tanja neural audio; browser speech is only a fallback. Autoplay is on by default.</p>' +
       toggle("autoplayWord", "Autoplay the word", "Play the word when each card appears.") +
       toggle("autoplayExample", "Autoplay the example", "Play the sentence when the answer is revealed.") +
       '<div class="field"><div><label>Playback speed</label><span class="desc">Slow down if the voice feels fast.</span></div><select data-setting="audioRate"><option value="0.8"' + (Number(s.audioRate) === 0.8 ? " selected" : "") + '>0.8×</option><option value="1"' + (Number(s.audioRate) === 1 ? " selected" : "") + '>1×</option><option value="1.2"' + (Number(s.audioRate) === 1.2 ? " selected" : "") + '>1.2×</option></select></div>' +
+      '<div class="field field-voice"><div><label>Fallback voice</label><span class="desc">Only used when a recorded clip is unavailable. Recorded words use the Tanja neural voice.</span></div><select data-setting="voiceURI">' + voiceOptions + "</select></div>" +
+      '<div class="settings-actions" style="margin-top:12px"><button class="btn btn-soft btn-sm" data-action="test-voice">Test fallback voice</button></div>' +
       "</div>" +
       '<div class="settings-panel"><h2>Display</h2><p>Keep the front of the card as minimal as you like.</p>' +
       toggle("showRomanization", "Show word type / forms", "Part of speech and gender under the German word.") +
@@ -1485,25 +1555,15 @@
     app.readerPlaying = false;
     app.readerToken = (app.readerToken || 0) + 1;
     if (window.speechSynthesis) window.speechSynthesis.cancel();
+    app.audio.pause();
+    app.audio.onended = null;
+    app.audio.onerror = null;
     readerClearHighlight();
-  }
-
-  function readerVoice(text, rate) {
-    var u = new window.SpeechSynthesisUtterance(text);
-    u.lang = "de-DE";
-    u.rate = rate;
-    var voice = germanVoice();
-    if (voice) u.voice = voice;
-    return u;
   }
 
   function readerSpeakLine(index) {
     var text = RI[(app.readerRoute || [])[0]];
     if (!text || !text.lines[index]) return;
-    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
-      toast("Speech audio is not available in this browser.");
-      return;
-    }
     readerStop();
     var el = document.querySelector('[data-reader-line="' + index + '"]');
     if (el) {
@@ -1512,27 +1572,18 @@
     }
     app.readerPlaying = true;
     var token = app.readerToken;
-    var u = readerVoice(cleanMarkup(text.lines[index].ko), Number(app.readerRate) || 0.9);
-    u.onend = function () {
+    var lineText = cleanMarkup(text.lines[index].ko);
+    function finish() {
       if (token !== app.readerToken) return;
       if (el) el.classList.remove("playing");
       app.readerPlaying = false;
-    };
-    u.onerror = function () {
-      if (token !== app.readerToken) return;
-      if (el) el.classList.remove("playing");
-      app.readerPlaying = false;
-    };
-    setTimeout(function () { window.speechSynthesis.speak(u); }, 40);
+    }
+    speak(lineText, Number(app.readerRate) || 0.9, finish);
   }
 
   function readerPlayAll() {
     var text = RI[(app.readerRoute || [])[0]];
     if (!text) return;
-    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
-      toast("Speech audio is not available in this browser.");
-      return;
-    }
     readerStop();
     var i = 0;
     var token = app.readerToken;
@@ -1542,25 +1593,22 @@
         if (token === app.readerToken) readerStop();
         return;
       }
-      var el = document.querySelector('[data-reader-line="' + i + '"]');
+      var index = i;
+      var el = document.querySelector('[data-reader-line="' + index + '"]');
       readerClearHighlight();
       if (el) {
         el.classList.add("playing");
         el.scrollIntoView({ block: "nearest" });
       }
-      var u = readerVoice(cleanMarkup(text.lines[i].ko), Number(app.readerRate) || 0.9);
-      u.onend = function () {
+      var lineText = cleanMarkup(text.lines[index].ko);
+      speak(lineText, Number(app.readerRate) || 0.9, function () {
         if (token !== app.readerToken) return;
         if (el) el.classList.remove("playing");
         i += 1;
         setTimeout(next, 120);
-      };
-      u.onerror = function () {
-        if (token === app.readerToken) readerStop();
-      };
-      window.speechSynthesis.speak(u);
+      });
     }
-    setTimeout(next, 40);
+    next();
   }
 
   /* ---------------------------------------------------------------------
@@ -2254,7 +2302,7 @@
           '<div class="tip-kicker">Vocabulary</div><div class="tip-title">' + esc(res.surface || c.word) + '</div><div class="tip-rom">' + esc(sub) + "</div><p>" + esc(c.meaning_zh) + "</p>";
         if (res.note) html += '<div class="tip-note">' + esc(res.note) + "</div>";
         if (c.gender_info) html += '<div class="tip-hanja">' + esc(c.gender_info) + "</div>";
-        html += '<div class="tip-actions"><button class="btn btn-soft btn-sm" data-action="tip-speak" data-text="' + esc(res.surface || c.word) + '">' + icon("speaker", 14) + ' Listen</button><button class="btn btn-ghost btn-sm" data-action="tip-card" data-id="' + esc(c.id) + '">Open card</button></div>';
+        html += '<div class="tip-actions"><button class="btn btn-soft btn-sm" data-action="tip-speak" data-audio="' + esc(Deck.wordAudio(c)) + '" data-text="' + esc(res.surface || c.word) + '">' + icon("speaker", 14) + ' Listen</button><button class="btn btn-ghost btn-sm" data-action="tip-card" data-id="' + esc(c.id) + '">Open card</button></div>';
       } else {
         var e = res.entry || {};
         var line = e.word ? e.word + (e.r ? " · " + e.r : "") : e.r || "";
@@ -2304,18 +2352,19 @@
     scheduleHideGloss();
   }
 
-  function speak(text) {
+  function speak(text, rate, onend) {
+    var path = Deck.audioFor(text);
+    if (path) {
+      playAudio(path, rate, onend);
+      return;
+    }
     if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) {
       toast("Speech audio is not available in this browser.");
+      if (onend) onend();
       return;
     }
     window.speechSynthesis.cancel();
-    var u = new window.SpeechSynthesisUtterance(text);
-    u.lang = "de-DE";
-    u.rate = 0.9;
-    var voice = germanVoice();
-    if (voice) u.voice = voice;
-    window.speechSynthesis.speak(u);
+    speakGerman(text, rate == null ? 0.94 : rate, onend);
   }
 
 
@@ -2402,6 +2451,7 @@
           button.classList.toggle("active", active);
           button.setAttribute("aria-pressed", active ? "true" : "false");
         });
+        if (app.readerPlaying && app.audio.src) app.audio.playbackRate = Number(app.readerRate) || 1;
         break;
       case "reader-read":
         var readingId = (app.readerRoute || [])[0];
@@ -2536,7 +2586,9 @@
         navigate("#/grammar/item/" + btn.getAttribute("data-id"));
         break;
       case "tip-speak":
-        speak(btn.getAttribute("data-text") || "");
+        var tipAudio = btn.getAttribute("data-audio");
+        if (tipAudio) playAudio(tipAudio);
+        else speak(btn.getAttribute("data-text") || "");
         break;
       case "tip-card":
         hideGloss();
@@ -2547,6 +2599,9 @@
         break;
       case "speak":
         speak(btn.getAttribute("data-text") || "");
+        break;
+      case "test-voice":
+        speak("Dies ist ein Test der Ersatzstimme.");
         break;
       case "home":
         location.hash = "#/";

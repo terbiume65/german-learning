@@ -17,6 +17,7 @@
       showHanja: true,
       theme: "system",
       audioRate: 1,
+      voiceURI: "",
     },
     cards: {},
     reverseCards: {},
