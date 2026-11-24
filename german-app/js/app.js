@@ -27,6 +27,7 @@
     audio: new Audio(),
     soundWarned: false,
     toastTimer: null,
+    autoNextTimer: null,
     summary: null,
   };
 
@@ -190,9 +191,10 @@
       CloudSync.init({
         getState: function () { return app.state; },
         setState: function (next) {
+          var studying = location.hash.indexOf("#/learn") === 0 && app.session && !app.session.finished;
           app.state = next;
           Store.save(app.state);
-          render();
+          if (!studying) render();
         },
       });
       window.addEventListener("cloud:changed", function () {
@@ -318,6 +320,7 @@
   }
 
   function showNext() {
+    clearAutoNext();
     if (!app.session) return;
     if (app.session.queue.length === 0) {
       finishSession();
@@ -496,6 +499,21 @@
     render();
   }
 
+  function clearAutoNext() {
+    if (app.autoNextTimer) {
+      clearTimeout(app.autoNextTimer);
+      app.autoNextTimer = null;
+    }
+  }
+
+  function scheduleAutoNext() {
+    clearAutoNext();
+    app.autoNextTimer = setTimeout(function () {
+      app.autoNextTimer = null;
+      if (app.mode === "result" && app.session && !app.session.finished) nextCard();
+    }, 1000);
+  }
+
   function applyAnswer(grade, correct, elapsed) {
     if (!app.current || !app.session) return;
     var card = app.current;
@@ -532,8 +550,10 @@
       s.queue.splice(pos, 0, { id: card.id, isNew: false, relearn: true });
     }
     app.mode = "result";
+    clearAutoNext();
     Store.save(app.state);
     render();
+    if (grade === 1 || !correct) scheduleAutoNext();
     if (wasMode === "mcq") playAnswerAudio(card, direction);
   }
 
@@ -556,6 +576,7 @@
 
   function nextCard() {
     if (app.mode !== "result") return;
+    clearAutoNext();
     showNext();
   }
 
@@ -563,6 +584,7 @@
     if (app.session && !app.session.finished && app.session.done > 0) {
       if (!window.confirm("Leave this session? Your answers are already saved.")) return;
     }
+    clearAutoNext();
     app.audio.pause();
     app.session = null;
     location.hash = "#/";
@@ -574,6 +596,7 @@
       if (!window.confirm("Leave this session? Your answers are already saved.")) return;
       app.session = null;
     }
+    clearAutoNext();
     app.audio.pause();
     location.hash = hash;
   }
@@ -583,6 +606,7 @@
     if (app.readerPlaying || (window.speechSynthesis && window.speechSynthesis.speaking)) readerStop();
     var raw = location.hash.replace(/^#\/?/, "");
     var view = (raw.split("/")[0] || "dashboard").trim();
+    if (view !== "learn") clearAutoNext();
     if (view === "learn") {
       if (!app.session) {
         var dir = app.dashboardDirection || "forward";
@@ -843,7 +867,7 @@
       '<div class="meta"><span>' + s.done + " done · " + s.queue.length + " left</span><span>" + (direction === "reverse" ? "Recall" : "Recognize") + " · " + (s.beans || 0) + " Taler earned</span></div></div>" +
       audioButton +
       "</div>" +
-      '<div class="study-card">' + content + "</div>" +
+      '<div class="study-card' + (app.mode === "front" ? "" : " no-enter") + '">' + content + "</div>" +
       '<div class="study-footer"><span class="muted">Space to reveal / next · 1–4 to choose · A word audio · S example audio · Esc to exit</span>' +
       '<button class="btn btn-ghost btn-sm" data-action="exit">End session</button></div>' +
       "</main>"
@@ -937,7 +961,10 @@
     var last = app.last || { correct: false, dueLabel: "", grade: 3, mode: "back" };
     var isMCQ = last.mode === "mcq" || (app.mcq && last.selectedIndex != null);
     var beans = last.beans ? '<span class="pill" style="margin-left:8px;background:var(--surface-2);color:var(--gold)">+' + last.beans + " Taler</span>" : "";
-    var banner = last.correct
+    var againRating = Number(last.grade) === 1 && last.mode !== "mcq";
+    var banner = againRating
+      ? '<div class="result-banner again">' + icon("clock") + "Again — this card will come back in a few cards." + beans + "</div>"
+      : last.correct
       ? '<div class="result-banner good">' + icon("check") + "Correct — next review in " + esc(last.dueLabel) + beans + "</div>"
       : '<div class="result-banner bad">' + icon("x") + "Not quite — this card will come back in a few cards." + beans + "</div>";
     var options = "";
@@ -965,7 +992,7 @@
       banner +
       options +
       renderBack(c, false, direction) +
-      '<div class="study-footer" style="margin-top:4px"><span class="muted">' + (last.correct ? "Keep going." : "Review it once more before moving on.") + '</span><button class="btn btn-primary" data-action="next">Next ' + icon("arrow") + "</button></div>" +
+      '<div class="study-footer" style="margin-top:4px"><span class="muted">' + (last.correct ? "Keep going." : "This card will return soon. Next word in 1s…") + '</span><button class="btn btn-primary" data-action="next">' + (last.correct ? "Next" : "Next now") + " " + icon("arrow") + "</button></div>" +
       "</div>"
     );
   }
