@@ -553,7 +553,7 @@
     clearAutoNext();
     Store.save(app.state);
     render();
-    if (grade === 1 || !correct) scheduleAutoNext();
+    if (wasMode === "back" || grade === 1 || !correct) scheduleAutoNext();
     if (wasMode === "mcq") playAnswerAudio(card, direction);
   }
 
@@ -603,6 +603,7 @@
 
   function route() {
     hideGloss();
+    window.scrollTo(0, 0);
     if (app.readerPlaying || (window.speechSynthesis && window.speechSynthesis.speaking)) readerStop();
     var raw = location.hash.replace(/^#\/?/, "");
     var view = (raw.split("/")[0] || "dashboard").trim();
@@ -992,7 +993,7 @@
       banner +
       options +
       renderBack(c, false, direction) +
-      '<div class="study-footer" style="margin-top:4px"><span class="muted">' + (last.correct ? "Keep going." : "This card will return soon. Next word in 1s…") + '</span><button class="btn btn-primary" data-action="next">' + (last.correct ? "Next" : "Next now") + " " + icon("arrow") + "</button></div>" +
+      '<div class="study-footer" style="margin-top:4px"><span class="muted">' + (last.mode === "back" ? (last.correct ? "Next word in 1s…" : "This card will return soon. Next word in 1s…") : (last.correct ? "Keep going." : "This card will return soon. Next word in 1s…")) + '</span><button class="btn btn-primary" data-action="next">' + (last.mode === "back" || !last.correct ? "Next now" : "Next") + " " + icon("arrow") + "</button></div>" +
       "</div>"
     );
   }
