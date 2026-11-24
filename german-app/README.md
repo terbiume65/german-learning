@@ -67,6 +67,25 @@ pipeline/.venv/bin/pip install -r pipeline/requirements-audio.txt
 
 The generator is resumable and skips existing clips. It needs network access while generating; the finished app does not. Any string missing from the manifest falls back to the browser's `de-DE` voice.
 
+## Cloud sync
+
+Optional Supabase sync keeps progress together across devices.
+
+- Sign in from **Settings → Cloud sync** with an email and password.
+- Each account gets one row per app in `public.app_progress`, protected by row-level security.
+- The app pulls and merges on start/focus, and pushes about a second after each change.
+- Cloud sync is optional; when signed out, everything still runs locally.
+
+Merge rules are deliberately conservative:
+
+- vocabulary/reverse cards: keep the state with the latest review
+- grammar and reading: union completed items, keep the best score
+- daily stats: keep the higher count per day
+- café items, charms and grammar stars: union
+- café currency/streak: keep the higher value
+
+The backend is a free Supabase project. The public project URL and publishable key live in `js/sync-config.js`; the table policy is in `supabase/schema.sql`. Email confirmation is enabled. After creating your own account, disable new sign-ups in Supabase if you want the project private to you. Free Supabase projects pause after a week of inactivity and can be restored from the dashboard.
+
 ## Grammar
 
 `german-app/data/grammar-de.js` contains the 28 lessons. Each lesson has:
@@ -106,6 +125,9 @@ Markup in a line uses `[[surface|w:lemma]]` for vocabulary and `[[surface|g:less
 | `js/app.js` | Routing, study sessions, grammar, reader, glosses, TTS, UI |
 | `js/data.js` | Deck helpers, search, multiple-choice generation, recorded-audio lookup, TTS fallback |
 | `js/store.js` | Local progress, FSRS state, streaks, Taler, stars, export/import |
+| `js/sync.js` | Optional Supabase sign-in, merge and push/pull |
+| `js/sync-config.js` | Supabase project URL, publishable key and app id |
+| `supabase/schema.sql` | Progress table and row-level security policy |
 | `js/fsrs.js` | FSRS scheduler |
 | `js/cafe.js` | Market catalog, charms and SVG scene |
 | `data/vocab.js` | Generated 804-card deck |

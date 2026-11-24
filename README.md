@@ -10,6 +10,7 @@ A self-contained German A1 study project: vocabulary deck, visual A1–A2 gramma
 | `data/` | Generated A1 deck (`a1_vocab.json`, `a1_vocab.csv`), the structured source (`anki_notes.jsonl`), and the translation cache. |
 | `pipeline/` | Deck and audio builders: `build_deck.py`, `export_speech.js` and `build_audio.py`. |
 | `source/` | The official Goethe A1 word list PDF and the visual grammar reference PDF. |
+| `supabase/` | Database table and RLS policy for optional cross-device sync. |
 
 ## Run
 
