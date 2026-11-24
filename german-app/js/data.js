@@ -60,7 +60,7 @@
   }
 
   function theMeaning(c) {
-    return (c.meaning_zh || "").trim();
+    return (c.meaning_en || "").trim();
   }
 
   function tooSimilar(a, b) {
@@ -80,7 +80,7 @@
     DECK.forEach(function (c) {
       if (c.id === card.id) return;
       var m = theMeaning(c);
-      if (!m || m.length > 14) return;
+      if (!m || m.length > 32) return;
       if (tooSimilar(m, correct)) return;
       if (alt.indexOf(m) >= 0) return;
       var lenDiff = Math.abs(m.length - correct.length);
@@ -121,8 +121,8 @@
       if (c.id === card.id) return;
       var w = c.word;
       if (!w || used[w] || tooSimilar(w, correct)) return;
-      if (c.meaning_zh === card.meaning_zh) return;
-      if ((card.alt_meanings || []).indexOf(c.meaning_zh) >= 0) return;
+      if (c.meaning_en === card.meaning_en) return;
+      if ((card.alt_meanings || []).indexOf(c.meaning_en) >= 0) return;
       var lenDiff = Math.abs(w.length - correct.length);
       var first = w.charAt(0) === correct.charAt(0) ? 0.5 : 0;
       pool.push({ m: w, score: lenDiff + first + rnd() * 2.6 });
@@ -185,7 +185,7 @@
         c.word.toLowerCase().indexOf(q) >= 0 ||
         (c.lemma || "").toLowerCase().indexOf(q) >= 0 ||
         (c.gender_info || "").toLowerCase().indexOf(q) >= 0 ||
-        (c.meaning_zh || "").indexOf(q) >= 0 ||
+        (c.meaning_en || "").indexOf(q) >= 0 ||
         (c.meaning_en || "").toLowerCase().indexOf(q) >= 0 ||
         (c.example_ko || "").toLowerCase().indexOf(q) >= 0
       );
@@ -209,7 +209,7 @@
     var pool = DECK.filter(function (c) {
       return (
         c.word &&
-        c.meaning_zh &&
+        c.meaning_en &&
         c.example_ko &&
         c.word.length <= 28 &&
         c.word.charAt(0) !== "(" &&

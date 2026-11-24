@@ -2,7 +2,7 @@
 
 A small, local-first German learning app built on the Goethe-Zertifikat A1 word list, with a visual A1–A2 grammar path, a graded reader and a Christmas market that grows as you study.
 
-The interface is in English; meanings, translations and grammar explanations are in Simplified Chinese. Progress stays in the browser.
+The interface, vocabulary meanings, example translations, grammar notes and reader translations are all in English. Progress stays in the browser.
 
 ## Run it
 
@@ -18,11 +18,11 @@ The app itself is static. The fixed German speech is pre-generated and checked i
 
 ## What is inside
 
-- **804 A1 vocabulary cards** from the official Goethe A1 word list, with articles, gender, plural forms, part of speech, a Chinese meaning and an example sentence with a Chinese translation.
-- **FSRS scheduling** for long-term retention. Recognition (German → Chinese) and recall (Chinese → German) have separate schedules.
+- **804 A1 vocabulary cards** from the official Goethe A1 word list, with articles, gender, plural forms, part of speech, an English meaning and an example sentence with an English translation.
+- **FSRS scheduling** for long-term retention. Recognition (German → English) and recall (English → German) have separate schedules.
 - **28 visual grammar lessons** in 7 units, covering a curated A1–A2 core path: gender and articles, plurals, the present tense, cases, negation, questions, possessives, adjective endings, modals, separable verbs, the imperative, reflexives, the dative, prepositions, the perfect tense, word order, subordinate and relative clauses, comparison, the future and Konjunktiv II.
 - **Original grammar diagrams**: gender columns, case tables, verb grids, sentence flows, two-way preposition diagrams, timelines and comparison bars. Many elements are tappable.
-- **9 original graded reader texts** from first introductions to longer stories, with hover/tap glosses, Chinese translation on demand, line-by-line and whole-text recorded German audio, new-word lists and grammar links.
+- **9 original graded reader texts** from first introductions to longer stories, with hover/tap glosses, English translation on demand, line-by-line and whole-text recorded German audio, new-word lists and grammar links.
 - **Recorded neural German audio**: 2,445 short clips generated with the `de-DE-TanjaNeural` voice cover every word, example, grammar sentence and reader line. Playback is consistent across browsers and devices.
 - **Browser voice fallback** for any text without a recorded clip, with a voice picker in Settings. Installed Premium/Enhanced voices are preferred and novelty voices are ranked last.
 - **Weihnachtsmarkt**: reviews earn Taler; Taler buy wooden stalls, fairy lights, Glühwein, gingerbread, a tree, a carousel and more. Completing a grammar unit earns a star; stars plus Taler synthesize permanent study charms for the market wall.
@@ -42,9 +42,8 @@ This rewrites:
 - `data/a1_vocab.json` — readable deck
 - `data/a1_vocab.csv` — spreadsheet export
 - `german-app/data/vocab.js` — what the app loads
-- `data/translation_cache.json` — cached machine translations
 
-Hand-written overrides for ambiguous machine translations and the few entries without a natural example live in `MANUAL_ZH` and `MANUAL_EXAMPLES` inside `pipeline/build_deck.py`. The deck contains a few official subentries and variants, which is why the count is higher than the round “circa 650” figure in the PDF.
+The deck emits English meanings and example translations; the source already provides English glosses. Hand-written example overrides live in `MANUAL_EXAMPLES` inside `pipeline/build_deck.py`. The deck contains a few official subentries and variants, which is why the count is higher than the round “circa 650” figure in the PDF.
 
 ## Audio
 
@@ -86,12 +85,23 @@ Merge rules are deliberately conservative:
 
 The backend is a free Supabase project. The public project URL and publishable key live in `js/sync-config.js`; the table policy is in `supabase/schema.sql`. Email confirmation is enabled. After creating your own account, disable new sign-ups in Supabase if you want the project private to you. Free Supabase projects pause after a week of inactivity and can be restored from the dashboard.
 
+## Word building
+
+Selected cards show an interactive **Word building** panel on the answer side. It splits a word into prefixes, roots, suffixes, compounds and linking sounds, with a short English note for each part. Tap a coloured part to highlight it and see its explanation.
+
+The breakdowns live in `data/word-parts.js`. They focus on separable verbs and transparent compounds, such as:
+
+- `Anrufbeantworter` → An + ruf + be + antwort + er
+- `ausziehen` → aus + zieh + en
+- `Fahrkarte` → Fahr + Karte
+- `Wohnung` → wohn + ung
+
 ## Grammar
 
 `german-app/data/grammar-de.js` contains the 28 lessons. Each lesson has:
 
 - a short explanation and formation patterns,
-- two example sentences with Chinese translations,
+- two example sentences with English translations,
 - a visual panel rendered by `renderGrammarVisual()` in `js/app.js`,
 - a unit conversation with hoverable words and target patterns,
 - three exercises: choose the form, fill the blank and order the sentence.
@@ -133,6 +143,8 @@ Markup in a line uses `[[surface|w:lemma]]` for vocabulary and `[[surface|g:less
 | `data/vocab.js` | Generated 804-card deck |
 | `data/grammar-de.js` | 28 visual grammar lessons |
 | `data/reader-de.js` | 9 graded texts, glossary and levels |
+| `data/glossary-en.js` | English glosses for the reader hover cards |
+| `data/word-parts.js` | Interactive word-building breakdowns |
 | `data/speech.js` | Generated text → MP3 manifest |
 | `audio/text/` | 2,445 recorded neural German clips |
 | `pipeline/export_speech.js` | Collects the fixed strings that need audio |

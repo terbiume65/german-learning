@@ -311,12 +311,10 @@ def main():
             "hanja": "",
             "hanja_simplified": "",
             "hanja_candidates": [],
-            "meaning_zh": meaning_zh,
             "meaning_en": r.get("meaning_en") or "",
             "alt_meanings": [],
             "example_ko": ex_de,
             "example_romanization": "",
-            "example_zh": ex.get("zh") or cache.get("de:" + ex_de, ""),
             "example_en": ex_en,
             "verb_forms": r.get("verb_forms_raw") or "",
             "audio": None,
@@ -329,9 +327,9 @@ def main():
     json.dump(out, open(os.path.join(DATA, "a1_vocab.json"), "w"), ensure_ascii=False, indent=1)
     with open(os.path.join(DATA, "a1_vocab.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["id", "word", "pos", "gender_info", "meaning_zh", "example_de", "example_zh"])
+        w.writerow(["id", "word", "pos", "gender_info", "meaning_en", "example_de", "example_en"])
         for c in out:
-            w.writerow([c["id"], c["word"], c["pos"], c["gender_info"], c["meaning_zh"], c["example_ko"], c["example_zh"]])
+            w.writerow([c["id"], c["word"], c["pos"], c["gender_info"], c["meaning_en"], c["example_ko"], c["example_en"]])
     js = "window.VOCAB = " + json.dumps(out, ensure_ascii=False, separators=(",", ":")) + ";\nwindow.DECK_INFO = {count:%d, level:'A1', source:'Goethe-Zertifikat A1 Wortliste'};\n" % len(out)
     open(os.path.join(APP_DATA, "vocab.js"), "w").write(js)
     print("wrote", len(out), "entries")

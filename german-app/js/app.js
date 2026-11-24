@@ -761,8 +761,8 @@
     var readingNext = readerNextText();
     var modeSwitch =
       '<div class="mode-switch">' +
-      '<button class="mode-btn ' + (!isRev ? "active" : "") + '" data-action="set-direction" data-direction="forward">German → Chinese<small>Recognition</small></button>' +
-      '<button class="mode-btn ' + (isRev ? "active" : "") + '" data-action="set-direction" data-direction="reverse">Chinese → German<small>Recall</small></button>' +
+      '<button class="mode-btn ' + (!isRev ? "active" : "") + '" data-action="set-direction" data-direction="forward">German → English<small>Recognition</small></button>' +
+      '<button class="mode-btn ' + (isRev ? "active" : "") + '" data-action="set-direction" data-direction="reverse">English → German<small>Recall</small></button>' +
       "</div>";
 
     return (
@@ -773,7 +773,7 @@
       "<h1>" + (isRev ? "See the meaning. <em>Recall the word.</em>" : esc(greeting()) + (greeting().slice(-1) === "?" ? " " : ". ") + "Ready to learn some <em>German</em>?") + "</h1>" +
       '<p class="lead">' +
       (isRev
-        ? "Reverse mode uses a separate review schedule. You see the Chinese meaning and produce the German word; audio plays after you reveal it. "
+        ? "Reverse mode uses a separate review schedule. You see the English meaning and produce the German word; audio plays after you reveal it. "
         : Deck.count.toLocaleString() + " German words and 28 visual grammar lessons. Vocabulary uses FSRS; grammar is a guided path. ") +
       (queue.length
         ? "You have <strong>" + c.due + "</strong> review" + (c.due === 1 ? "" : "s") + " and <strong>" + Math.min(c.newTotal, c.newAllowance) + "</strong> new card" + (Math.min(c.newTotal, c.newAllowance) === 1 ? "" : "s") + " ready."
@@ -825,8 +825,8 @@
       '<div class="wod-word">' + esc(wod.word) + "</div>" +
       '<div class="wod-meta"><span>' + esc(wod.romanization) + "</span>" +
       '<button class="speaker small soft" data-action="play-card-word" data-id="' + esc(wod.id) + '" aria-label="Play word">' + icon("speaker", 17) + "</button></div>" +
-      '<div class="wod-meaning">' + esc(wod.meaning_zh) + "</div>" +
-      '<div class="wod-example">' + esc(wod.example_ko) + "<br>" + esc(wod.example_zh) + "</div>" +
+      '<div class="wod-meaning">' + esc(wod.meaning_en) + "</div>" +
+      '<div class="wod-example">' + esc(wod.example_ko) + "<br>" + esc(wod.example_en) + "</div>" +
       "</div></div>" +
       "</section>"
     );
@@ -879,8 +879,8 @@
     var reverse = direction === "reverse";
     return (
       '<div class="card-stage">' +
-      '<div class="card-kicker"><span class="pill ' + (statusClass || status) + '">' + esc(status) + "</span><span>" + (reverse ? "Chinese → German · recall" : "German → Chinese · recognize") + "</span></div>" +
-      '<div class="word ' + (reverse ? "prompt-cn" : "") + '">' + esc(reverse ? c.meaning_zh : c.word) + "</div>" +
+      '<div class="card-kicker"><span class="pill ' + (statusClass || status) + '">' + esc(status) + "</span><span>" + (reverse ? "English → German · recall" : "German → English · recognize") + "</span></div>" +
+      '<div class="word ' + (reverse ? "prompt-en" : "") + '">' + esc(reverse ? c.meaning_en : c.word) + "</div>" +
       (reverse
         ? '<p class="reverse-prompt-note">Recall the German word. Audio stays hidden until you reveal the answer.</p>'
         : app.state.settings.showRomanization
@@ -895,6 +895,40 @@
     );
   }
 
+  function wordPartsFor(card) {
+    var map = window.WORD_PARTS || {};
+    if (!card) return null;
+    var candidates = [card.lemma, card.word];
+    var base = String(card.lemma || "").replace(/^\([^)]*\)\s*/, "").trim();
+    if (base) candidates.push(base);
+    for (var i = 0; i < candidates.length; i++) {
+      if (candidates[i] && map[candidates[i]]) return map[candidates[i]];
+    }
+    return null;
+  }
+
+  function renderWordParts(card) {
+    var parts = wordPartsFor(card);
+    if (!parts || !parts.length) return "";
+    return (
+      '<div class="word-parts">' +
+      '<div class="word-parts-head"><strong>Word building</strong><span>tap a part</span></div>' +
+      '<div class="word-parts-chain">' +
+      parts
+        .map(function (part, i) {
+          return (
+            (i ? '<span class="word-part-plus">+</span>' : "") +
+            '<button class="word-part word-part-' + esc(part.type) + '" data-action="word-part" data-part="' + esc(part.text) + '" data-note="' + esc(part.note) + '">' + esc(part.text) + "</button>"
+          );
+        })
+        .join("") +
+      "</div>" +
+      '<p class="word-part-note">Tap a coloured part to see what it means.</p>' +
+      '<div class="word-part-legend"><span class="word-part-key prefix">prefix</span><span class="word-part-key root">root</span><span class="word-part-key suffix">suffix</span><span class="word-part-key compound">compound</span></div>' +
+      "</div>"
+    );
+  }
+
   function hanjaChip(c) {
     if (!app.state.settings.showHanja || !c.gender_info) return "";
     return '<div class="hanja-chip"><b>' + esc(c.gender_info) + "</b></div>";
@@ -905,10 +939,10 @@
     var answerMain = reverse
       ? '<div class="answer-main"><div><div class="answer-word">' + esc(c.word) + "</div>" +
         '<div class="answer-word-rom">' + esc(c.romanization) + "</div>" +
-        '<div class="meaning" style="font-size:1.05rem;margin-top:10px">' + esc(c.meaning_zh) + "</div>" +
+        '<div class="meaning" style="font-size:1.05rem;margin-top:10px">' + esc(c.meaning_en) + "</div>" +
         (c.alt_meanings && c.alt_meanings.length ? '<div class="meaning-sub">also: ' + esc(c.alt_meanings.join(" · ")) + "</div>" : "") +
         "</div>" + hanjaChip(c) + "</div>"
-      : '<div class="answer-main"><div><div class="meaning">' + esc(c.meaning_zh) + "</div>" +
+      : '<div class="answer-main"><div><div class="meaning">' + esc(c.meaning_en) + "</div>" +
         (c.alt_meanings && c.alt_meanings.length ? '<div class="meaning-sub">also: ' + esc(c.alt_meanings.join(" · ")) + "</div>" : "") +
         "</div>" + hanjaChip(c) + "</div>";
     return (
@@ -918,7 +952,8 @@
       '<div class="example-box"><button class="speaker small" data-action="replay-example" aria-label="Play example">' + icon("speaker", 18) + "</button>" +
       '<div><div class="example-ko">' + esc(c.example_ko) + "</div>" +
       (app.state.settings.showRomanization ? '<div class="example-rom">' + esc(c.example_romanization) + "</div>" : "") +
-      '<div class="example-zh">' + esc(c.example_zh) + "</div></div></div>" +
+      '<div class="example-en">' + esc(c.example_en) + "</div></div></div>" +
+      renderWordParts(c) +
       (rating ? renderRating(c, direction) : "") +
       "</div></div>"
     );
@@ -946,7 +981,7 @@
     return (
       '<div class="card-stage">' +
       '<div class="card-kicker"><span>Multiple choice</span><span>' + (reverse ? "Which German word means this?" : "What does this word mean?") + "</span></div>" +
-      '<div class="word ' + (reverse ? "prompt-cn" : "") + '">' + esc(reverse ? c.meaning_zh : c.word) + "</div>" +
+      '<div class="word ' + (reverse ? "prompt-en" : "") + '">' + esc(reverse ? c.meaning_en : c.word) + "</div>" +
       (!reverse && app.state.settings.showRomanization ? '<div class="word-rom">' + esc(c.romanization) + "</div>" : "") +
       '<div class="options">' +
       m.options
@@ -1028,7 +1063,7 @@
         ? '<div class="missed-list"><div class="rating-label" style="text-align:left">Worth another look</div>' +
           missed
             .map(function (m) {
-              return '<div class="missed-row"><strong>' + esc(m.word) + "</strong><span>" + esc(m.meaning_zh) + "</span></div>";
+              return '<div class="missed-row"><strong>' + esc(m.word) + "</strong><span>" + esc(m.meaning_en) + "</span></div>";
             })
             .join("") +
           "</div>"
@@ -1146,7 +1181,7 @@
         return (
           '<div class="word-row" data-action="open-card" data-id="' + esc(c.id) + '">' +
           '<div><div class="ko">' + esc(c.word) + '</div><div class="rom">' + esc(c.romanization) + "</div></div>" +
-          '<div class="meaning">' + esc(c.meaning_zh) + "</div>" +
+          '<div class="meaning">' + esc(c.meaning_en) + "</div>" +
           '<div><span class="pill ' + st + '">' + st + "</span></div>" +
           '<div class="due">' + (cs.state === "new" ? "new" : "due " + FSRS.dueLabel(cs.due)) + "</div>" +
           '<div class="audio"><button class="speaker small soft" data-action="play-card-word" data-id="' + esc(c.id) + '" aria-label="Play word">' + icon("speaker", 16) + "</button></div>" +
@@ -1166,7 +1201,7 @@
       })
       .join("");
     return (
-      '<div class="page-head"><div><p class="eyebrow">The deck</p><h1>Word List</h1><p>' + Deck.count.toLocaleString() + " entries — search by German, word type, gender, or Chinese.</p></div>" +
+      '<div class="page-head"><div><p class="eyebrow">The deck</p><h1>Word List</h1><p>' + Deck.count.toLocaleString() + " entries — search by German, word type, gender, or English.</p></div>" +
       '<button class="btn btn-primary" data-action="start">Study due cards ' + icon("arrow") + "</button></div>" +
       '<div class="search-wrap">' + icon("search") + '<input class="search" type="search" placeholder="Search the A1 word list…" value="' + esc(q) + '" data-role="search" /></div>' +
       '<div class="chips">' + chips + '<span class="muted" style="font-size:11px;align-self:center;margin-left:auto">' + results.length + " results</span></div>" +
@@ -1239,10 +1274,10 @@
       })
       .join("");
     return (
-      '<div class="page-head"><div><p class="eyebrow">Your progress</p><h1>The long game</h1><p>Consistency beats cramming. ' + (isRev ? "Recall (Chinese → German)" : "Recognition (German → Chinese)") + " progress below.</p></div></div>" +
+      '<div class="page-head"><div><p class="eyebrow">Your progress</p><h1>The long game</h1><p>Consistency beats cramming. ' + (isRev ? "Recall (English → German)" : "Recognition (German → English)") + " progress below.</p></div></div>" +
       '<div class="mode-switch">' +
-      '<button class="mode-btn ' + (!isRev ? "active" : "") + '" data-action="set-stats-direction" data-direction="forward">Recognition<small>German → Chinese</small></button>' +
-      '<button class="mode-btn ' + (isRev ? "active" : "") + '" data-action="set-stats-direction" data-direction="reverse">Recall<small>Chinese → German</small></button>' +
+      '<button class="mode-btn ' + (!isRev ? "active" : "") + '" data-action="set-stats-direction" data-direction="forward">Recognition<small>German → English</small></button>' +
+      '<button class="mode-btn ' + (isRev ? "active" : "") + '" data-action="set-stats-direction" data-direction="reverse">Recall<small>English → German</small></button>' +
       "</div>" +
       '<div class="stat-large">' +
       '<div class="metric"><strong>' + learned.toLocaleString() + "</strong><span>" + (isRev ? "words recalled" : "words recognized") + "</span></div>" +
@@ -1271,7 +1306,7 @@
       '<div class="two-col">' +
       '<div class="panel"><div class="panel-head"><h2>Leeches · ' + (isRev ? "recall" : "recognition") + '</h2><span>most lapses</span></div><div class="hard-list">' +
       (hard.length
-        ? hard.map(function (x) { return '<div class="hard-row"><span class="ko">' + esc(x.c.word) + '</span><span class="meaning">' + esc(x.c.meaning_zh) + '</span><span class="lapses">' + x.s.lapses + " lapses</span></div>"; }).join("")
+        ? hard.map(function (x) { return '<div class="hard-row"><span class="ko">' + esc(x.c.word) + '</span><span class="meaning">' + esc(x.c.meaning_en) + '</span><span class="lapses">' + x.s.lapses + " lapses</span></div>"; }).join("")
         : '<div class="empty">No leeches yet — nice.</div>') +
       "</div></div>" +
       '<div class="panel"><div class="panel-head"><h2>Recent activity</h2><span>last 7 days</span></div><div class="hard-list">' +
@@ -1350,11 +1385,12 @@
       '<div class="modal-backdrop" data-action="close-modal"><div class="modal" role="dialog" aria-modal="true">' +
       '<div class="modal-head"><div><div class="modal-word">' + esc(c.word) + '</div><div class="modal-rom">' + esc(c.romanization) + "</div></div>" +
       '<button class="icon-btn" data-action="close-modal" aria-label="Close">' + icon("x") + "</button></div>" +
-      '<div class="modal-meaning">' + esc(c.meaning_zh) + (c.gender_info ? ' <span class="hanja-chip" style="margin-left:6px"><b>' + esc(c.gender_info) + "</b></span>" : "") + "</div>" +
+      '<div class="modal-meaning">' + esc(c.meaning_en) + (c.gender_info ? ' <span class="hanja-chip" style="margin-left:6px"><b>' + esc(c.gender_info) + "</b></span>" : "") + "</div>" +
       (c.alt_meanings && c.alt_meanings.length ? '<div class="meaning-sub">also: ' + esc(c.alt_meanings.join(" · ")) + "</div>" : "") +
       '<div class="modal-example"><div class="ko">' + esc(c.example_ko) + "</div>" +
       (app.state.settings.showRomanization ? '<div class="example-rom">' + esc(c.example_romanization) + "</div>" : "") +
-      '<div class="zh">' + esc(c.example_zh) + "</div></div>" +
+      '<div class="en">' + esc(c.example_en) + "</div></div>" +
+      renderWordParts(c) +
       '<div class="settings-actions" style="margin:0 0 14px">' +
       '<button class="btn btn-soft btn-sm" data-action="play-card-word" data-id="' + esc(c.id) + '">' + icon("speaker", 15) + ' Word</button>' +
       '<button class="btn btn-ghost btn-sm" data-action="play-card-example" data-id="' + esc(c.id) + '">' + icon("speaker", 15) + ' Example</button></div>' +
@@ -1456,7 +1492,7 @@
       return {
         word: res.card.word,
         rom: res.card.gender_info || res.card.romanization || "",
-        meaning: res.card.meaning_zh || "",
+        meaning: res.card.meaning_en || "",
         gender: res.card.gender_info || "",
       };
     }
@@ -1464,7 +1500,7 @@
     return {
       word: entry.word || word,
       rom: entry.r || "",
-      meaning: entry.zh || "",
+      meaning: entry.en || "",
       hanja: "",
     };
   }
@@ -1513,7 +1549,7 @@
       '<div class="page-head"><div><p class="eyebrow">Comprehensible input</p><h1>Reader</h1><p>Read and listen to German from first words to longer stories. Hover any highlighted word for help.</p></div>' +
       '<div class="bean-pill" style="font-size:13px;padding:9px 13px">' + icon("book") + " " + prog.read + " / " + prog.total + " read</div></div>" +
       '<div class="reader-intro">' +
-      '<div><p class="eyebrow">The natural way</p><h2>Read first. Translate later.</h2><p>Start with a short text and read it once without translating. Let the situation and repeated words carry you. Hover underlined words, listen line by line, and only open the Chinese translation when you need a check.</p></div>' +
+      '<div><p class="eyebrow">The natural way</p><h2>Read first. Translate later.</h2><p>Start with a short text and read it once without translating. Let the situation and repeated words carry you. Hover underlined words, listen line by line, and only open the English translation when you need a check.</p></div>' +
       '<div class="reader-steps"><div><strong>1</strong><span>Read</span></div><div><strong>2</strong><span>Listen</span></div><div><strong>3</strong><span>Re-read</span></div></div>' +
       "</div>" +
       '<div class="reader-progress-panel"><div class="level-track" role="progressbar" aria-label="Reader progress" aria-valuemin="0" aria-valuemax="' + prog.total + '" aria-valuenow="' + prog.read + '"><div class="level-fill" style="width:' + pct + '%"></div></div><div class="level-meta"><span>' + prog.read + " / " + prog.total + " texts read · " + totalWords + " words in the reader</span><span>" + pct + "%</span></div></div>" +
@@ -1556,7 +1592,7 @@
       return (
         '<div class="reader-line" data-reader-line="' + i + '">' +
         '<button class="reader-line-audio" data-action="reader-line" data-index="' + i + '" aria-label="Listen to line ' + (i + 1) + '">' + icon("speaker", 15) + "</button>" +
-        '<div><p class="reader-ko" lang="de">' + glossMarkup(line.ko, [], null) + '</p><p class="reader-zh" lang="zh-CN">' + esc(line.zh) + "</p></div>" +
+        '<div><p class="reader-ko" lang="de">' + glossMarkup(line.ko, [], null) + '</p><p class="reader-en" lang="en">' + esc(line.en) + "</p></div>" +
         "</div>"
       );
     }).join("");
@@ -1583,7 +1619,7 @@
       '<p class="about-box">' + (read ? "You have finished this text. Read it again anytime; the audio and glosses stay available." : "Mark this text as read after you finish. First read earns +5 Taler.") + "</p>" +
       (read ? '<span class="pill mature">Read</span>' : '<button class="btn btn-primary btn-sm" data-action="reader-read">Mark as read · +5 Taler</button>') +
       "</div>" +
-      '<div class="panel"><div class="panel-head"><h2>How to read</h2><span>natural method</span></div><p class="reader-howto">Read the German first without translation. Use the situation and repeated words to guess. Hover underlined words only when needed. Listen to a line, then read it aloud. Show Chinese at the end as a check, not as the first step.</p></div>' +
+      '<div class="panel"><div class="panel-head"><h2>How to read</h2><span>natural method</span></div><p class="reader-howto">Read the German first without translation. Use the situation and repeated words to guess. Hover underlined words only when needed. Listen to a line, then read it aloud. Show English at the end as a check, not as the first step.</p></div>' +
       "</aside></div></div>"
     );
   }
@@ -1921,7 +1957,7 @@
       '<div class="grammar-layout"><div class="grammar-main">' +
       '<section class="panel"><div class="panel-head"><h2>In context</h2><span>hover or tap highlighted words and patterns</span></div><div class="dialogue">' +
       (unit.context || []).map(function (line) {
-        return '<div class="dialogue-line"><span class="speaker-tag">' + esc(line.speaker) + '</span><div><div class="grammar-ko" lang="de">' + glossMarkup(line.text, [], null) + '</div><div class="grammar-zh" lang="zh-CN">' + esc(line.zh) + "</div></div></div>";
+        return '<div class="dialogue-line"><span class="speaker-tag">' + esc(line.speaker) + '</span><div><div class="grammar-ko" lang="de">' + glossMarkup(line.text, [], null) + '</div><div class="grammar-en" lang="en">' + esc(line.en) + "</div></div></div>";
       }).join("") +
       "</div></section>" +
       '<section class="panel"><div class="panel-head"><h2>Lessons in this unit</h2><span>' + done + " / " + items.length + "</span></div><div class=\"unit-item-list\">" +
@@ -2026,12 +2062,12 @@
       "</section>" +
       '<section class="panel"><div class="panel-head"><h2>Examples</h2><span>hover the highlighted parts</span></div><div class="grammar-examples">' +
       item.examples.map(function (e) {
-        return '<div class="grammar-example"><button class="speaker small soft" data-action="speak" data-text="' + esc(e[0]) + '" aria-label="Listen">' + icon("speaker", 16) + '</button><div><div class="grammar-ko" lang="de">' + glossText(e[0], item.forms, item.id) + '</div><div class="grammar-zh" lang="zh-CN">' + esc(e[1]) + "</div></div></div>";
+        return '<div class="grammar-example"><button class="speaker small soft" data-action="speak" data-text="' + esc(e[0]) + '" aria-label="Listen">' + icon("speaker", 16) + '</button><div><div class="grammar-ko" lang="de">' + glossText(e[0], item.forms, item.id) + '</div><div class="grammar-en" lang="en">' + esc(e[1]) + "</div></div></div>";
       }).join("") +
       "</div></section>" +
       '<section class="panel"><div class="panel-head"><h2>In context · Unit ' + esc(String(unit.num)) + '</h2><span>your target is highlighted</span></div><div class="dialogue">' +
       (unit.context || []).map(function (line) {
-        return '<div class="dialogue-line"><span class="speaker-tag">' + esc(line.speaker) + '</span><div><div class="grammar-ko" lang="de">' + glossMarkup(line.text, [], item.id) + '</div><div class="grammar-zh" lang="zh-CN">' + esc(line.zh) + "</div></div></div>";
+        return '<div class="dialogue-line"><span class="speaker-tag">' + esc(line.speaker) + '</span><div><div class="grammar-ko" lang="de">' + glossMarkup(line.text, [], item.id) + '</div><div class="grammar-en" lang="en">' + esc(line.en) + "</div></div></div>";
       }).join("") +
       "</div></section>" +
       '<section class="panel grammar-practice"><div class="panel-head"><h2>Practice</h2><span>3 exercises · +1 Taler for each first correct answer</span></div>' +
@@ -2081,9 +2117,9 @@
     var nextHref = next ? "#/grammar/item/" + esc(next.id) : "#/grammar";
     return (
       '<div class="exercise-grid">' +
-      '<div class="exercise-card"><div class="exercise-head"><span class="exercise-num">1</span><div><h3>Choose the correct form</h3><p>' + esc(d.choice.sentence) + '</p><p class="exercise-zh">' + esc(item.examples[0][1]) + "</p></div></div>" +
+      '<div class="exercise-card"><div class="exercise-head"><span class="exercise-num">1</span><div><h3>Choose the correct form</h3><p>' + esc(d.choice.sentence) + '</p><p class="exercise-en">' + esc(item.examples[0][1]) + "</p></div></div>" +
       '<div class="exercise-options">' + choiceOptions + "</div>" + choiceFeedback + "</div>" +
-      '<div class="exercise-card"><div class="exercise-head"><span class="exercise-num">2</span><div><h3>Fill in the blank</h3><p>' + esc(d.fill.sentence) + '</p><p class="exercise-zh">' + esc(item.examples[1][1]) + "</p></div></div>" +
+      '<div class="exercise-card"><div class="exercise-head"><span class="exercise-num">2</span><div><h3>Fill in the blank</h3><p>' + esc(d.fill.sentence) + '</p><p class="exercise-en">' + esc(item.examples[1][1]) + "</p></div></div>" +
       '<div class="exercise-fill"><input class="exercise-input" data-role="g-fill" value="' + esc(ex.fill.value) + '" placeholder="Type the missing form" ' + (ex.fill.checked ? "disabled" : "") + ' /><button class="btn btn-primary btn-sm" data-action="g-check-fill"' + (ex.fill.checked ? " disabled" : "") + ">Check</button></div>" +
       fillFeedback + "</div>" +
       '<div class="exercise-card"><div class="exercise-head"><span class="exercise-num">3</span><div><h3>Put the sentence in order</h3><p>Tap the words in the correct order. Use every word once.</p></div></div>' +
@@ -2341,7 +2377,7 @@
         var c = res.card;
         var sub = c.word + (c.romanization ? " · " + c.romanization : "");
         html =
-          '<div class="tip-kicker">Vocabulary</div><div class="tip-title">' + esc(res.surface || c.word) + '</div><div class="tip-rom">' + esc(sub) + "</div><p>" + esc(c.meaning_zh) + "</p>";
+          '<div class="tip-kicker">Vocabulary</div><div class="tip-title">' + esc(res.surface || c.word) + '</div><div class="tip-rom">' + esc(sub) + "</div><p>" + esc(c.meaning_en) + "</p>";
         if (res.note) html += '<div class="tip-note">' + esc(res.note) + "</div>";
         if (c.gender_info) html += '<div class="tip-hanja">' + esc(c.gender_info) + "</div>";
         html += '<div class="tip-actions"><button class="btn btn-soft btn-sm" data-action="tip-speak" data-audio="' + esc(Deck.wordAudio(c)) + '" data-text="' + esc(res.surface || c.word) + '">' + icon("speaker", 14) + ' Listen</button><button class="btn btn-ghost btn-sm" data-action="tip-card" data-id="' + esc(c.id) + '">Open card</button></div>';
@@ -2349,7 +2385,7 @@
         var e = res.entry || {};
         var line = e.word ? e.word + (e.r ? " · " + e.r : "") : e.r || "";
         html =
-          '<div class="tip-kicker">Vocabulary</div><div class="tip-title">' + esc(res.surface || e.word || surface) + '</div><div class="tip-rom">' + esc(line) + "</div><p>" + esc(e.zh || "") + "</p>";
+          '<div class="tip-kicker">Vocabulary</div><div class="tip-title">' + esc(res.surface || e.word || surface) + '</div><div class="tip-rom">' + esc(line) + "</div><p>" + esc(e.en || "") + "</p>";
         if (e.note) html += '<div class="tip-note">' + esc(e.note) + "</div>";
         html += '<div class="tip-actions"><button class="btn btn-soft btn-sm" data-action="tip-speak" data-text="' + esc(res.surface || e.word || surface) + '">' + icon("speaker", 14) + " Listen</button></div>";
       }
@@ -2638,6 +2674,17 @@
         break;
       case "g-visual":
         btn.classList.toggle("active");
+        break;
+      case "word-part":
+        var wordParts = btn.closest(".word-parts");
+        if (wordParts) {
+          Array.prototype.forEach.call(wordParts.querySelectorAll(".word-part.active"), function (part) {
+            part.classList.remove("active");
+          });
+          btn.classList.add("active");
+          var partNote = wordParts.querySelector(".word-part-note");
+          if (partNote) partNote.textContent = btn.getAttribute("data-part") + " — " + btn.getAttribute("data-note");
+        }
         break;
       case "speak":
         speak(btn.getAttribute("data-text") || "");

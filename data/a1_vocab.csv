@@ -1,805 +1,805 @@
-id,word,pos,gender_info,meaning_zh,example_de,example_zh
-de-a1-0001,(ein)hundert,,,一百,Das Buch kostet einhundert Euro.,这本书一百欧元。
-de-a1-0002,(ein)tausend,,,一千,Die Stadt hat eintausend Einwohner.,这座城市有一千名居民。
-de-a1-0003,die (Kredit)-Karte,n.,feminine · die,信用卡,Kann ich auch mit Karte (be-) zahlen?,我也可以用卡支付吗？
-de-a1-0004,(sich etwas) kaufen,v.,,买,Tim kauft sich ein neues Auto.,蒂姆买了一辆新车。
-de-a1-0005,(sich) anziehen,v.,,穿衣服,Ich muss mich noch anziehen.,我还得穿衣服。
-de-a1-0006,(sich) ausziehen,v.,,脱下（衣服）；搬出,"Zieh die Schuhe aus, bitte!",请脱掉你的鞋子！
-de-a1-0007,(sich) duschen,v.,,淋浴,"Ich bade nicht so gern, ich dusche lieber.",我不太喜欢洗澡，我更喜欢淋浴。
-de-a1-0008,(sich) freuen,v.,,期待；感到高兴,Ich freue mich auf den Urlaub.,我很期待假期的到来。
-de-a1-0009,(sich) treffen,v.,,见面,Ich treffe in der Stadt einen Kollegen.,我在城里遇见一位同事。
-de-a1-0010,(sich) vorstellen,v.,,介绍,Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?,我们想互相了解。您能介绍一下自己吗？
-de-a1-0011,(sich) waschen,v.,,洗,Wo kann ich mir die Hände waschen?,我可以在哪里洗手？
-de-a1-0012,ab,prep.,,从（开始于）,Ab morgen muss ich arbeiten.,从明天开始我必须工作。
-de-a1-0013,der Abend,n.,masculine · der · plural Abende,晚上,Am Abend sehe ich fern.,晚上我看电视。
-de-a1-0014,aber,conj.,,但,"Ich bin oft im Büro, aber nur für wenige Stunden.",我经常在办公室，但只呆几个小时。
-de-a1-0015,abfahren,v.,,离开,Wir fahren um zwölf Uhr ab.,我们十二点出发。
-de-a1-0016,die Abfahrt,n.,feminine · die · plural Abfahrten,离开,Vor der Abfahrt rufe ich an.,走之前我会打电话。
-de-a1-0017,abfliegen,v.,,离开（乘飞机）,Wann fliegst du ab?,你什么时候走？
-de-a1-0018,der Abflug,n.,masculine · der,（航班）出发,Der Abflug ist um 11.20 Uhr.,出发时间为上午 11:20
-de-a1-0019,abgeben,v.,,交出；寄存,Ich muss meine Schlüssel abgeben.,我必须交出我的钥匙。
-de-a1-0020,abholen,v.,,接；取,Wann kann ich den Schrank bei dir abholen?,我什么时候可以去你那里取柜子？
-de-a1-0021,der Absender,n.,masculine · der,发件人,Da ist ein Brief für dich ohne Absender.,有一封给您的信，没有回信地址。
-de-a1-0022,acht,,,八,Die Antwort ist acht.,答案是八。
-de-a1-0023,Achtung,interj.,,注意！小心！,Achtung! Das dürfen Sie nicht tun.,注意！您不可以那样做。
-de-a1-0024,achtzehn,,,十八,Die Antwort ist achtzehn.,答案是十八。
-de-a1-0025,achtzig,,,八十,Die Antwort ist achtzig.,答案是八十。
-de-a1-0026,die Adresse,n.,feminine · die · plural Adressen,地址,Können Sie mir seine Adresse sagen?,你能告诉我他的地址吗？
-de-a1-0027,all-,"det., pron.",,所有（词干）,Alles Gute!,一切顺利！
-de-a1-0028,allein,adj.,,独自的,Er kommt allein.,他一个人来。
-de-a1-0029,also,adv.,,所以,"Also, es ist so: ...",所以，就像这样：...
-de-a1-0030,alt,adj.,,老的,Wie alt sind Sie?,你今年多大？
-de-a1-0031,das Alter,n.,neuter · das,年龄,Alter: 26 Jahre.,年龄：26岁。
-de-a1-0032,am Wochenende,,,周末,Am Wochenende habe ich frei.,我周末休息。
-de-a1-0033,an,prep.,,在,Fahren Sie an der nächsten Straße nach rechts.,在下一条街右转。
-de-a1-0034,an sein,v.,,开着；亮着,Heute Nacht war das Licht an.,今晚，灯亮了。
-de-a1-0035,anbieten,v.,,提供,Was darf ich dir anbieten?,我能为您提供什么？
-de-a1-0036,ander-,"det., pron.",,另一个（词干）,"Willst du diese Jacke?<br>– Nein, ich möchte die andere.",你想要这件夹克吗？<br>- 不，我想要另一件。
-de-a1-0037,der Anfang,n.,masculine · der · plural Anfänge,开始,Sie wohnt am Anfang der Straße.,她住在街的尽头。
-de-a1-0038,anfangen,v.,,开始,Hier fängt die Bahnhofstraße an.,班霍夫大街从这里开始。
-de-a1-0039,das Angebot,n.,neuter · das · plural Angebote,提供,Heute sind Sportschuhe im Angebot.,今天运动鞋打折。
-de-a1-0040,anklicken,v.,,单击,Da musst du dieses Wort anklicken.,你必须点击这个词。
-de-a1-0041,ankommen,v.,,到达,Wann kommt dieser Zug in Hamburg an?,这趟火车什么时候到达汉堡？
-de-a1-0042,ankreuzen,v.,,勾选,Auf dem Formular müssen Sie an mehreren Stellen etwas ankreuzen.,您必须在表格上的多个位置勾选某些内容。
-de-a1-0043,die Ankunft,n.,feminine · die · plural Ankünfte,到达,Auf diesem Plan steht nur die Ankunft(-szeit) der Züge.,该计划仅显示火车的到达（时间）。
-de-a1-0044,anmachen,v.,,打开,Mach bitte das Licht an!,请把灯打开！
-de-a1-0045,die Anmeldung,n.,feminine · die · plural Anmeldungen,登记,Eine Anmeldung für diesen Kurs ist nicht mehr möglich.,不再可以注册该课程。
-de-a1-0046,die Anrede,n.,feminine · die,称呼,Schreiben Sie auch eine Anrede und einen Gruß.,还要写上问候语和问候语。
-de-a1-0047,der Anruf,n.,masculine · der · plural Anrufe,称呼,Sie bekommt viele Anrufe auf ihrem Handy.,她的手机接到很多电话。
-de-a1-0048,der Anrufbeantworter,n.,masculine · der · plural Anrufbeantworter,应答机,Wir sind im Moment nicht da. Sprechen Sie bitte auf den Anrufbeantworter.,我们现在不在。请对答录机讲话。
-de-a1-0049,anrufen,v.,,打电话,Kann man Sie anrufen?,可以叫你吗？
-de-a1-0050,die Ansage,n.,feminine · die · plural Ansagen,通知；广播,Hören Sie die Ansagen.,听听公告。
-de-a1-0051,der Anschluss,n.,masculine · der,联系,In Mannheim haben Sie Anschluss nach Saarbrücken.,在曼海姆，您可以前往萨尔布吕肯。
-de-a1-0052,die Antwort,n.,feminine · die · plural Antworten,回答,Er gibt leider keine Antwort.,不幸的是他没有给出答案。
-de-a1-0053,antworten,v.,,回答,Er antwortet nicht.,他没有回答。
-de-a1-0054,die Anzeige,n.,feminine · die · plural Anzeigen,广告,Ich habe Ihre Anzeige in der Zeitung gelesen.,我在报纸上读到了你们的广告。
-de-a1-0055,das Apartment,n.,neuter · das · plural Apartments,公寓,Wir haben ein Apartment gemietet.,我们租了一套公寓。
-de-a1-0056,der Apfel,n.,masculine · der · plural Äpfel,苹果,Ein Pfund Äpfel bitte.,请给我一磅苹果。
-de-a1-0057,der Appetit,n.,masculine · der,食欲,Guten Appetit!,祝你胃口好！
-de-a1-0058,der April,n.,masculine · der,四月,Mein Geburtstag ist im April.,我的生日是四月。
-de-a1-0059,die Arbeit,n.,feminine · die · plural Arbeiten,工作,Mein Bruder sucht Arbeit.,我弟弟正在找工作。
-de-a1-0060,arbeiten,v.,,去工作,Wo arbeiten Sie?,你在哪里工作？
-de-a1-0061,arbeitslos,adj.,,失业的,"Es gibt bei uns viele Leute, die schon lange arbeitslos sind.",我们有很多人长期失业。
-de-a1-0062,der Arbeitsplatz,n.,masculine · der · plural Arbeitsplätze,工作场所,An meinem Arbeitsplatz fehlt ein Drucker.,我的工作场所没有打印机。
-de-a1-0063,der Arm,n.,masculine · der · plural Arme,手臂,Mein Arm tut weh.,我的手臂很痛。
-de-a1-0064,der Arzt,n.,masculine · der · plural Ärzte,医生（医学专业人士）,Morgen habe ich einen Termin bei meiner Ärztin.,我明天和我的医生有个约会。
-de-a1-0065,auch,part.,,还,Ich bin auch Spanier.,我也是西班牙人。
-de-a1-0066,auf,prep.,,在……上面；打开,Die Kinder spielen auf der Straße.,孩子们在街上玩耍。
-de-a1-0067,auf sein,v.,,开放,Du brauchst den Schlüssel nicht. Die Wohnung ist auf.,你不需要钥匙。公寓已开放。
-de-a1-0068,das Auf Wiederhören!,phrase,neuter · das,再见（在电话里）,Wir müssen jetzt Schluss machen. Also auf Wiederhören!,我们现在必须停下来。那么再见！
-de-a1-0069,das Auf Wiedersehen!,phrase,neuter · das,再见,Auf Wiedersehen!,再见！
-de-a1-0070,die Aufgabe,n.,feminine · die · plural Aufgaben,任务,Das ist eine schwere Aufgabe.,这是一项艰巨的任务。
-de-a1-0071,aufhören,v.,,停止；结束,Der Kurs hört in einer Woche auf.,课程一周后结束。
-de-a1-0072,aufstehen,v.,,起床,Ich muss immer um vier Uhr aufstehen.,我总是必须在四点钟起床。
-de-a1-0073,der Aufzug,n.,masculine · der · plural Aufzüge,电梯,In diesem Haus gibt es keinen Aufzug.,这所房子没有电梯。
-de-a1-0074,das Auge,n.,neuter · das · plural Augen,眼睛,Er hat blaue Augen.,他有蓝色的眼睛。
-de-a1-0075,der August,n.,masculine · der,八月,Mein Geburtstag ist im August.,我的生日是八月。
-de-a1-0076,aus,prep.,,从……出来；关着,Er kommt aus Brasilien.,他来自巴西。
-de-a1-0077,aus sein,v.,,关着；结束,Das Licht ist aus.,灯灭了。
-de-a1-0078,der Ausflug,n.,masculine · der,游览,Morgen machen wir einen Ausflug nach Heidelberg.,明天我们将前往海德堡。
-de-a1-0079,ausfüllen,v.,,填写,Füllen Sie bitte dieses Formular aus.,请填写这张表格。
-de-a1-0080,der Ausgang,n.,masculine · der,出口,Wo ist der Ausgang?,出口在哪里？
-de-a1-0081,die Auskunft,n.,feminine · die · plural Auskünfte,信息；咨询处,Können Sie mir eine Auskunft geben?,你能给我一些信息吗？
-de-a1-0082,das Ausland,n.,neuter · das,国外,Fahren Sie ins Ausland?,你要出国吗？
-de-a1-0083,der Ausländer,n.,masculine · der · plural Ausländer,外国人,SInd Sie Ausländerin?,你是外国人吗？
-de-a1-0084,ausländisch,adj.,,外国的,Leider habe ich nur ausländisches Geld.,不幸的是我只有外国钱。
-de-a1-0085,ausmachen,v.,,关闭,Mach bitte das Licht aus!,请关灯！
-de-a1-0086,die Aussage,n.,feminine · die · plural Aussagen,陈述,Ist die Aussage richtig oder falsch?,该说法是真是假？
-de-a1-0087,aussehen,v.,,看,Das sieht schön aus.,看起来不错。
-de-a1-0088,aussteigen,v.,,下车,Wo muss ich aussteigen?,我该在哪里下车？
-de-a1-0089,der Ausweis,n.,masculine · der,身份证,Hier ist mein Ausweis.,这是我的证件。
-de-a1-0090,das Auto,n.,neuter · das · plural Autos,车,Er kommt mit dem Auto.,他开车来。
-de-a1-0091,die Autobahn,n.,feminine · die · plural Autobahnen,公路,Wo geht‘s hier bitte zur Autobahn?,请问这里的高速公路在哪里？
-de-a1-0092,der Automat,n.,masculine · der,自动售货机或售票机,Die Fahrkarten gibt es nur am Automaten.,门票只能通过机器购买。
-de-a1-0093,automatisch,adj.,,自动的,Du musst nichts machen. Das geht automatisch.,你不需要做任何事。这是自动发生的。
-de-a1-0094,das Baby,n.,neuter · das · plural Babys,婴儿,Mein Kind ist noch ein Baby.,我的孩子还是个婴儿。
-de-a1-0095,das Bad,n.,neuter · das,浴室,Wir haben kein großes Bad.,我们没有大浴室。
-de-a1-0096,baden,v.,,洗澡,"Ich bade nicht so gern, ich dusche lieber.",我不太喜欢洗澡，我更喜欢淋浴。
-de-a1-0097,die Bahn,n.,feminine · die,铁路；火车,Wir fahren lieber mit der Bahn.,我们更喜欢坐火车。
-de-a1-0098,der Bahnhof,n.,masculine · der,火车站,Komme ich hier zum Bahnhof?,我可以从这里到火车站吗？
-de-a1-0099,der Bahnsteig,n.,masculine · der,平台,Auf welchem Bahnsteig fährt der Zug?,火车在哪个站台行驶？
-de-a1-0100,bald,adv.,,很快,Ich komme bald.,我很快就来。
-de-a1-0101,der Balkon,n.,masculine · der,阳台,Die Wohnung hat auch einen kleinen Balkon.,公寓还设有一个小阳台。
-de-a1-0102,die Banane,n.,feminine · die · plural Bananen,香蕉,"Drei Bananen, bitte!",请给我三根香蕉！
-de-a1-0103,die Bank,n.,feminine · die,银行；长椅,Die Bank schließt schon um vier Uhr.,银行四点钟关门。
-de-a1-0104,bar,adj.,,现金,Muss ich bar zahlen oder geht‘s auch mit Karte?,我必须用现金支付还是也可以用卡支付？
-de-a1-0105,der Bauch,n.,masculine · der,胃,Seit gestern tut mir der Bauch weh.,从昨天开始我的胃就一直疼。
-de-a1-0106,der Baum,n.,masculine · der · plural Bäume,树,"Vorsicht, fahr nicht an den Baum!",小心，别撞到树了！
-de-a1-0107,der Beamte,n.,masculine · der · plural Beamten,公职人员；公务员,Fragen Sie die Beamtin an Schalter acht!,询问八号柜台的工作人员！
-de-a1-0108,bedeuten,v.,,意思是,Was bedeutet das Wort?,这个词是什么意思？
-de-a1-0109,beginnen,v.,,开始,Das Spiel beginnt um 15.30 Uhr.,比赛于下午 3:30 开始。
-de-a1-0110,bei,prep.,,在……旁；在……家,Offenbach liegt bei Frankfurt.,奥芬巴赫靠近法兰克福。
-de-a1-0111,beide,det.,,两个都,Beide Eltern arbeiten.,父母双方都工作。
-de-a1-0112,das Bein,n.,neuter · das · plural Beine,腿,Mein rechtes Bein tut weh.,我的右腿很痛。
-de-a1-0113,das Beispiel,n.,neuter · das · plural Beispiele,例子,Kannst du mir ein Beispiel sagen?,你能告诉我一个例子吗？
-de-a1-0114,bekannt,adj.,,众所周知的,Picasso ist sehr bekannt.,毕加索非常有名。
-de-a1-0115,der/die Bekannte,n.,m/f · der/die · plural Bekannten,熟人,Ein Bekannter von mir heißt Klaus.,我的一个熟人叫克劳斯。
-de-a1-0116,bekommen,v.,,得到；收到,Haben Sie meinen Brief bekommen?,你收到我的信了吗？
-de-a1-0117,benutzen,v.,,使用,Die Aufzüge bitte nicht benutzen!,请不要使用电梯！
-de-a1-0118,der Beruf,n.,masculine · der · plural Berufe,职业,Was sind Sie von Beruf?,你的职业是什么？
-de-a1-0119,besetzt,adj.,,被占用的；有人了,Die Nummer ist immer besetzt.,号码总是占线。
-de-a1-0120,besichtigen,v.,,参观或游览一个地方,Ich möchte gern den Dom besichtigen.,我想去参观大教堂。
-de-a1-0121,besser,adj.,,更好的,Es geht mir schon besser.,我已经感觉好多了。
-de-a1-0122,best-,adj.,,最好的（词干）,Am besten treffen wir uns morgen.,我们最好明天见面。
-de-a1-0123,bestellen,v.,,订购,"Wir möchten bestellen, bitte.",我们想订购，请。
-de-a1-0124,besuchen,v.,,拜访一个人或一个地方,Darf ich dich besuchen?,我可以拜访你吗？
-de-a1-0125,das Bett,n.,neuter · das · plural Betten,床,Wir brauchen noch ein Kinderbett.,我们还需要一张婴儿床。
-de-a1-0126,bezahlen,v.,,支付某物的费用,Wo muss ich bezahlen?,我必须在哪里付款？
-de-a1-0127,das Bier,n.,neuter · das,啤酒,Noch ein Bier bitte.,再来一杯啤酒。
-de-a1-0128,das Bild,n.,neuter · das · plural Bilder,图片,Hast du ein Bild von deinem Sohn?,你有你儿子的照片吗？
-de-a1-0129,billig,adj.,,便宜（通常是低质量）,Die Jacke kostet nur 10 Euro! Die ist aber billig!,这件夹克只要10欧元！但它很便宜！
-de-a1-0130,die Birne,n.,feminine · die · plural Birnen,梨,"Ein Kilo Birnen, bitte!",请给我一公斤梨！
-de-a1-0131,bis,prep.,,直到,Ich fahre nur bis Stuttgart.,我只想去斯图加特
-de-a1-0132,bisschen,pron.,,（一点,"Ich spreche Englisch, Französisch und ein bisschen Deutsch.",我会说英语、法语和一点德语。
-de-a1-0133,bitte,part.,,请,"Eine Tasse Kaffee, bitte!",请喝杯咖啡！
-de-a1-0134,die Bitte,n.,feminine · die · plural Bitten,要求,Ich habe noch eine Bitte.,我还有一个请求。
-de-a1-0135,bitten,v.,,请求,Darf ich Sie um etwas bitten?,我可以向你求点东西吗？
-de-a1-0136,bitter,adj.,,苦的,Der Kaffee schmeckt bitter.,咖啡的味道很苦。
-de-a1-0137,blau,,,蓝色的,Meine Lieblingsfarbe ist Blau.,我最喜欢的颜色是蓝色。
-de-a1-0138,bleiben,v.,,留下来,Ich bleibe heute zu Hause.,我今天待在家里。
-de-a1-0139,der Bleistift,n.,masculine · der · plural Bleistifte,铅笔,Hast du einen Bleistift?,你有铅笔吗？
-de-a1-0140,der Blick,n.,masculine · der,看法,Von diesem Hotel hat man einen guten Blick auf den Rhein.,这家酒店可以看到莱茵河的美景。
-de-a1-0141,die Blume,n.,feminine · die · plural Blumen,花,Gefallen dir die Blumen?,你喜欢花吗？
-de-a1-0142,der Bogen,n.,masculine · der,床单,Schreiben Sie Ihre Lösungen bitte auf den Antwortbogen.,请将您的答案写在答题纸上。
-de-a1-0143,brauchen,v.,,需要,Brauchst du die Zeitung noch?,你还需要报纸吗？
-de-a1-0144,braun,,,棕色的,Meine Lieblingsfarbe ist Braun.,我最喜欢的颜色是棕色。
-de-a1-0145,breit,adj.,,宽的,Wie breit ist der Schrank?,衣柜多宽？
-de-a1-0146,der Brief,n.,masculine · der · plural Briefe,信,Haben Sie einen Brief für mich?,你有一封信给我吗？
-de-a1-0147,die Briefmarke,n.,feminine · die · plural Briefmarken,（邮票,Kaufst du bitte Briefmarken bei der Post.,请从邮局购买邮票。
-de-a1-0148,bringen,v.,,带来；拿给,Bringen Sie mir bitte noch einen Kaffee!,请再给我一杯咖啡！
-de-a1-0149,das Brot,n.,neuter · das · plural Brote,面包,Haben Sie auch Weißbrot?,你也有白面包吗？
-de-a1-0150,der Bruder,n.,masculine · der · plural Brüder,兄弟,Sein Bruder arbeitet auch hier.,他的兄弟也在这里工作。
-de-a1-0151,das Brötchen,n.,neuter · das · plural Brötchen,面包卷,Möchtest du Brötchen zum Frühstück?,您早餐想吃三明治吗？
-de-a1-0152,das Buch,n.,neuter · das · plural Bücher,书,Gute Bücher sind oft sehr teuer.,好书往往非常昂贵。
-de-a1-0153,der Buchstabe,n.,masculine · der · plural Buchstaben,字母（字符）,Diesen Buchstaben gibt es in meiner Sprache nicht.,这封信在我的语言中不存在。
-de-a1-0154,buchstabieren,v.,,拼写,Bitte buchstabieren Sie Ihren Namen.,请拼出你的名字。
-de-a1-0155,der Bus,n.,masculine · der · plural Busse,公共汽车,Wann kommt der nächste Bus?,下一趟公共汽车什么时候来？
-de-a1-0156,die Butter,n.,feminine · die,黄油,Für mich bitte ein Brötchen mit Butter und Käse.,请给我一份黄油和奶酪卷。
-de-a1-0157,die Bäckerei,n.,feminine · die,面包店,Ich geh mal schnell zur Bäckerei.,我很快就去面包店。
-de-a1-0158,böse,adj.,,生气的,Sie ist böse auf mich.,她对我很生气。
-de-a1-0159,das Café,n.,neuter · das · plural Cafés,咖啡店,Sollen wir uns im Café treffen?,我们应该在咖啡馆见面吗？
-de-a1-0160,die CD,n.,feminine · die · plural CDs,光盘,Bring bitte deine Lieblings-CD mit.,请随身携带您最喜爱的 CD。
-de-a1-0161,der Chef,n.,masculine · der,老板,Wir haben eine neue Chefin.,我们有一个新老板。
-de-a1-0162,circa/ca.,adv.,,大约,Von Mainz nach Frankfurt sind es circa fünfzig Kilometer.,从美因茨到法兰克福大约有五十公里。
-de-a1-0163,der Computer,n.,masculine · der · plural Computer,电脑,Wann bekommst du deinen neuen Computer?,你什么时候能收到你的新电脑？
-de-a1-0164,da,adv.,,那里；在这里,Da hinten ist er ja.,他又回来了。
-de-a1-0165,die Dame,n.,feminine · die · plural Damen,女士,Damen (an der Toilette),女士（在厕所）
-de-a1-0166,daneben,adv.,,在它旁边,Du kennst doch die Post. Daneben ist die Bank.,你知道邮局。旁边就是银行。
-de-a1-0167,der Dank,n.,masculine · der,谢谢,Vielen Dank!,谢谢你！
-de-a1-0168,danke,interj.,,谢谢,"Soll ich Ihnen helfen?<br>- Nein, danke!",您需要我帮助您吗？<br>- 不，谢谢！
-de-a1-0169,danken,v.,,感谢,Ich danke Ihnen für die Einladung.,感谢您的邀请。
-de-a1-0170,dann,adv.,,然后（之后）,"Ich muss noch schnell zur Post, dann komme ich.",我得赶紧去邮局然后我就来。
-de-a1-0171,das Datum,n.,neuter · das,日期,Bitte schreiben Sie noch das Datum auf das Formular.,请在表格上写下日期。
-de-a1-0172,dauern,v.,,持续,Wie lange dauert der Film?,影片时长是多少？
-de-a1-0173,dein-,det.,,你的（物主冠词词干）,Ist das dein Auto?,那是你的车吗？
-de-a1-0174,denn,conj.,,因为,"Ich kann nicht kommen, denn ich bin krank.",我不能来，因为我病了。
-de-a1-0175,der,"det., pron.",,定冠词（阳性）,Ich nehme das da.,我要这个。
-de-a1-0176,Deutschland,n.,neuter,德国,Sie kommt aus Deutschland.,她来自德国。
-de-a1-0177,der Dezember,n.,masculine · der,十二月,Mein Geburtstag ist im Dezember.,我的生日是十二月。
-de-a1-0178,dich,pron.,,你（宾格单数）,Die Blumen sind für dich.,花是给你的。
-de-a1-0179,der Dienstag,n.,masculine · der,周二,Am Dienstag habe ich frei.,星期二我有空。
-de-a1-0180,dies-,det.,,这个（指示冠词词干）,Ich nehme lieber diesen Kuchen.,我宁愿吃这个蛋糕。
-de-a1-0181,dir,pron.,,你（与格单数）,Gefallen dir die Blumen?,你喜欢花吗？
-de-a1-0182,die Disco,n.,feminine · die · plural Discos,迪斯科；迪斯科舞厅,Heute abend gehen wir in die Disco tanzen.,今晚我们要去迪斯科舞厅跳舞。
-de-a1-0183,der Doktor,n.,masculine · der,医生（头衔或学位）,Meine Tochter ist krank. Wir gehen zum Doktor.,我女儿病了。我们要去看医生。
-de-a1-0184,der Donnerstag,n.,masculine · der,周四,Am Donnerstag habe ich frei.,星期四我有空。
-de-a1-0185,das Doppelzimmer,n.,neuter · das,双人间,Wollen Sie ein Doppelzimmer oder ein Einzelzimmer?,您想要双人间还是单人间？
-de-a1-0186,das Dorf,n.,neuter · das · plural Dörfer,村庄,Meine Familie lebt in einem Dorf.,我的家人住在一个​​村庄。
-de-a1-0187,dort,adv.,,那里,Deine Tasche kannst du dorthin stellen.,你可以把包放在那里。
-de-a1-0188,dorthin,adv.,,那里（到那个地方，那个方向）,Deine Tasche kannst du dorthin stellen.,你可以把包放在那里。
-de-a1-0189,draußen,adv.,,外部,Wollen wir draußen sitzen?,我们想坐在外面吗？
-de-a1-0190,drei,,,三,Die Antwort ist drei.,答案是三。
-de-a1-0191,dreizehn,,,十三,Die Antwort ist dreizehn.,答案是十三。
-de-a1-0192,dreißig,,,三十,Die Antwort ist dreißig.,答案是三十。
-de-a1-0193,dritte,,,第三,Die dritte Antwort ist richtig.,第三个答案是正确的。
-de-a1-0194,drucken,v.,,打印,Bitte drucke das Formular für mich.,请帮我打印表格。
-de-a1-0195,der Drucker,n.,masculine · der · plural Drucker,打印机,Mein Drucker ist kaputt.,我的打印机坏了。
-de-a1-0196,drücken,v.,,按,"Drück hier, dann geht der Computer an.",按此处，计算机将打开。
-de-a1-0197,durch,prep.,,通过,Am besten gehen Sie durch die Breite Straße.,最好穿过Breite Straße。
-de-a1-0198,die Durchsage,n.,feminine · die · plural Durchsagen,公告,Ich habe die Durchsage nicht verstanden.,我没看懂这个公告。
-de-a1-0199,der Durst,n.,masculine · der,口渴,Hast du etwas zu trinken? Ich habe großen Durst.,你有喝的吗？我很渴。
-de-a1-0200,die Dusche,n.,feminine · die,淋浴,Unsere Wohnung hat nur eine Dusche.,我们的公寓只有淋浴。
-de-a1-0201,dürfen,v.,,被允许,Sie dürfen hier nicht rauchen.,这里不准吸烟。
-de-a1-0202,die E-Mail,n.,feminine · die · plural E-Mails,电子邮件,Ich habe Ihre E-Mail nicht bekommen.,我没有收到你的电子邮件。
-de-a1-0203,die Ecke,n.,feminine · die · plural Ecken,角落,An der nächsten Ecke links.,在下一个拐角处左边。
-de-a1-0204,die Ehefrau,n.,feminine · die · plural Ehefrauen,妻子,Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.,这是我的丈夫/妻子。
-de-a1-0205,der Ehemann,n.,masculine · der · plural Ehemänner,丈夫,Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.,这是我的丈夫/妻子。
-de-a1-0206,das Ei,n.,neuter · das · plural Eier,蛋,Möchtest du ein Ei zum Frühstück?,早餐要吃鸡蛋吗？
-de-a1-0207,eilig,adj.,,匆忙,Hast du es eilig?,您是不是在赶时间？
-de-a1-0208,ein Grad unter Null/minus ein Grad,phrase,,零以下一级/负一级,Heute sind es minus ein Grad.,今天气温为零下一度。
-de-a1-0209,ein halb; halb,,,一半,Ich möchte ein halbes Kilo Tomaten.,我想要半公斤西红柿。
-de-a1-0210,ein Meter fünfzehn,phrase,,一米十五,Das Kind ist ein Meter fünfzehn groß.,这孩子有五英尺高。
-de-a1-0211,ein Uhr,,,一点钟,Wir treffen uns um ein Uhr.,我们将在一点钟见面。
-de-a1-0212,ein Viertel; Viertel,,,四分之一,Ich warte noch ein Viertel Stunde.,我再等一刻钟。
-de-a1-0213,ein-,"det., pron.",,不定冠词词干（ein-）,Ich nehme ein Bier. Willst du auch eins?,我要一杯啤酒。你也想要一个吗？
-de-a1-0214,einfach,adj.,,简单的；单程的,Die Prüfung ist ganz einfach.,测试非常简单。
-de-a1-0215,der Eingang,n.,masculine · der,入口,Der Eingang ist um die Ecke.,入口就在拐角处。
-de-a1-0216,einkaufen,v.,,去购物,Ich muss noch für morgen einkaufen.,明天我还得去买东西。
-de-a1-0217,einladen,v.,,邀请,Darf ich Sie zu einem Kaffee einladen?,我可以请你喝咖啡吗？
-de-a1-0218,die Einladung,n.,feminine · die,邀请函,Danke für die Einladung!,感谢您的邀请！
-de-a1-0219,einmal,adv.,,一次,Diese Prüfung mache ich nicht noch einmal.,我不会再参加这个测试了。
-de-a1-0220,eins,,,一,Die Antwort ist eins.,答案是一。
-de-a1-0221,einsteigen,v.,,上（登上）,"Schnell, steig ein, der Zug fährt gleich.",快点上车吧，火车马上就要开了。
-de-a1-0222,der Eintritt,n.,masculine · der,入口,Der Preis für den Eintritt ist 5 Euro.,入场费为 5 欧元。
-de-a1-0223,einundzwanzig,,,21,Die Antwort ist einundzwanzig.,答案是二十一个。
-de-a1-0224,das Einzelzimmer,n.,neuter · das,单人间,Haben Sie noch ein Einzelzimmer?,请问还有单间吗？
-de-a1-0225,elf,,,十一,Die Antwort ist elf.,答案是十一。
-de-a1-0226,die Eltern,n.,plural · die,父母,Meine Eltern leben in Spanien.,我的父母住在西班牙。
-de-a1-0227,empfehlen,v.,,推荐,Welchen Wein können Sie mir empfehlen?,您可以向我推荐哪款酒？
-de-a1-0228,der Empfänger,n.,masculine · der · plural Empfänger,接受者,"Auf dem Brief steht dein Name, also bist du der Empfänger.",信上有你的名字，所以你就是收件人。
-de-a1-0229,das Ende,n.,neuter · das,结尾；结束,Sie wohnt am Ende der Straße.,她住在街的尽头。
-de-a1-0230,enden,v.,,结束,Die Straße endet hier.,路到这里就结束了。
-de-a1-0231,entschuldigen,v.,,原谅,Entschuldigen Sie bitte!,对不起，请原谅！
-de-a1-0232,die Entschuldigung,n.,feminine · die,打扰一下；对不起,Entschuldigung!<br>– Bitte.,抱歉！<br>——拜托。
-de-a1-0233,er,pron.,,他,Er heißt Ali.,他的名字叫阿里。
-de-a1-0234,das Ergebnis,n.,neuter · das · plural Ergebnisse,结果,Das Ergebnis des Tests bekommen Sie in zwei Wochen.,您将在两周内收到测试结果。
-de-a1-0235,erklären,v.,,解释,Kannst du mir das erklären?,你能向我解释一下吗？
-de-a1-0236,erlauben,v.,,允许,Rauchen ist hier nicht erlaubt.,这里禁止吸烟。
-de-a1-0237,erst-,adj.,,第一的,Ich war zum ersten Mal allein im Urlaub.,这是我第一次独自度假。
-de-a1-0238,der Erwachsene,n.,masculine · der · plural Erwachsenen,成人,Dieser Film ist nur für Erwachsene.,这部电影仅供成人观看。
-de-a1-0239,erzählen,v.,,告诉,Wir müssen euch etwas erzählen!,我们必须告诉你一件事！
-de-a1-0240,es,pron.,,它,Es regnet.,下雨了。
-de-a1-0241,essen,v.,,吃饭,Was gibt es zu essen?,有什么吃的？
-de-a1-0242,das Essen,n.,neuter · das,食物；一顿饭,Das Essen ist heute sehr gut.,今天的食物非常好。
-de-a1-0243,euer,det.,,你们的（物主冠词词干）,Euer Kurs beginnt heute.,你的课程从今天开始。
-de-a1-0244,Europa,n.,neuter,欧洲,Deutschland liegt in Europa.,德国位于欧洲。
-de-a1-0245,fahren,v.,,乘车前往或旅行；开车,Ich fahre mit dem Auto zur Arbeit.,我开车去上班。
-de-a1-0246,der Fahrer,n.,masculine · der,司机,Bitte nicht mit dem Fahrer sprechen!,请不要与司机说话！
-de-a1-0247,die Fahrkarte,n.,feminine · die · plural Fahrkarten,（交通）票,Hast du schon eine Fahrkarte?,您已经有票了吗？
-de-a1-0248,das Fahrrad,n.,neuter · das · plural Fahrräder,自行车,Fährst du mit dem Fahrrad oder mit dem Auto?,您骑自行车还是开车旅行？
-de-a1-0249,falsch,adj.,,错误的；不正确,Das ist falsch.,那是错误的。
-de-a1-0250,die Familie,n.,feminine · die · plural Familien,家庭,Meine Familie lebt in Spanien.,我的家人住在西班牙。
-de-a1-0251,der Familienname,n.,masculine · der,姓,Meine Familiennamen sind García González.,我的姓氏是加西亚·冈萨雷斯。
-de-a1-0252,der Familienstand,n.,masculine · der,婚姻状况,Bei „Familienstand“ musst du „ledig“ ankreuzen.,在“婚姻状况”下，您必须勾选“单身”。
-de-a1-0253,die Farbe,n.,feminine · die · plural Farben,颜色,Die Farbe gefällt mir gut.,我喜欢这个颜色。
-de-a1-0254,das Fax,n.,neuter · das · plural Faxe,传真,Schicken Sie uns einfach ein Fax!,只需给我们发传真即可！
-de-a1-0255,der Februar,n.,masculine · der,二月,Mein Geburtstag ist im Februar.,我的生日是二月。
-de-a1-0256,fehlen,v.,,缺席；缺少,"Herr Müller ist nicht da, er fehlt schon seit drei Tagen.",穆勒先生不在，他已经失踪三天了。
-de-a1-0257,der Fehler,n.,masculine · der · plural Fehler,错误,Diesen Fehler mache ich immer.,我总是犯这个错误。
-de-a1-0258,die Feier-,n.,feminine · die,庆祝（构词成分）,"z. B. Feierabend, Feiertag",例如B. 下班后、公共假期
-de-a1-0259,der Feierabend,n.,masculine · der,工作日结束,Einen schönen Feierabend.,祝你今晚愉快。
-de-a1-0260,feiern,v.,,庆祝,Wir feiern heute meinen Geburtstag.,今天我们庆祝我的生日。
-de-a1-0261,der Feiertag,n.,masculine · der · plural Feiertage,银行假日,Am Montag ist Feiertag.,星期一是假期。
-de-a1-0262,fernsehen,v.,,看电视,Wollen wir heute Abend mal fernsehen?,今晚我们看电视吗？
-de-a1-0263,fertig,adj.,,完成的；准备好；完毕,Bist du fertig?,你准备好了吗？
-de-a1-0264,das Feuer,n.,neuter · das,火,Haben Sie Feuer?,你有火吗？
-de-a1-0265,das Fieber,n.,neuter · das,发烧,Mein Mann hat noch immer Fieber.,我丈夫还在发烧。
-de-a1-0266,der Film,n.,masculine · der · plural Filme,电影,Ich möchte gern diesen Film sehen.,我想看这部电影。
-de-a1-0267,finden,v.,,找到,Wir müssen den Schlüssel finden.,我们必须找到钥匙。
-de-a1-0268,Finnland,n.,neuter,芬兰,Sie kommt aus Finnland.,她来自芬兰。
-de-a1-0269,die Firma,n.,feminine · die,公司,Er arbeitet jetzt bei einer anderen Firma.,他现在在另一家公司工作。
-de-a1-0270,der Fisch,n.,masculine · der · plural Fische,鱼,Ich esse gern Fisch. Fleisch mag ich nicht.,我喜欢吃鱼。我不喜欢吃肉。
-de-a1-0271,die Flasche,n.,feminine · die · plural Flaschen,瓶子,"Eine Flasche Bier, bitte.",请给我一瓶啤酒。
-de-a1-0272,das Fleisch,n.,neuter · das,肉,Fleisch mag ich nicht.,我不喜欢吃肉。
-de-a1-0273,fliegen,v.,,飞翔,Ich fliege nicht gern. Deshalb fahre ich mit dem Zug.,我不喜欢飞行。这就是我坐火车的原因。
-de-a1-0274,der Flughafen,n.,masculine · der,飞机场,Kannst du mich zum Flughafen bringen?,你能送我去机场吗？
-de-a1-0275,das Flugzeug,n.,neuter · das,飞机,Das Flugzeug aus Berlin kommt heute später an.,从柏林起飞的飞机今天晚些时候抵达。
-de-a1-0276,das Formular,n.,neuter · das · plural Formulare,形式,Sie müssen dieses Formular ausfüllen.,您必须填写此表格。
-de-a1-0277,das Foto,n.,neuter · das · plural Fotos,照片,Darf ich ein Foto machen?,我可以拍照吗？
-de-a1-0278,die Frage,n.,feminine · die · plural Fragen,问题,Ich habe eine Frage.,我有一个问题。
-de-a1-0279,fragen,v.,,询问,Er möchte Sie etwas fragen. Wann kommen Sie?,他想问你一些事情。你什么时候来？
-de-a1-0280,die Frau,n.,feminine · die,女士；妻子,Das ist Frau Becker.,这是贝克尔女士。
-de-a1-0281,frei,adj.,,自由的,Ist der Platz noch frei?,空间还可以吗？
-de-a1-0282,der Freitag,n.,masculine · der,星期五,Am Freitag habe ich frei.,我星期五休息。
-de-a1-0283,die Freizeit,n.,feminine · die,空闲时间,In meiner Freizeit spiele ich oft Fußball.,在我的空闲时间我经常踢足球。
-de-a1-0284,fremd,adj.,,外国的；陌生；奇怪的,Das weiß ich nicht; ich bin fremd hier.,我不知道；我是这里的陌生人。
-de-a1-0285,der Freund,n.,masculine · der · plural Freunde,朋友,Das ist ein Freund von mir.,这是我的一个朋友。
-de-a1-0286,die Freundin,n.,feminine · die,朋友；女朋友,Das ist meine Freundin Susanne.,这是我的朋友苏珊娜。
-de-a1-0287,früher,adv.,,以前；较早,Früher waren wir oft zusammen im Kino.,我们以前经常一起去看电影。
-de-a1-0288,der Frühling/das Frühjahr,n.,masculine · der,春天,Im Frühling sind wir oft draußen.,春天我们经常在外面。
-de-a1-0289,das Frühstück,n.,neuter · das,早餐,Möchtest du ein Ei zum Frühstück?,早餐要吃鸡蛋吗？
-de-a1-0290,frühstücken,v.,,吃早餐,Am Sonntag frühstücke ich gern im Bett.,周日我喜欢在床上吃早餐。
-de-a1-0291,der Fuß,n.,masculine · der · plural Füße,脚,Der linke Fuß tut mir weh.,我的左脚很痛。
-de-a1-0292,der Fußball,n.,masculine · der,足球,Spielt ihr gerne Fußball?,你喜欢踢足球吗？
-de-a1-0293,die Führung,n.,feminine · die,旅游,Die Führung durch das Haus beginnt in 3 Minuten.,房屋参观将在 3 分钟后开始。
-de-a1-0294,fünf,,,五,Die Antwort ist fünf.,答案是五。
-de-a1-0295,fünf Minuten vor/nach eins (ein Uhr),,,五点钟/一点钟过去（一点钟）,Es ist fünf Minuten nach eins.,现在是一点五分。
-de-a1-0296,fünfzehn,,,十五,Die Antwort ist fünfzehn.,答案是十五。
-de-a1-0297,fünfzig,,,五十,Die Antwort ist fünfzig.,答案是五十。
-de-a1-0298,für,prep.,,为了,Das ist für Sie.,这是给您的。
-de-a1-0299,der Garten,n.,masculine · der,花园,Wir haben leider keinen Garten.,不幸的是我们没有花园。
-de-a1-0300,der Gast,n.,masculine · der · plural Gäste,客人,Am Wochenende haben wir mehrere Gäste.,周末我们有几位客人。
-de-a1-0301,geben,v.,,给予,Kannst du mir bitte deinen Kugelschreiber geben?,你能把你的笔给我吗？
-de-a1-0302,geboren,adj.,,出生,Ich bin in Zagreb geboren.,我出生在萨格勒布。
-de-a1-0303,das Geburtsjahr,n.,neuter · das,出生年份,"Das Geburtsjahr Ihres Sohnes, bitte?",请问您儿子的出生年份？
-de-a1-0304,der Geburtsort,n.,masculine · der,出生地,Bitte schreiben Sie Ihren Geburtsort auf das Formular.,请在表格上写下您的出生地。
-de-a1-0305,der Geburtstag,n.,masculine · der,生日,Herzlichen Glückwunsch zum Geburtstag!,生日快乐！
-de-a1-0306,gefallen,v.,,使喜欢；合意,Das gefällt mir.,我喜欢这样。
-de-a1-0307,gegen,prep.,,反对；朝；大约,Fahr nicht gegen den Baum!,别撞树！
-de-a1-0308,gehen,v.,,去；走；运转,"Ich weiß nicht, wie das geht.",我不知道该怎么做。
-de-a1-0309,gehören,v.,,归属,Wem gehört das?,这是属于谁的？
-de-a1-0310,gelb,,,黄色的,Meine Lieblingsfarbe ist Gelb.,我最喜欢的颜色是黄色。
-de-a1-0311,das Geld,n.,neuter · das,钱,Hast du noch Geld?,你还有钱吗？
-de-a1-0312,das Gemüse,n.,neuter · das,蔬菜,Gemüse brauchen wir auch noch.,我们还需要蔬菜。
-de-a1-0313,das Gepäck,n.,neuter · das,行李,Wollen Sie Ihr Gepäck mitnehmen?,您想随身携带行李吗？
-de-a1-0314,gerade,adv.,,现在,Da kommt er ja gerade.,他就是从那里来的。
-de-a1-0315,geradeaus,adv.,,直接,Gehen Sie immer geradeaus!,永远直走！
-de-a1-0316,gern(e),adv.,,喜欢地；乐意,Ich gehe gerne einkaufen.,我喜欢去购物。
-de-a1-0317,das Geschenk,n.,neuter · das · plural Geschenke,展示,Danke für das schöne Geschenk.,谢谢你送的这份可爱的礼物。
-de-a1-0318,geschlossen,adj.,,关闭,Die Bank hat am Samstag geschlossen.,银行周六不营业。
-de-a1-0319,die Geschwister,n.,plural · die,兄弟姐妹,Ich habe leider keine Geschwister.,不幸的是我没有兄弟姐妹。
-de-a1-0320,das Geschäft,n.,neuter · das · plural Geschäfte,店铺；商业,Die Geschäfte schließen um 18.30 Uhr.,商店下午 6:30 关门
-de-a1-0321,das Gespräch,n.,neuter · das · plural Gespräche,谈话,Das Gespräch mit Frau Kunz ist um 14 Uhr.,Kunz 女士的采访时间为下午 2 点。
-de-a1-0322,gestern,adv.,,昨天,Gestern war ich krank.,昨天我病了。
-de-a1-0323,gestorben,v.,,死了,Meine Frau ist gestern gestorben.,我的妻子昨天去世了。
-de-a1-0324,das Getränk,n.,neuter · das · plural Getränke,喝,Mein Lieblingsgetränk ist Tomatensaft.,我最喜欢的饮料是番茄汁。
-de-a1-0325,das Gewicht,n.,neuter · das,重量,Bei „Gewicht“ schreibst du: 62 Kilo.,在“重量”下写下：62 公斤。
-de-a1-0326,gewinnen,v.,,赢得胜利,Wer gewinnt das Spiel?,谁会赢得比赛？
-de-a1-0327,geöffnet,adj.,,打开,Der Laden ist samstags bis 16.00 Uhr geöffnet.,商店每周六营业至下午 4 点。
-de-a1-0328,das Glas,n.,neuter · das · plural Gläser,玻璃,Bitte noch ein Glas Wein!,请再来一杯酒！
-de-a1-0329,glauben,v.,,相信；认为,"Sie können mir glauben, es ist so.",你可以相信我，这是真的。
-de-a1-0330,gleich,adj.,,相同的；马上,Das ist mir gleich.,我不在乎。
-de-a1-0331,das Gleis,n.,neuter · das · plural Gleise,轨道；站台,Der ICE nach Berlin hält heute an Gleis 12.,开往柏林的 ICE 今天停在 12 号站台。
-de-a1-0332,das Glück,n.,neuter · das,运气,Viel Glück!,祝你好运！
-de-a1-0333,glücklich,adj.,,快乐的,Meine Kinder sind glücklich verheiratet.,我的孩子们婚姻幸福。
-de-a1-0334,der Glückwunsch,n.,masculine · der,恭喜,Herzlichen Glückwunsch zum Geburtstag.,生日快乐。
-de-a1-0335,der Grad (Celsius),n.,masculine · der,度（摄氏）,Heute haben wir dreißig Grad.,今天气温三十度。
-de-a1-0336,das Gramm,n.,neuter · das · plural Gramm,克,Für den Kuchen brauche ich 200 Gramm Mehl.,做蛋糕我需要 200 克面粉。
-de-a1-0337,gratulieren,v.,,祝贺,Ich gratuliere dir!,我祝贺你！
-de-a1-0338,grau,,,灰色的,Meine Lieblingsfarbe ist Grau.,我最喜欢的颜色是灰色。
-de-a1-0339,grillen,v.,,烧烤,Heute grillen wir im Garten.,今天我们在花园里烧烤。
-de-a1-0340,groß,adj.,,大的；高的,Mein Bruder und ich sind gleich groß.,我和弟弟一样高。
-de-a1-0341,die Großeltern,n.,plural · die,祖父母,Meine Großeltern leben in Japan.,我的祖父母住在日本。
-de-a1-0342,die Großmutter,n.,feminine · die,祖母（中性/正式）,Meine Großmutter heißt Eva.,我祖母的名字是伊娃。
-de-a1-0343,der Großvater,n.,masculine · der,祖父（中性/正式）,Mein Großvater ist schon 80.,我爷爷已经80岁了。
-de-a1-0344,die Gruppe,n.,feminine · die · plural Gruppen,团体,Die erste Gruppe beginnt um 16 Uhr.,第一组下午 4 点开始。
-de-a1-0345,der Gruß,n.,masculine · der · plural Grüße,问候,Viele Grüße an Ihre Frau.,向你的妻子致以许多问候。
-de-a1-0346,die Größe,n.,feminine · die,尺寸,Haben Sie das auch in Größe 40?,你也有这个40码的吗？
-de-a1-0347,grün,,,绿色的,Meine Lieblingsfarbe ist Grün.,我最喜欢的颜色是绿色。
-de-a1-0348,gut,adj.,,好的,Das finde ich gut.,我喜欢这样。
-de-a1-0349,gültig,adj.,,有效的,Der Pass ist nicht mehr gültig.,该通行证不再有效。
-de-a1-0350,günstig,adj.,,便宜；物有所值,Dort gibt es günstige Angebote.,那里有便宜的优惠。
-de-a1-0351,das Haar,n.,neuter · das · plural Haare,头发,Sie hat lange Haare.,她有一头长发。
-de-a1-0352,haben,v.,,拥有,Ich habe ein neues Auto.,我有一辆新车。
-de-a1-0353,halb drei,,,两点半,Der Film beginnt um halb drei.,电影两点半开始。
-de-a1-0354,die Halbpension,n.,feminine · die,半食宿,Möchten Sie Vollpension oder Halbpension?,您想要全膳还是半膳？
-de-a1-0355,die Halle,n.,feminine · die,大厅,Wir treffen uns in Halle B,我们在B馆见面
-de-a1-0356,hallo,interj.,,你好,Hallo Inge! Wie geht’s?,你好英格！你好吗？
-de-a1-0357,halten,v.,,停；拿着；认为,Dieser Zug hält nicht in Rüdesheim.,这列火车不会在吕德斯海姆停靠。
-de-a1-0358,die Haltestelle,n.,feminine · die,（公共交通）停止,An der nächsten Haltestelle müssen Sie aussteigen.,你必须在下一站下车。
-de-a1-0359,die Hand,n.,feminine · die · plural Hände,手,Er gibt mir die Hand.,他握了我的手。
-de-a1-0360,das Handy,n.,neuter · das · plural Handys,手机,In der Schule bitte die Handys ausmachen!,请在学校关闭手机！
-de-a1-0361,das Haus,n.,neuter · das · plural Häuser,房子；建筑；家,In welchem Haus wohnst du?,你住在哪一栋房子里？
-de-a1-0362,die Hausaufgabe,n.,feminine · die · plural Hausaufgaben,家庭作业,Kannst du mir bei den Hausaufgaben helfen?,你能帮我做作业吗？
-de-a1-0363,die Hausfrau,n.,feminine · die · plural Hausfrauen,家庭主妇,"Die Hausfrau/der Hausmann wäscht, kocht und kauft ein.",家庭主妇/丈夫洗衣、做饭和购物。
-de-a1-0364,der Hausmann,n.,masculine · der,家庭主夫,"Die Hausfrau/der Hausmann wäscht, kocht und kauft ein.",家庭主妇/丈夫洗衣、做饭和购物。
-de-a1-0365,die Heimat,n.,feminine · die,家,Ich komme aus der Schweiz. Das ist meine Heimat.,我来自瑞士。这是我的家。
-de-a1-0366,heiraten,v.,,结婚,Meine Schwester heiratet einen Japaner.,我姐姐要嫁给一个日本男人。
-de-a1-0367,heißen,v.,,被称为,Ich heiße Charlotte Meier.,我叫夏洛特·梅尔。
-de-a1-0368,helfen,v.,,帮助,"Können Sie mir helfen, bitte?",你能帮我吗？
-de-a1-0369,hell,adj.,,明亮的,Im Sommer ist es bis 21 Uhr hell.,夏季，晚上 9 点之前天都是亮的。
-de-a1-0370,der Herbst,n.,masculine · der,落下,Im Herbst sind wir oft draußen.,秋天我们在户外度过了很多时间。
-de-a1-0371,der Herd,n.,masculine · der,火炉,In der neuen Küche fehlt noch der Herd.,新厨房里的炉子仍然不见了。
-de-a1-0372,der Herr,n.,masculine · der · plural Herren,先生,"Guten Tag, Herr Sommer!",下午好，夏天先生！
-de-a1-0373,herzlich,adj.,,衷心的；热情的,Herzlichen Glückwunsch!,恭喜！
-de-a1-0374,heute,adv.,,今天,Heute ist ein schöner Tag.,今天是美好的一天。
-de-a1-0375,hier,adv.,,这里,"Hier ist 06131-553221, Pamela Linke.",我是 06131-553221，帕梅拉·林克。
-de-a1-0376,die Hilfe,n.,feminine · die,帮助,Hilfe! Bitte helfen Sie mir!,帮助！请帮我！
-de-a1-0377,hinten,adv.,,在/在后面,Die Tür zum Aussteigen ist hinten.,出口门位于后面。
-de-a1-0378,das Hobby,n.,neuter · das · plural Hobbys,爱好,Meine Hobbys sind Wandern und Schwimmen.,我的爱好是徒步旅行和游泳。
-de-a1-0379,hoch,adj.,,高的,Der Mount Everest ist 8.880 Meter hoch.,"珠穆朗玛峰高8,880米。"
-de-a1-0380,die Hochzeit,n.,feminine · die,婚礼,Zur dieser Hochzeit kommen mehr als fünfzig Gäste.,参加这场婚礼的宾客超过五十人。
-de-a1-0381,holen,v.,,去取,Ich hole zwei Flaschen Wasser aus der Küche.,我从厨房拿了两瓶水。
-de-a1-0382,das Hotel,n.,neuter · das · plural Hotels,酒店,Im Urlaub sind wir in einem Hotel am Meer.,假期我们住在海边的一家酒店。
-de-a1-0383,der Hund,n.,masculine · der · plural Hunde,狗,Der Hund ist noch jung.,狗还年轻。
-de-a1-0384,hunderteins,,,一百零一,Die Zahl ist hunderteins.,数量是一百零一个。
-de-a1-0385,der Hunger,n.,masculine · der,饥饿,Ich habe Hunger! Wann ist das Essen fertig?,我饿了！食物什么时候准备好？
-de-a1-0386,das Hähnchen,n.,neuter · das · plural Hähnchen,鸡,Ein Hähnchen mit Pommes bitte!,请一份鸡肉和薯条！
-de-a1-0387,hören,v.,,倾听；听到,Hör mal! Was ist das?,听！那是什么？
-de-a1-0388,ich,pron.,,我,Ich heiße Veronika.,我的名字是维罗妮卡。
-de-a1-0389,ihm/ihr,pron.,,他/她,Gib ihr/ihm bitte das Buch.,请把书给她/他。
-de-a1-0390,immer,adv.,,总是,Frau Bast kommt immer zu spät.,巴斯特女士总是迟到。
-de-a1-0391,in,prep.,,在；到,Ich wohne in Wiesbaden.,我住在威斯巴登。
-de-a1-0392,die Information,n.,feminine · die · plural Informationen,信息；咨询处,"Wenn Sie Fragen haben, gehen Sie zur Information.",如果您有任何疑问，请前往信息。
-de-a1-0393,international,adj.,,国际的,"Unser Deutschkurs ist international: Silvana kommt aus Italien, Conchi aus Spanien, Yin aus China ...",我们的德语课程是国际化的：Silvana来自意大利，Conchi来自西班牙，Yin来自中国......
-de-a1-0394,das Internet,n.,neuter · das,互联网,Das findest du im Internet.,你可以在互联网上找到它。
-de-a1-0395,ja,interj.,,是的,Sind Sie Herr Watanabe?<br>– Ja.,您是渡边先生吗？<br>- 是的。
-de-a1-0396,die Jacke,n.,feminine · die · plural Jacken,夹克,Zieh dir eine Jacke an. Es ist kalt.,穿上夹克。是冷的。
-de-a1-0397,das Jahr,n.,neuter · das · plural Jahre,年,Sie wohnt seit einem Jahr hier.,她在这里住了一年了。
-de-a1-0398,der Januar,n.,masculine · der,一月,Mein Geburtstag ist im Januar.,我的生日是一月。
-de-a1-0399,jed-,det.,,每个（词干）,Blumen kannst du in jedem Bahnhof kaufen.,每个火车站都可以买到鲜花。
-de-a1-0400,jetzt,adv.,,现在；此时此刻,Jetzt machen wir eine Pause.,现在让我们休息一下。
-de-a1-0401,der Job,n.,masculine · der · plural Jobs,工作,Jenny hat einen neuen Job bei der Post.,珍妮在邮局找到了一份新工作。
-de-a1-0402,der Jugendliche,n.,masculine · der · plural Jugendlichen,年轻人；青少年,Viele Jugendliche kaufen gern ein.,许多年轻人喜欢购物。
-de-a1-0403,der Juli,n.,masculine · der,七月,Mein Geburtstag ist im Juli.,我的生日是七月。
-de-a1-0404,jung,adj.,,年轻的,Claudia ist 21.<br>– Was? Noch so jung?,克劳迪娅 21 岁。<br>- 什么？还这么年轻？
-de-a1-0405,der Junge,n.,masculine · der · plural Jungen,男生,Ich habe zwei Kinder. Einen Jungen und ein Mädchen.,我有两个孩子。一个男孩和一个女孩。
-de-a1-0406,der Juni,n.,masculine · der,六月,Mein Geburtstag ist im Juni.,我的生日是六月。
-de-a1-0407,der Kaffee,n.,masculine · der,咖啡,Zum Frühstück trinke ich immer Kaffee.,我早餐总是喝咖啡。
-de-a1-0408,kaputt,adj.,,破碎的,Das Glas war teuer. Es geht sehr leicht kaputt.,玻璃很贵。它很容易破裂。
-de-a1-0409,die Karte,n.,feminine · die · plural Karten,卡片；菜单,Ich schreibe meinen Bekannten eine Karte aus dem Urlaub.,我在假期里给朋友们写了一张卡片。
-de-a1-0410,die Kartoffel,n.,feminine · die · plural Kartoffeln,土豆,Für Pommes frites braucht man Kartoffeln.,你需要土豆来做炸薯条。
-de-a1-0411,die Kasse,n.,feminine · die,直到,Zahlen Sie bitte an der Kasse.,请在结账时付款。
-de-a1-0412,kein,det.,,没有；不是（否定冠词）,Es gibt keine Eintrittskarten mehr.,没有更多门票了。
-de-a1-0413,kennen,v.,,认识或熟悉一个人/地方,"Kennen Sie diese Frau?<br>– Nein, leider nicht.",你认识这个女人吗？<br>- 不，不幸的是不认识。
-de-a1-0414,kennenlernen,v.,,去了解,Wir sind neu hier. Wir möchten Sie kennenlernen.,我们是新来的。我们想认识您。
-de-a1-0415,das Kilogramm,n.,neuter · das · plural Kilogramm,公斤,Das Paket wiegt drei Kilogramm.,包裹重三公斤。
-de-a1-0416,der Kilometer,n.,masculine · der · plural Kilometer,公里,Der Bahnhof ist drei Kilometer entfernt.,火车站距离酒店三公里。
-de-a1-0417,das Kind,n.,neuter · das · plural Kinder,孩子,Wie viele Kinder haben Sie?,你有几个孩子？
-de-a1-0418,der Kindergarten,n.,masculine · der,幼儿园,Die kleine Laura geht schon in den Kindergarten.,小劳拉已经去幼儿园了。
-de-a1-0419,das Kino,n.,neuter · das · plural Kinos,电影院,Wir sehen heute Abend im Kino einen schönen Film.,今晚我们要在电影院看一部好电影。
-de-a1-0420,der Kiosk,n.,masculine · der,亭,"Am Kiosk bekommen Sie Getränke, Zigaretten und Zeitungen.",您可以在售货亭购买饮料、香烟和报纸。
-de-a1-0421,klar,interj.,,当然；自然,Kommst du mit?<br>– Klar!,你和我们一起去吗？<br>——当然！
-de-a1-0422,die Klasse,n.,feminine · die,班级；年级,In unserer Klasse sind fünfundzwanzig Schüler.,我们班有二十五个学生。
-de-a1-0423,die Kleidung,n.,feminine · die,衣服,"Wo finde ich Kleidung?<br>– Jacken im ersten, Jeans im zweiten Stock.",在哪里可以找到衣服？<br>- 一楼是夹克，二楼是牛仔裤。
-de-a1-0424,klein,adj.,,小的,Eltville ist eine kleine Stadt am Rhein.,埃尔特维尔是莱茵河畔的一个小镇。
-de-a1-0425,kochen,v.,,做饭,Herr Georgi kann gut kochen.,乔治先生厨艺很好。
-de-a1-0426,der Koffer,n.,masculine · der · plural Koffer,手提箱,Ist das Ihr Koffer?,那是你的手提箱吗？
-de-a1-0427,der Kollege,n.,masculine · der · plural Kollegen,同事,Wie heißt die neue Kollegin?,新同事叫什么名字？
-de-a1-0428,kommen,v.,,来,Woher kommen Sie?<br>– Aus Frankreich.,你来自哪里？<br>——来自法国。
-de-a1-0429,das Konto,n.,neuter · das,帐户,Das Geld überweisen wir am ersten März auf Ihr Konto.,我们将于 3 月 1 日将资金转入您的帐户。
-de-a1-0430,der Kopf,n.,masculine · der,头,Mein Kopf tut weh!,我头好痛！
-de-a1-0431,kosten,v.,,成本,Wie viel kostet das?<br>– 10 Euro.,多少钱？<br>- 10 欧元。
-de-a1-0432,krank,adj.,,患病的,"Ich kann heute nicht zur Arbeit kommen, ich bin krank und liege im Bett.",我今天不能来上班，我病了，躺在床上。
-de-a1-0433,kriegen,v.,,要得到,Ich kriege 15 Euro in der Stunde für meine Arbeit.,我的工作每小时 15 欧元。
-de-a1-0434,der Kuchen,n.,masculine · der,蛋糕,Ich nehme ein Stück Kuchen.,我要一块蛋糕。
-de-a1-0435,der Kugelschreiber,n.,masculine · der,圆珠笔,Hast du einen Kugelschreiber für mich?,你有一支笔给我吗？
-de-a1-0436,kulturell,adj.,,文化,Ich bin kulturell interessiert. Ich gehe oft ins Museum.,我对文化感兴趣。我经常去博物馆。
-de-a1-0437,der Kunde,n.,masculine · der · plural Kunden,顾客,"Einen Moment, bitte. Ich habe eine Kundin.",请稍等一下。我有一个客户。
-de-a1-0438,der Kurs,n.,masculine · der · plural Kurse,课程,Der Deutschkurs geht bis zum Sommer.,德语课程持续到夏季。
-de-a1-0439,kurz,adj.,,短的,Ricardo hat kurzes Haar.,里卡多有短发。
-de-a1-0440,können,v.,,能够,Ich kann Deutsch und Russisch.,我会说德语和俄语。
-de-a1-0441,die Küche,n.,feminine · die,厨房,Der neue Herd kommt in die Küche.,新炉子进入厨房。
-de-a1-0442,der Kühlschrank,n.,masculine · der,冰箱,"Haben wir noch Milch?<br>– Ja, im Kühlschrank.",我们还有牛奶吗？<br>- 有，冰箱里还有。
-de-a1-0443,lachen,v.,,笑,Die Kinder lachen viel.,孩子们笑得很开心。
-de-a1-0444,der Laden,n.,masculine · der · plural Läden,店铺,Im Buchladen können Sie Bücher kaufen.,你可以在书店买书。
-de-a1-0445,das Land,n.,neuter · das · plural Länder,国家,Italien ist ein schönes Land.,意大利是一个美丽的国家。
-de-a1-0446,lang,adj.,,长（形容词）,Die Jeans ist zu lang.,牛仔裤太长了。
-de-a1-0447,lange,adv.,,长的；很久,Wie lange fährt der Zug von Hamburg nach Berlin?,乘火车从 汉堡 开往 柏林 需要多长时间？
-de-a1-0448,langsam,adj.,,慢的,Könnten Sie bitte etwas langsamer sprechen?,你能说慢一点吗？
-de-a1-0449,laufen,v.,,走；跑步；运转,"Ich möchte nicht Auto fahren, ich möchte laufen.",我不想开车，我想走路。
-de-a1-0450,laut,adj.,,大声,Nicht so laut! Das Baby schläft.,没那么大声！宝宝正在睡觉。
-de-a1-0451,leben,v.,,生活；活着,Sie lebt bei ihrer Schwester.,她和她姐姐住在一起。
-de-a1-0452,das Leben,n.,neuter · das,生活,Das Leben in diesem Land ist teuer.,这个国家的生活很昂贵。
-de-a1-0453,die Lebensmittel,n.,plural · die,食品,Lebensmittel bekommen Sie im Supermarkt.,您可以在超市购买杂货。
-de-a1-0454,ledig,adj.,,单身的,Sind Sie verheiratet?<br>– Nein. Ledig.,你结婚了吗？<br>- 没有。单身。
-de-a1-0455,legen,v.,,水平放置或放置,Legen Sie das Buch auf den Tisch.,把书放在桌子上。
-de-a1-0456,der Lehrer,n.,masculine · der · plural Lehrer,老师,Unsere Deutschlehrerin heißt Frau Müller.,我们的德语老师叫Müller女士。
-de-a1-0457,leicht,adj.,,轻的；容易的,Der Koffer ist leicht.,行李箱很轻。
-de-a1-0458,leider,adv.,,很遗憾,Leider kann ich nicht kommen. Ich muss zum Arzt.,不幸的是我不能来。我得去看医生。
-de-a1-0459,leise,adj.,,安静的,Seid leise. Die anderen schlafen schon.,安静。其他人都已经睡了。
-de-a1-0460,lernen,v.,,学习,Wie lange lernen Sie schon Deutsch?,您学德语多久了？
-de-a1-0461,lesen,v.,,阅读,Ich lese ein Buch von García Márquez.,我正在读加西亚·马尔克斯写的一本书。
-de-a1-0462,letzt-,adj.,,最后的（词干）,Morgen ist der letzte Kurstag.,明天是课程的最后一天。
-de-a1-0463,die Leute,n.,plural · die,人们,In der Disko sind viele Leute.,迪斯科舞厅里有很多人。
-de-a1-0464,das Licht,n.,neuter · das,光（名词）,Wo macht man hier das Licht an?,你在哪里开灯？
-de-a1-0465,lieb,adj.,,亲爱的,"Liebe Susanne, lieber Hans,",亲爱的苏珊娜，亲爱的汉斯，
-de-a1-0466,lieben,v.,,去爱,Ich liebe dich!,我爱你！
-de-a1-0467,lieber,adv.,,更喜欢,Sie fährt lieber mit der Bahn.,她更喜欢坐火车。
-de-a1-0468,Lieblings-,adj.,,最喜欢的（构词成分）,Mein Lieblingsfilm ist „Schwarze Augen“.,我最喜欢的电影是《黑眼睛》。
-de-a1-0469,das Lied,n.,neuter · das · plural Lieder,歌曲,Welches ist dein Lieblingslied?,你最喜欢哪首歌？
-de-a1-0470,liegen,v.,,躺；位于,Um neun Uhr liegt Judith noch im Bett.,九点钟朱迪思还躺在床上。
-de-a1-0471,links,adv.,,左边,Gehen Sie die nächste Straße links.,在下一个路口左转。
-de-a1-0472,der/das Liter,n.,m/n · der/das · plural Liter,升,Ich kaufe zwei Liter Milch.,我买了两升牛奶。
-de-a1-0473,der Lkw,n.,masculine · der · plural Lkws,卡车,Dieser Lastkraftwagen ist sehr groß.,这辆卡车非常大。
-de-a1-0474,das Lokal,n.,neuter · das,餐厅；酒吧,In unserer Straße gibt es ein neues Lokal.,我们街上有一家新餐馆。
-de-a1-0475,lustig,adj.,,有趣的,Frau Mertens ist lustig. Sie lacht immer.,默滕斯女士很有趣。她总是在笑。
-de-a1-0476,die Lösung,n.,feminine · die · plural Lösungen,解决方案,Die Lösung ist ganz einfach.,解决方案非常简单。
-de-a1-0477,machen,v.,,做；制作,Was machst du heute Abend?,今晚你在做什么？
-de-a1-0478,der Mai,n.,masculine · der,可能,Mein Geburtstag ist im Mai.,我的生日是五月。
-de-a1-0479,man,pron.,,人们（泛指）,Hier darf man nicht rauchen.,这里不准吸烟。
-de-a1-0480,der Mann,n.,masculine · der · plural Männer,男人；丈夫,Mein Mann arbeitet bei der Polizei.,我丈夫为警察工作。
-de-a1-0481,die Maschine,n.,feminine · die · plural Maschinen,机器（通用）,Die Waschmaschine ist günstig.,洗衣机很便宜。
-de-a1-0482,das Meer,n.,neuter · das,海,Wir machen Urlaub am Meer.,我们要去海边度假。
-de-a1-0483,mehr,adv.,,更多的,Dieses Auto kostet 1.000 Euro mehr als das andere.,"这辆车比另一辆车贵了 1,000 欧元。"
-de-a1-0484,mein,det.,,我的,Mein Vater ist Arzt.,我的父亲是一名医生。
-de-a1-0485,meist-,det.,,大多数的（词干）,Die meisten Norddeutschen sind sehr groß.,大多数北德人都很高。
-de-a1-0486,der Mensch,n.,masculine · der · plural Menschen,人,Die Menschen sind hier anders als bei uns.,这里的人与我们不同。
-de-a1-0487,der Meter,n.,masculine · der · plural Meter,仪表,Der Tisch ist zwei Meter lang.,桌子有两米长。
-de-a1-0488,Mexiko,n.,neuter,墨西哥,Sie kommt aus Mexiko.,她来自墨西哥。
-de-a1-0489,die Miete,n.,feminine · die,租,Die Miete für diese Wohnung ist 600 Euro.,这间公寓的租金为 600 欧元。
-de-a1-0490,mieten,v.,,出租,Ich möchte ein Auto mieten.,我想租车。
-de-a1-0491,die Milch,n.,feminine · die,牛奶,Die Milch steht im Kühlschrank.,牛奶在冰箱里。
-de-a1-0492,die Milliarde,n.,feminine · die · plural Milliarden,十亿,Eine Milliarde ist tausend Millionen.,十亿就是一千亿。
-de-a1-0493,die Million,n.,feminine · die · plural Millionen,一百万,Die Stadt hat eine Million Einwohner.,这个城市有一百万居民。
-de-a1-0494,die Minute,n.,feminine · die · plural Minuten,分钟,Der Bus kommt in zehn Minuten.,公共汽车十分钟后到达。
-de-a1-0495,mit,prep.,,和,Trinken Sie den Kaffee mit Milch?,你喝咖啡加牛奶吗？
-de-a1-0496,mitbringen,v.,,带来,Ich gehe einkaufen. Soll ich dir was mitbringen?,我去购物。要我给你带点东西吗？
-de-a1-0497,mitkommen,v.,,与,Ich gehe ins Kino. Kommst du mit?,我去电影院。你跟我一起去吗？
-de-a1-0498,mitmachen,v.,,加入,Warum macht ihr nicht mit?,你为什么不加入呢？
-de-a1-0499,mitnehmen,v.,,带着,Nehmen wir meine Schwester ins Kino mit?,我们带我妹妹去看电影好吗？
-de-a1-0500,der Mittag,n.,masculine · der,正午,Wir essen um zwölf Uhr zu Mittag.,我们十二点吃午饭。
-de-a1-0501,die Mitte,n.,feminine · die,中间,Der Lehrer steht in der Mitte des Klassenzimmers.,老师站在教室中间。
-de-a1-0502,der Mittwoch,n.,masculine · der,周三,Am Mittwoch habe ich frei.,星期三我有空。
-de-a1-0503,der Moment,n.,masculine · der,片刻,Moment mal bitte!,请稍等！
-de-a1-0504,der Montag,n.,masculine · der,周一,Am Montag habe ich frei.,星期一我有空。
-de-a1-0505,morgen,adv.,,明天,Morgen beginnt die Schule um 10 Uhr.,明天上午 10 点学校开始上课。
-de-a1-0506,der Morgen,n.,masculine · der,早晨,Am Morgen trinke ich Kaffee.,早上我喝咖啡。
-de-a1-0507,der Mund,n.,masculine · der,嘴,Öffnen Sie den Mund.,张开嘴。
-de-a1-0508,die Mutter,n.,feminine · die · plural Mütter,母亲,Frau Berghäuser ist die Mutter von Michaela.,Berghäuser 女士是米凯拉的母亲。
-de-a1-0509,das Mädchen,n.,neuter · das · plural Mädchen,女孩,Familie Kurz bekommt ein Baby.<br>– Junge oder Mädchen?,库尔兹家族有了一个孩子。<br>– 男孩还是女孩？
-de-a1-0510,männlich,adj.,,男性,Kreuzen Sie bitte an: „weiblich“ oder „männlich“.,请勾选：“女”或“男”。
-de-a1-0511,der März,n.,masculine · der,行进,Mein Geburtstag ist im März.,我的生日是三月。
-de-a1-0512,die Möbel,n.,plural · die,家具,Sind die Möbel neu?,家具是新的吗？
-de-a1-0513,möchten,v.,,想要,Was möchten Sie trinken?,你想喝点什么？
-de-a1-0514,mögen,v.,,喜欢,Magst du Kaffee oder Tee?,你喜欢咖啡还是茶？
-de-a1-0515,möglich,adj.,,可能的,Mit dieser Fahrkarte ist die Fahrt ab 9 Uhr möglich.,持此票您可以从上午 9 点开始出行。
-de-a1-0516,müde,adj.,,疲劳的,Ich bin müde. Ich gehe schlafen.,我累了。我要去睡觉。
-de-a1-0517,müssen,v.,,必须,Ich muss jeden Tag von 8 Uhr bis 18 Uhr arbeiten.,我必须从早上 8 点工作到下午 6 点。每天。
-de-a1-0518,nach,prep.,,去；在……之后,Ich gehe jetzt nach Hause.,我现在要回家了。
-de-a1-0519,der Nachmittag,n.,masculine · der · plural Nachmittage,下午,Am Nachmittag lerne ich Deutsch.,下午我学德语。
-de-a1-0520,die Nacht,n.,feminine · die · plural Nachte,夜晚,In der Nacht ist es ruhig.,晚上很安静。
-de-a1-0521,der Name,n.,masculine · der · plural Namen,姓名,Mein Name ist Thomas Schmidt.,我的名字是托马斯·施密特。
-de-a1-0522,nehmen,v.,,拿；取用；乘坐,Heute gibt es Hähnchen. Das nehme ich.,今天我们有鸡肉。我会接受的。
-de-a1-0523,nein,interj.,,不,"Fährst du auch nach München?<br>– Nein, ich habe keine Zeit.",你也要去慕尼黑吗？<br>- 不，我没有时间。
-de-a1-0524,neu,adj.,,新的,Ich bin der neue Kollege.,我是新同事。
-de-a1-0525,neun,,,九,Die Antwort ist neun.,答案是九。
-de-a1-0526,neunzehn,,,十九,Die Antwort ist neunzehn.,答案是十九。
-de-a1-0527,neunzehnhundertneunundneunzig,,,十九九十九,Er wurde neunzehnhundertneunundneunzig geboren.,他出生于十九年九十九岁。
-de-a1-0528,neunzig,,,九十,Die Antwort ist neunzig.,答案是九十。
-de-a1-0529,nicht,part.,,不是,Das stimmt nicht.,那不是真的。
-de-a1-0530,nichts,pron.,,没有什么,Das macht nichts.,那没关系。
-de-a1-0531,nie,adv.,,绝不,Er kommt nie pünktlich.,他从来不准时来。
-de-a1-0532,noch,adv.,,还；仍然,Vielleicht kommt er noch.,也许他会来。
-de-a1-0533,der Norden,n.,masculine · der,北,Wir fahren in den Norden.,我们正向北行驶。
-de-a1-0534,normal,adj.,,普通的,75 kg. Sein Gewicht ist normal.,75公斤。他的体重正常。
-de-a1-0535,der November,n.,masculine · der,十一月,Mein Geburtstag ist im November.,我的生日是十一月。
-de-a1-0536,die Nummer,n.,feminine · die · plural Nummern,数字,Sie haben Zimmer Nummer zwölf.,你的房间号是十二号。
-de-a1-0537,nur,part.,,仅有的,Ich möchte nur ein Glas Wasser.,我只想要一杯水。
-de-a1-0538,nächst-,adj.,,下一个的（词干）,Sehen wir uns nächste Woche?,我们下周见吗？
-de-a1-0539,oben,adv.,,楼上,Ich wohne oben.,我住在楼上。
-de-a1-0540,das Obst,n.,neuter · das,水果,Im Sommer ist das Obst billig.,夏天的水果很便宜。
-de-a1-0541,oder,conj.,,或者,Wann können Sie kommen – heute oder morgen?,你什么时候能来——今天还是明天？
-de-a1-0542,oft,adv.,,经常,Petra treffe ich oft.,我经常见到佩特拉。
-de-a1-0543,ohne,prep.,,没有,Ohne Geld kann er nichts kaufen.,没有钱他什么也买不了。
-de-a1-0544,der Oktober,n.,masculine · der,十月,Mein Geburtstag ist im Oktober.,我的生日是十月。
-de-a1-0545,die Oma,n.,feminine · die · plural Omas,奶奶,Meine Oma ist schon tot.,我奶奶已经死了。
-de-a1-0546,der Opa,n.,masculine · der · plural Opas,爷爷,Mein Opa heißt Hans.,我祖父的名字是汉斯。
-de-a1-0547,die Ordnung,n.,feminine · die,秩序；整齐；没问题（in Ordnung）,Das ist in Ordnung.,没关系。
-de-a1-0548,der Ort,n.,masculine · der · plural Orte,地方,Der Ort liegt am Meer.,这个地方在海边。
-de-a1-0549,der Osten,n.,masculine · der,东方,Wir fahren in den Osten.,我们正向东行驶。
-de-a1-0550,das Papier,n.,neuter · das,纸,Hier sind Papier und Bleistift.,这里有纸和铅笔。
-de-a1-0551,die Papiere,n.,plural · die,文件,Haben Sie Ihre Papiere dabei?,你带证件了吗？
-de-a1-0552,der Partner,n.,masculine · der · plural Partner,（男）合伙人,Sie ist meine Partnerin.,她是我的伙伴。
-de-a1-0553,die Partnerin,n.,feminine · die · plural Partnerinnen,（女）合伙人,Sie ist meine Partnerin.,她是我的伙伴。
-de-a1-0554,die Party,n.,feminine · die,派对,Heute Abend machen wir eine Party.,今晚我们要举办一个聚会。
-de-a1-0555,der Pass,n.,masculine · der · plural Pässe,护照,Im Hotel brauchst du deinen Pass.,您需要在酒店出示护照。
-de-a1-0556,die Pause,n.,feminine · die · plural Pausen,休息,Von 12.00 bis 12.30 Uhr haben wir Mittagspause.,我们从中午 12:00 开始午休。至中午 12:30
-de-a1-0557,das Pfund,n.,neuter · das · plural Pfunde,磅,Sie kauft ein Pfund Äpfel.,她买了一磅苹果。
-de-a1-0558,der Plan,n.,masculine · der · plural Pläne,地图；计划,Ich kaufe mir einen Stadtplan.,我买了一张城市地图。
-de-a1-0559,der Platz,n.,masculine · der · plural Plätze,座位；广场,"Tut mir leid, der Platz ist besetzt.",抱歉，座位已满。
-de-a1-0560,die Polizei,n.,feminine · die,警察,Holen Sie die Polizei!,打电话叫警察！
-de-a1-0561,die Pommes frites,n.,plural · die,薯条,Die Kinder essen Hähnchen mit Pommes frites.,孩子们吃鸡肉和炸薯条。
-de-a1-0562,die Post,n.,feminine · die,邮局；邮件,"Wo ist die Post, bitte?",请问邮局在哪里？
-de-a1-0563,die Postleitzahl,n.,feminine · die,邮政编码,Wie ist Ihre Postleitzahl?,您的邮政编码是多少？
-de-a1-0564,das Praktikum,n.,neuter · das,实习,Ich mache ein Praktikum bei Siemens.,我在西门子实习。
-de-a1-0565,die Praxis,n.,feminine · die,实践,Die Praxis ist ab acht Uhr geöffnet.,练习从八点开始开放。
-de-a1-0566,der Preis,n.,masculine · der · plural Preise,价格,Die Preise sind hoch.,价格很高。
-de-a1-0567,das Problem,n.,neuter · das · plural Probleme,问题,Mein Problem ist die Sprache.,我的问题是语言。
-de-a1-0568,der Prospekt,n.,masculine · der · plural Prospekte,小册子,Bitte schicken Sie mir einen Prospekt von Ihrem Hotel.,请给我寄一份你们酒店的小册子。
-de-a1-0569,das Prozent,n.,neuter · das · plural Prozente,百分比,Das Getränk hat fünf Prozent Alkohol.,该饮料的酒精含量为百分之五。
-de-a1-0570,die Prüfung,n.,feminine · die,考试,Die Prüfung ist am Montag um 8.00 Uhr.,考试时间为周一上午 8:00。
-de-a1-0571,pünktlich,adj.,,准时,Der Bus fährt pünktlich um acht Uhr.,公共汽车八点准时出发。
-de-a1-0572,der Quadratmeter,n.,masculine · der · plural Quadratmeter,平方米,Das Zimmer ist zwanzig Quadratmeter groß.,房间有二十平方米。
-de-a1-0573,Rad fahren,v.,,循环,Das Kind kann schon Rad fahren.,孩子已经会骑自行车了。
-de-a1-0574,rauchen,v.,,抽烟,Ich rauche nicht.,我不抽烟。
-de-a1-0575,der Raum,n.,masculine · der · plural Räume,房间；空间,Der Unterricht ist in Raum 332.,班级在332室。
-de-a1-0576,die Rechnung,n.,feminine · die · plural Rechnungen,账单,"Die Rechnung, bitte.",我要买单。
-de-a1-0577,rechts,adv.,,正确的,Die Schillerstraße ist hier rechts.,席勒大街（Schillerstrasse）就在右边。
-de-a1-0578,der Regen,n.,masculine · der,雨,Bei diesem Regen gehe ich nicht raus.,这么大的雨我不会出去。
-de-a1-0579,regnen,v.,,下雨,Heute regnet es.,今天下雨了。
-de-a1-0580,der Reis,n.,masculine · der,米,Ich esse gern Reis.,我喜欢吃米饭。
-de-a1-0581,die Reise,n.,feminine · die,旅行,Wir machen eine Reise nach Österreich.,我们要去奥地利旅行。
-de-a1-0582,das Reisebüro,n.,neuter · das · plural Reisebüros,旅行社,Mein Mann arbeitet im Reisebüro.,我丈夫在一家旅行社工作。
-de-a1-0583,der Reiseführer,n.,masculine · der,旅游指南；导游,Ich kaufe mir einen Reiseführer von Berlin.,我买了一本柏林旅行指南。
-de-a1-0584,reisen,v.,,去旅行,Ich reise gern.,我喜欢旅行。
-de-a1-0585,die Reparatur,n.,feminine · die,维修,Die Reparatur ist sehr teuer.,维修费用非常昂贵。
-de-a1-0586,reparieren,v.,,修理,Er hat das Fahrrad repariert.,他修好了自行车。
-de-a1-0587,das Restaurant,n.,neuter · das · plural Restaurants,餐厅,Wir essen heute in einem Restaurant.,今天我们在一家餐馆吃饭。
-de-a1-0588,die Rezeption,n.,feminine · die · plural Rezeptionen,接待；前台,Fragen Sie bitte im Hotel an der Rezeption.,请向酒店前台询问。
-de-a1-0589,richtig,adj.,,正确的,Habe ich das richtig verstanden?,我理解正确吗？
-de-a1-0590,riechen,v.,,闻,Dieser Wein riecht gut.,这酒闻起来很香。
-de-a1-0591,rot,,,红色的,Meine Lieblingsfarbe ist Rot.,我最喜欢的颜色是红色。
-de-a1-0592,ruhig,adj.,,安静的；冷静的,Ich möchte ein ruhiges Zimmer.,我想要一个安静的房间。
-de-a1-0593,die S-Bahn,n.,feminine · die,通勤列车,Ich nehme lieber die S-Bahn.,我更喜欢乘坐 S-Bahn。
-de-a1-0594,der Saft,n.,masculine · der,汁,Möchtest du einen Apfelsaft?,您想要一些苹果汁吗？
-de-a1-0595,sagen,v.,,说；告诉,"Sag mal, wie geht es dir denn?",告诉我，你好吗？
-de-a1-0596,der Salat,n.,masculine · der,沙拉,Wie schmeckt dir der Salat?,你觉得沙拉怎么样？
-de-a1-0597,das Salz,n.,neuter · das,盐,"Herr Ober, kann ich bitte Salz haben?",服务员，能给我加点盐吗？
-de-a1-0598,der Samstag/Sonnabend,n.,masculine · der,周六,„Samstag/Sonnabend“ bezeichnet denselben Wochentag.,“星期六/星期六”是指一周中的同一天。
-de-a1-0599,der Satz,n.,masculine · der · plural Sätze,句子,Dieser Satz ist sehr einfach.,这句话很简单。
-de-a1-0600,der Schalter,n.,masculine · der,柜台,Gehen Sie bitte zum Schalter drei!,请前往三号柜台！
-de-a1-0601,scheinen,v.,,闪耀,Die Sonne scheint.,阳光明媚。
-de-a1-0602,schicken,v.,,发送,Bitte schicken Sie mir eine E-Mail.,请给我发电子邮件。
-de-a1-0603,das Schild,n.,neuter · das · plural Schilder,符号,Haben Sie nicht das Schild gesehen?,你没看到标志吗？
-de-a1-0604,der Schinken,n.,masculine · der · plural Schinken,火腿,Ich möchte gern ein Schinkenbrot.,我想要一个火腿三明治。
-de-a1-0605,schlafen,v.,,睡觉,Ich schlafe meistens acht Stunden.,我通常睡八个小时。
-de-a1-0606,schlecht,adj.,,坏的；不舒服,Mir ist schlecht!,我觉得恶心！
-de-a1-0607,schließen,v.,,关闭,"Bitte, schließen Sie die Tür.",请把门关上。
-de-a1-0608,der Schluss,n.,masculine · der,结束；结尾,Ich muss jetzt Schluss machen.,我现在必须分手了。
-de-a1-0609,der Schlüssel,n.,masculine · der · plural Schlüssel,钥匙,Ich gebe Ihnen noch den Zimmerschlüssel.,我会给你房间钥匙。
-de-a1-0610,schmecken,v.,,品尝,Schmeckt das gut?,味道好吗？
-de-a1-0611,schnell,adj.,,快的,Er fährt schnell.,他开得很快。
-de-a1-0612,schon,adv.,,已经,Ist das Essen schon fertig?,食物准备好了吗？
-de-a1-0613,der Schrank,n.,masculine · der · plural Schränke,橱柜,Die Gläser stehen im Schrank.,眼镜在柜子里。
-de-a1-0614,schreiben,v.,,写,Er schreibt jeden Tag fünfzig E-Mails.,他每天写五十封电子邮件。
-de-a1-0615,der Schuh,n.,masculine · der · plural Schuhe,鞋,Zieh die Schuhe aus!,脱掉你的鞋子！
-de-a1-0616,die Schule,n.,feminine · die,学校,Meine Tochter geht schon in die Schule.,我女儿已经去上学了。
-de-a1-0617,schwarz,,,黑色的,Meine Lieblingsfarbe ist Schwarz.,我最喜欢的颜色是黑色。
-de-a1-0618,schwer,adj.,,重的；难的,Ist Ihr Gepäck sehr schwer?,你的行李很重吗？
-de-a1-0619,die Schwester,n.,feminine · die · plural Schwestern,姐姐,Meine Schwester kommt am Dienstag.,我姐姐星期二来。
-de-a1-0620,das Schwimmbad,n.,neuter · das,游泳池,Kommst du mit ins Schwimmbad?,你来游泳池吗？
-de-a1-0621,schwimmen,v.,,游泳,Ich schwimme jeden Tag einen Kilometer.,我每天游一公里。
-de-a1-0622,schön,adj.,,美丽的；美好的,Schönen Urlaub!,祝您假期愉快！
-de-a1-0623,der Schüler,n.,masculine · der · plural Schüler,瞳孔,In meinem Kurs sind acht Schülerinnen und fünf Schüler.,我班有八个男生和五个女生。
-de-a1-0624,sechs,,,六,Die Antwort ist sechs.,答案是六。
-de-a1-0625,sechzehn,,,十六,Die Antwort ist sechzehn.,答案是十六。
-de-a1-0626,sechzig,,,六十,Die Antwort ist sechzig.,答案是六十。
-de-a1-0627,der See,n.,masculine · der,湖,"Komm, wir fahren zum Starnberger See.",走吧，我们去施塔恩贝格湖吧。
-de-a1-0628,sehen,v.,,查看,Ich kann dich nicht sehen.,我看不到你。
-de-a1-0629,die Sehenswürdigkeit,n.,feminine · die · plural Sehenswürdigkeiten,景点,Welche Sehenswürdigkeiten gibt es in Frankfurt?,法兰克福有哪些景点？
-de-a1-0630,sehr,adv.,,非常,Danke sehr!,非常感谢！
-de-a1-0631,sein,v.,,成为,Herr Müller ist in seinem Zimmer.,穆勒先生在他的房间里。
-de-a1-0632,seit,prep.,,对于（一段时间）,Ich wohne seit drei Jahren in Köln.,我在科隆生活了三年。
-de-a1-0633,die Sekunde,n.,feminine · die · plural Sekunden,秒（时间单位）,Warten Sie bitte eine Sekunde.,请稍等。
-de-a1-0634,selbstständig,adj.,,独立的,Er ist selbstständig.,他是独立的。
-de-a1-0635,der September,n.,masculine · der,九月,Mein Geburtstag ist im September.,我的生日是九月。
-de-a1-0636,sich,pron.,,自己,Sie müssen sich erst anmelden.,您必须先注册。
-de-a1-0637,sich anmelden,v.,,注册；报名,Wo kann ich mich anmelden?,我在哪里签字？
-de-a1-0638,sich kümmern,v.,,照顾,Jede Mutter kümmert sich um ihre kleinen Kinder.,每个母亲都会照顾她的小孩子。
-de-a1-0639,sie,pron.,,她,Wie heißt sie?,她叫什么名字？
-de-a1-0640,Sie,pron.,,你（有礼貌）,"Wie heißen Sie, bitte?",请问你叫什么名字？
-de-a1-0641,sieben,,,七,Die Antwort ist sieben.,答案是七。
-de-a1-0642,siebzehn,,,十七,Die Antwort ist siebzehn.,答案是十七。
-de-a1-0643,siebzig,,,七十,Die Antwort ist siebzig.,答案是七十。
-de-a1-0644,sitzen,v.,,坐,Wo sitzen Sie?,你坐在哪里？
-de-a1-0645,so,adv.,,这样；所以,Sie müssen das so machen!,你必须这样做！
-de-a1-0646,das Sofa,n.,neuter · das,沙发,Das Sofa ist neu.,沙发是新的。
-de-a1-0647,sofort,adv.,,立即地,Bitte antworten Sie sofort.,请立即回复。
-de-a1-0648,der Sohn,n.,masculine · der · plural Söhne,儿子,"Das ist Hans, mein Sohn.",这是汉斯，我的儿子。
-de-a1-0649,sollen,v.,,应该,Soll ich kommen?,我来吗？
-de-a1-0650,der Sommer,n.,masculine · der,夏天,Im Sommer sind wir oft draußen.,夏天我们在户外度过了很多时间。
-de-a1-0651,die Sonne,n.,feminine · die,太阳,Die Sonne scheint.,阳光明媚。
-de-a1-0652,der Sonntag,n.,masculine · der,星期日,Am Sonntag habe ich frei.,周日我有空。
-de-a1-0653,die Speisekarte,n.,feminine · die,菜单,"Bringen Sie mir die Speisekarte, bitte.",请给我菜单。
-de-a1-0654,spielen,v.,,玩,Die Kinder spielen draußen.,孩子们正在外面玩耍。
-de-a1-0655,der Sport,n.,masculine · der,运动,Ich mache viel Sport.,我做很多运动。
-de-a1-0656,die Sprache,n.,feminine · die · plural Sprachen,语言,Welche Sprachen sprichst du?,你会说哪几种语言？
-de-a1-0657,sprechen,v.,,说话,Kann ich (mit) Herrn Klein sprechen?,我可以和克莱因先生通话吗？
-de-a1-0658,spät,adj.,,晚的,"Es ist schon spät, ich muss gehen.",已经很晚了，我得走了。
-de-a1-0659,später,adv.,,之后,Das können wir später machen.,我们可以稍后再做。
-de-a1-0660,die Stadt,n.,feminine · die · plural Städte,城市,Heidelberg ist eine alte Stadt.,海德堡是一座古老的城市。
-de-a1-0661,stehen,v.,,站；位于；写着,"Ich glaube es nicht, aber es steht in der Zeitung.",我不相信，但报纸上有这样的报道。
-de-a1-0662,die Stelle,n.,feminine · die · plural Stellen,位置；工作岗位,Ich habe eine neue Stelle.,我有一份新工作。
-de-a1-0663,stellen,v.,,竖放；放置,Stell die Tasche rechts in die Ecke!,把袋子放在右边的角落里！
-de-a1-0664,der Stock,n.,masculine · der,（建筑物的）楼层,Unsere Wohnung liegt im ersten Stock.,我们的公寓位于一楼。
-de-a1-0665,die Straße,n.,feminine · die · plural Straßen,街道,In welcher Straße wohnen Sie?,你住在哪条街上？
-de-a1-0666,die Straßenbahn,n.,feminine · die,电车,Wo fährt die Straßenbahn ab?,有轨电车从哪里出发？
-de-a1-0667,der Student,n.,masculine · der · plural Studenten,学生,Ich bin Studentin.,我是一名学生。
-de-a1-0668,studieren,v.,,学习,Ich studiere in Mainz.,我在美因茨学习。
-de-a1-0669,das Studium,n.,neuter · das,学位课程,Das Studium beginnt im Oktober.,研究将于十月开始。
-de-a1-0670,die Stunde,n.,feminine · die · plural Stunden,小时,Ich bin in einer Stunde zurück.,我一小时后回来。
-de-a1-0671,suchen,v.,,寻找,Suchst du etwas?,你在找东西吗？
-de-a1-0672,der Süden,n.,masculine · der,南,Wir fahren in den Süden.,我们要向南走。
-de-a1-0673,der Tag,n.,masculine · der · plural Tage,天,Heute ist ein schöner Tag.,今天是美好的一天。
-de-a1-0674,tanzen,v.,,跳舞,Tanzen Sie gern?,你喜欢跳舞吗？
-de-a1-0675,die Tasche,n.,feminine · die · plural Taschen,包,Ich habe die Schlüssel in der Tasche.,我的钥匙在我的口袋里。
-de-a1-0676,das Taxi,n.,neuter · das · plural Taxis,出租车,Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi.,今天没有更多公交车了。他乘坐出租车。
-de-a1-0677,der Tee,n.,masculine · der,茶,Ich trinke morgens immer Tee.,我总是早上喝茶。
-de-a1-0678,der Teil,n.,masculine · der · plural Teile,部分,Lies bitte auch den zweiten Teil.,另请阅读第二部分。
-de-a1-0679,das Telefon,n.,neuter · das,电话,Haben Sie Telefon?,你有电话吗？
-de-a1-0680,telefonieren,v.,,打电话,Darf ich mal telefonieren?,我可以打电话吗？
-de-a1-0681,der Termin,n.,masculine · der · plural Termine,预约,Am besten machen wir sofort einen Termin.,我们最好立即预约。
-de-a1-0682,der Test,n.,masculine · der,测试,Der Test war einfach.,测试很简单。
-de-a1-0683,teuer,adj.,,昂贵的,Das ist mir zu teuer.,这对我来说太贵了。
-de-a1-0684,der Text,n.,masculine · der · plural Texte,文本,Lesen Sie bitte diesen Text.,请阅读本文。
-de-a1-0685,das Thema,n.,neuter · das,话题,Wir sprechen heute über das Thema „Essen und Trinken“.,今天我们要聊的话题是“吃喝”。
-de-a1-0686,das Ticket,n.,neuter · das · plural Tickets,票,Wie viel kostet das Ticket?,门票多少钱？
-de-a1-0687,der Tisch,n.,masculine · der · plural Tische,桌子,Die Fotos liegen auf dem Tisch.,照片在桌子上。
-de-a1-0688,die Tochter,n.,feminine · die · plural Töchter,女儿,Das ist meine Tochter Katharina.,这是我的女儿凯瑟琳娜。
-de-a1-0689,die Toilette,n.,feminine · die · plural Toiletteen,洗手间,"Wo ist die Toilette, bitte?",请问厕所在哪里？
-de-a1-0690,die Tomate,n.,feminine · die · plural Tomaten,番茄,Die Tomate ist noch grün.,西红柿还是绿的。
-de-a1-0691,tot,adj.,,死的,Sein Vater ist schon lange tot.,他的父亲已经去世很长时间了。
-de-a1-0692,die Treppe,n.,feminine · die · plural Treppen,楼梯,Die Toilette? Die Treppe hoch und dann links.,厕所？上楼梯然后离开。
-de-a1-0693,trinken,v.,,喝,Möchtest du etwas trinken?,你想喝点什么吗？
-de-a1-0694,tschüss,interj.,,再见,Junge Leute sagen meistens „tschüss!“ und nicht „auf Wiedersehen“.,年轻人通常会说“再见！”而不是“再见”。
-de-a1-0695,tun,v.,,做；干,Ich habe noch etwas zu tun.,我还有事要做。
-de-a1-0696,die Türkei,n.,feminine · die,火鸡,Sie kommt aus der Türkei.,她来自土耳其。
-de-a1-0697,die Uhr,n.,feminine · die,时钟/手表；点钟,Es ist vier Uhr.,已经四点了。
-de-a1-0698,um,prep.,,在；大约,Er kommt um sieben Uhr.,他七点钟来。
-de-a1-0699,umziehen,v.,,搬家（住处）,Nächsten Monat ziehen wir um.,我们下个月就要搬家了。
-de-a1-0700,und,conj.,,和,Peter und Helmut sind meine Söhne.,彼得和赫尔穆特是我的儿子。
-de-a1-0701,unser-,det.,,我们的（物主冠词词干）,Das ist unsere Lehrerin.,这是我们的老师。
-de-a1-0702,unten,adv.,,在底部,Er wohnt ganz unten im Haus.,他住在房子的底层。
-de-a1-0703,unter,prep.,,以下,Unter uns wohnt eine Familie mit drei Kindern.,我们楼下住着一个有三个孩子的家庭。
-de-a1-0704,der Unterricht,n.,masculine · der,课程；上课,Wir haben Unterricht von 8.00 bis 12.00 Uhr.,我们的上课时间是早上八点到中午十二点。
-de-a1-0705,unterschreiben,v.,,签署,Wo muss ich unterschreiben?,我必须在哪里签名？
-de-a1-0706,die Unterschrift,n.,feminine · die,签名,Hier fehlt noch Ihre Unterschrift.,这里仍然缺少您的签名。
-de-a1-0707,der Urlaub,n.,masculine · der,假期,Ich nehme im September Urlaub.,我九月要休假。
-de-a1-0708,usw.,phrase,,等等,"Wir brauchen Brot, Milch, Käse usw.",我们需要面包、牛奶、奶酪等。
-de-a1-0709,der Vater,n.,masculine · der · plural Väter,父亲,Mein Vater ist Arbeiter.,我的父亲是一名工人。
-de-a1-0710,verboten,adj.,,禁止的,Hier ist Rauchen verboten.,这里禁止吸烟。
-de-a1-0711,verdienen,v.,,赚取,Ich verdiene 1.500 Euro im Monat.,"我每个月挣 1,500 欧元。"
-de-a1-0712,der Verein,n.,masculine · der,俱乐部,Es gibt einen neuen Sportverein in der Stadt.,镇上有一个新的体育俱乐部。
-de-a1-0713,verheiratet,adj.,,已婚,Ich bin verheiratet und habe drei Kinder.,我已婚并育有三个孩子。
-de-a1-0714,verkaufen,v.,,出售,Er verkauft sein altes Auto.,他正在卖掉他的旧车。
-de-a1-0715,der Verkäufer,n.,masculine · der · plural Verkäufer,销售员,Meine Mutter ist Verkäuferin im Kaufhaus.,我的母亲是一家百货公司的售货员。
-de-a1-0716,vermieten,v.,,出租,Die Wohnung ist schon vermietet.,公寓已经租出去了。
-de-a1-0717,der Vermieter,n.,masculine · der,房东,Unser Vermieter heißt Huber. Er wohnt auch hier.,我们的房东叫胡贝尔。他也住在这里。
-de-a1-0718,verstehen,v.,,去理解,Können Sie mich verstehen?,你能理解我吗？
-de-a1-0719,der Verwandte,n.,masculine · der · plural Verwandten,相对的,Peter besucht seine Verwandten in Polen.,彼得拜访他在波兰的亲戚。
-de-a1-0720,viel,adv.,,很多,Hier regnet es viel.,这里雨很大。
-de-a1-0721,vielleicht,adv.,,也许；或许,Ich komme vielleicht mit dem Bus.,我可能会乘公共汽车来。
-de-a1-0722,vier,,,四,Die Antwort ist vier.,答案是四个。
-de-a1-0723,vier Grad über Null/plus vier Grad,phrase,,零上四度/加四度,Heute sind es plus vier Grad.,今天气温上升四度。
-de-a1-0724,vierte,,,第四,Heute ist der vierte Mai.,今天是五月四号。
-de-a1-0725,Viertel vor/nach zwei,phrase,,两点一刻/两点过去,„Viertel vor/nach zwei“ ist eine umgangssprachliche Zeitangabe.,“两点一刻/两点之后”是时间的口语表达。
-de-a1-0726,vierundzwanzig Uhr,,,时间：24:00,Der Zug kommt um vierundzwanzig Uhr an.,火车晚上10点到达。
-de-a1-0727,vierzehn,,,十四,Die Antwort ist vierzehn.,答案是十四。
-de-a1-0728,vierzig,,,四十,Die Antwort ist vierzig.,答案是四十。
-de-a1-0729,von,prep.,,从；……的,Das Auto von Felix ist kaputt.,菲利克斯的车坏了。
-de-a1-0730,vor,prep.,,在……前面,Der Termin war vor einer Stunde.,约会是一个小时前。
-de-a1-0731,der Vormittag,n.,masculine · der · plural Vormittage,上午,Am Vormittag bin ich im Büro.,早上我会在办公室。
-de-a1-0732,der Vorname,n.,masculine · der · plural Vornamen,名,"Ich heiße Müller, mein Vorname ist Eva.",我的名字是穆勒，我的名字是伊娃。
-de-a1-0733,die Vorsicht,n.,feminine · die,小心,Vorsicht! Da kommt ein Auto.,警告！有车来了
-de-a1-0734,die Vorwahl,n.,feminine · die,区号,Wie ist die Vorwahl von München?,慕尼黑 的区号是多少？
-de-a1-0735,wandern,v.,,徒步旅行,Wir wandern um den Chiemsee.,我们在基姆湖周围徒步旅行。
-de-a1-0736,wann,adv.,,什么时候,Wann bist du fertig?,你什么时候准备好？
-de-a1-0737,warten,v.,,等待,Können Sie ein paar Minuten warten?,你能等几分钟吗？
-de-a1-0738,warum,adv.,,为什么,Warum kommt er nicht?,他为什么不来？
-de-a1-0739,was,pron.,,什么,Was ist das?,那是什么？
-de-a1-0740,was für ein,det.,,什么样的,Was für eine Farbe möchten Sie?,你想要什么颜色？
-de-a1-0741,das Wasser,n.,neuter · das,水,"Ein Glas Wasser, bitte.",请给我一杯水。
-de-a1-0742,weg sein,v.,,消失,Herr Meier ist schon weg.,迈尔先生已经走了。
-de-a1-0743,wehtun,v.,,伤害,Ich muss zum Arzt. Mein Bein tut weh.,我得去看医生。我的腿疼。
-de-a1-0744,weiblich,adj.,,女性,Kreuzen Sie bitte an: „weiblich“ oder „männlich“.,请勾选：“女”或“男”。
-de-a1-0745,der Wein,n.,masculine · der,葡萄酒,"Nein danke, ich möchte keinen Wein.",不，谢谢，我不需要酒。
-de-a1-0746,weit,adj.,,远的,Zum Bahnhof ist es nicht weit.,离火车站不远。
-de-a1-0747,weiter,adv.,,更远,Der Bus fährt nicht weiter.,巴士不再继续行驶。
-de-a1-0748,weiß,,,白色的,Meine Lieblingsfarbe ist Weiß.,我最喜欢的颜色是白色。
-de-a1-0749,welch-,det.,,哪个（疑问冠词词干）,Welches Buch möchtest du?,你想要哪本书？
-de-a1-0750,die Welt,n.,feminine · die,世界,Es gibt viele Probleme auf der Welt.,世界上有很多问题。
-de-a1-0751,wenig,adv.,,少的；不多,Ich habe leider nur wenig verstanden.,不幸的是我了解甚少。
-de-a1-0752,wer,pron.,,谁,Wer ist das?,那是谁？
-de-a1-0753,werden,v.,,成为,Mein Sohn will Arzt werden.,我儿子想成为一名医生。
-de-a1-0754,der Westen,n.,masculine · der,西方,Wir fahren in den Westen.,我们正向西行驶。
-de-a1-0755,das Wetter,n.,neuter · das,天气,Wir hatten schlechtes Wetter.,我们天气不好。
-de-a1-0756,wichtig,adj.,,重要的,Dieses Formular ist sehr wichtig.,这个形式非常重要。
-de-a1-0757,wie,adv.,,如何；像,Wie heißt du?,你叫什么名字？
-de-a1-0758,wie viel,det.,,多少,Wie viel Milch nehmen Sie?,你喝多少牛奶？
-de-a1-0759,wiederholen,v.,,重复,Können Sie das bitte wiederholen?,您能重复一下吗？
-de-a1-0760,willkommen,adj.,,欢迎,Herzlich willkommen!,欢迎！
-de-a1-0761,der Wind,n.,masculine · der,风,Der Wind kommt aus Osten.,风从东边吹来。
-de-a1-0762,der Winter,n.,masculine · der,冬天,Im Winter sind wir oft draußen.,冬天我们经常在外面。
-de-a1-0763,wir,pron.,,我们,Wir lernen Deutsch.,我们正在学习德语。
-de-a1-0764,wissen,v.,,知道一个事实,"Weißt du, wie er heißt?",你知道他叫什么名字吗？
-de-a1-0765,wo,adv.,,在哪里,Wo waren Sie im Urlaub?,你去哪儿度假了？
-de-a1-0766,die Woche,n.,feminine · die · plural Wochee,星期,Ich arbeite fünf Tage pro Woche.,我每周工作五天。
-de-a1-0767,das Wochenende,n.,neuter · das,周末,Am Wochenende besuche ich meine Eltern.,周末我去看望我的父母。
-de-a1-0768,der Wochentag,n.,masculine · der · plural Wochentage,工作日,Montag ist der erste Wochentag.,星期一是一周的第一天。
-de-a1-0769,woher,adv.,,从哪里,Woher kommen Sie?,你从哪来？
-de-a1-0770,wohin,adv.,,到哪里,Wohin fährt dieser Bus?,这辆公共汽车要去哪里？
-de-a1-0771,wohnen,v.,,居住,Ich wohne in München.,我住在慕尼黑。
-de-a1-0772,die Wohnung,n.,feminine · die · plural Wohnungen,公寓,Seit wann haben Sie diese Wohnung?,您拥有这套公寓多久了？
-de-a1-0773,wollen,v.,,想要,Wollen Sie einen Kaffee trinken?,你想喝杯咖啡吗？
-de-a1-0774,das Wort,n.,neuter · das · plural Wörter,单词,Ich kenne das Wort nicht.,我不认识这个词。
-de-a1-0775,wunderbar,adj.,,精彩的,Das Essen schmeckt wunderbar.,食物味道好极了。
-de-a1-0776,das Wörterbuch,n.,neuter · das · plural Wörterbucher,字典,Ich muss das Wort im Wörterbuch nachschlagen.,我得在字典里查这个词。
-de-a1-0777,zahlen,v.,,支付；付款,"Zahlen, bitte!",请付款！
-de-a1-0778,zehn,,,十,Die Antwort ist zehn.,答案是十个。
-de-a1-0779,die Zeit,n.,feminine · die,时间,Ich habe heute keine Zeit.,我今天没有时间。
-de-a1-0780,die Zeitung,n.,feminine · die · plural Zeitungen,报纸,Ich lese gern Zeitung.,我喜欢看报纸。
-de-a1-0781,der Zentimeter,n.,masculine · der · plural Zentimeter,厘米,Das Buch ist zwanzig Zentimeter breit.,这本书有二十厘米宽。
-de-a1-0782,die Zigarette,n.,feminine · die · plural Zigaretten,卷烟,Wie teuer sind die Zigaretten?,香烟多少钱？
-de-a1-0783,das Zimmer,n.,neuter · das · plural Zimmer,房间（建筑物内）,Das Zimmer ist groß.,房间很大。
-de-a1-0784,der Zoll,n.,masculine · der,海关,Wir müssen noch durch den Zoll.,我们还得过海关。
-de-a1-0785,zu,prep.,,去；太（第三格）,Der Bus fährt zum Bahnhof.,巴士前往火车站。
-de-a1-0786,zu sein,v.,,待关闭,Die Tür ist zu.,门关着。
-de-a1-0787,zufrieden,adj.,,使满意,Ich bin mit der Wohnung zufrieden.,我对公寓很满意。
-de-a1-0788,der Zug,n.,masculine · der · plural Züge,火车（特定的铁路服务）,Ich fahre gern mit dem Zug.,我喜欢乘火车旅行。
-de-a1-0789,zum Beispiel,phrase,,例如,"Viele meiner Verwandten, z. B. meine beiden Brüder, arbeiten auch hier.",我的许多亲戚，例如B. 我的两个兄弟也在这里工作。
-de-a1-0790,zurzeit,adv.,,眼下,Zurzeit habe ich sehr viel zu tun.,我现在有很多事情要做。
-de-a1-0791,zurück,adv.,,后退,Einmal Frankfurt und zurück.,到达法兰克福后又返回。
-de-a1-0792,zusammen,adv.,,一起,Sollen wir zusammen essen gehen?,我们应该一起出去吃饭吗？
-de-a1-0793,zwanzig,,,二十,Die Antwort ist zwanzig.,答案是二十。
-de-a1-0794,zwei,,,二,Die Antwort ist zwei.,答案是两个。
-de-a1-0795,zweihundert,,,二百,Das kostet zweihundert Euro.,那要花两百欧元。
-de-a1-0796,zweitausendvierzehn,,,2014,Sie wurde zweitausendvierzehn geboren.,她出生于2014年。
-de-a1-0797,zweite,,,第二,Die zweite Antwort ist richtig.,第二个答案是正确的。
-de-a1-0798,zwischen,prep.,,之间,Heidelberg liegt zwischen Frankfurt und Stuttgart.,海德堡位于法兰克福和斯图加特之间。
-de-a1-0799,zwölf,,,十二,Die Antwort ist zwölf.,答案是十二。
-de-a1-0800,öffnen,v.,,打开,Ich öffne die Tür.,我打开门。
-de-a1-0801,das Öl,n.,neuter · das,油,Den Salat machen wir ohne Öl.,我们做沙拉时不加油。
-de-a1-0802,über,prep.,,在……上方；关于；超过,Gehen Sie hier über die Straße.,走过这里的街道。
-de-a1-0803,übernachten,v.,,过夜,Du kannst bei mir übernachten.,你可以和我一起过夜。
-de-a1-0804,überweisen,v.,,转移,Sie können das Geld auch überweisen.,您也可以转账。
+id,word,pos,gender_info,meaning_en,example_de,example_en
+de-a1-0001,(ein)hundert,,,(one) hundred,Das Buch kostet einhundert Euro.,The book costs one hundred euros.
+de-a1-0002,(ein)tausend,,,(one) thousand,Die Stadt hat eintausend Einwohner.,The town has one thousand inhabitants.
+de-a1-0003,die (Kredit)-Karte,n.,feminine · die,(credit) card,Kann ich auch mit Karte (be-) zahlen?,Can I also pay by card?
+de-a1-0004,(sich etwas) kaufen,v.,,to buy,Tim kauft sich ein neues Auto.,Tim buys himself a new car.
+de-a1-0005,(sich) anziehen,v.,,to get dressed,Ich muss mich noch anziehen.,I still need to get dressed.
+de-a1-0006,(sich) ausziehen,v.,,to take off; to move out,"Zieh die Schuhe aus, bitte!",Please take off your shoes!
+de-a1-0007,(sich) duschen,v.,,to shower,"Ich bade nicht so gern, ich dusche lieber.","I don’t like bathing so much, I prefer to shower."
+de-a1-0008,(sich) freuen,v.,,to look forward to; to be happy about,Ich freue mich auf den Urlaub.,I’m looking forward to the vacation.
+de-a1-0009,(sich) treffen,v.,,to meet,Ich treffe in der Stadt einen Kollegen.,I am meeting a colleague in town.
+de-a1-0010,(sich) vorstellen,v.,,to introduce,Wir wollen uns kennenlernen. Können Sie sich bitte vorstellen?,We would like to get to know one another. Could you please introduce yourself?
+de-a1-0011,(sich) waschen,v.,,to wash,Wo kann ich mir die Hände waschen?,Where can I wash my hands?
+de-a1-0012,ab,prep.,,from (starting at),Ab morgen muss ich arbeiten.,I have to work from tomorrow.
+de-a1-0013,der Abend,n.,masculine · der · plural Abende,evening,Am Abend sehe ich fern.,I watch television in the evening.
+de-a1-0014,aber,conj.,,but,"Ich bin oft im Büro, aber nur für wenige Stunden.","I'm in the office often, but only for a few hours."
+de-a1-0015,abfahren,v.,,to depart,Wir fahren um zwölf Uhr ab.,We leave at twelve o'clock.
+de-a1-0016,die Abfahrt,n.,feminine · die · plural Abfahrten,departure,Vor der Abfahrt rufe ich an.,I'll call before I leave.
+de-a1-0017,abfliegen,v.,,to depart (by air),Wann fliegst du ab?,When do you depart?
+de-a1-0018,der Abflug,n.,masculine · der,(flight) departure,Der Abflug ist um 11.20 Uhr.,Departure is at 11:20 am.
+de-a1-0019,abgeben,v.,,to hand in; to hand over; to deliver,Ich muss meine Schlüssel abgeben.,I have to hand over my keys.
+de-a1-0020,abholen,v.,,to pick up,Wann kann ich den Schrank bei dir abholen?,When can I pick up the cupboard from you?
+de-a1-0021,der Absender,n.,masculine · der,sender,Da ist ein Brief für dich ohne Absender.,There is a letter for you with no return address.
+de-a1-0022,acht,,,eight,Die Antwort ist acht.,The answer is eight.
+de-a1-0023,Achtung,interj.,,attention; watch out,Achtung! Das dürfen Sie nicht tun.,Careful! You are not allowed to do that.
+de-a1-0024,achtzehn,,,eighteen,Die Antwort ist achtzehn.,The answer is eighteen.
+de-a1-0025,achtzig,,,eighty,Die Antwort ist achtzig.,The answer is eighty.
+de-a1-0026,die Adresse,n.,feminine · die · plural Adressen,address,Können Sie mir seine Adresse sagen?,Can you tell me his address?
+de-a1-0027,all-,"det., pron.",,everything,Alles Gute!,All the best!
+de-a1-0028,allein,adj.,,alone,Er kommt allein.,He comes alone.
+de-a1-0029,also,adv.,,so,"Also, es ist so: ...","So, it's like this: ..."
+de-a1-0030,alt,adj.,,old,Wie alt sind Sie?,How old are you?
+de-a1-0031,das Alter,n.,neuter · das,age,Alter: 26 Jahre.,Age: 26 years.
+de-a1-0032,am Wochenende,,,on the weekend,Am Wochenende habe ich frei.,I have the weekend off.
+de-a1-0033,an,prep.,,at,Fahren Sie an der nächsten Straße nach rechts.,Turn right at the next street.
+de-a1-0034,an sein,v.,,to be (switched) on; to be on,Heute Nacht war das Licht an.,The light was on last night.
+de-a1-0035,anbieten,v.,,to offer,Was darf ich dir anbieten?,What can I offer you?
+de-a1-0036,ander-,"det., pron.",,other,"Willst du diese Jacke?<br>– Nein, ich möchte die andere.","Do you want this jacket?<br>– No, I want the other one."
+de-a1-0037,der Anfang,n.,masculine · der · plural Anfänge,beginning,Sie wohnt am Anfang der Straße.,She lives at the beginning of the street.
+de-a1-0038,anfangen,v.,,to start; to begin,Hier fängt die Bahnhofstraße an.,This is where the Bahnhofstraße starts.
+de-a1-0039,das Angebot,n.,neuter · das · plural Angebote,offer,Heute sind Sportschuhe im Angebot.,Today sports shoes are on sale.
+de-a1-0040,anklicken,v.,,to click,Da musst du dieses Wort anklicken.,You have to click on this word.
+de-a1-0041,ankommen,v.,,to arrive,Wann kommt dieser Zug in Hamburg an?,When does this train arrive in Hamburg?
+de-a1-0042,ankreuzen,v.,,to tick,Auf dem Formular müssen Sie an mehreren Stellen etwas ankreuzen.,You have to tick something in several places on the form.
+de-a1-0043,die Ankunft,n.,feminine · die · plural Ankünfte,arrival,Auf diesem Plan steht nur die Ankunft(-szeit) der Züge.,This plan only shows the arrival (time) of the trains.
+de-a1-0044,anmachen,v.,,to turn on,Mach bitte das Licht an!,Please turn on the light!
+de-a1-0045,die Anmeldung,n.,feminine · die · plural Anmeldungen,registration,Eine Anmeldung für diesen Kurs ist nicht mehr möglich.,Registration for this course is no longer possible.
+de-a1-0046,die Anrede,n.,feminine · die,salutation; form of address,Schreiben Sie auch eine Anrede und einen Gruß.,Also write a salutation and a greeting.
+de-a1-0047,der Anruf,n.,masculine · der · plural Anrufe,call,Sie bekommt viele Anrufe auf ihrem Handy.,She gets a lot of calls on her cell phone.
+de-a1-0048,der Anrufbeantworter,n.,masculine · der · plural Anrufbeantworter,answering machine,Wir sind im Moment nicht da. Sprechen Sie bitte auf den Anrufbeantworter.,We're not there at the moment. Please leave a message on the answering machine.
+de-a1-0049,anrufen,v.,,to call; to phone,Kann man Sie anrufen?,Can people call you?
+de-a1-0050,die Ansage,n.,feminine · die · plural Ansagen,announcement; recorded message,Hören Sie die Ansagen.,Listen to the announcements.
+de-a1-0051,der Anschluss,n.,masculine · der,connection,In Mannheim haben Sie Anschluss nach Saarbrücken.,In Mannheim you have a connection to Saarbrücken.
+de-a1-0052,die Antwort,n.,feminine · die · plural Antworten,answer,Er gibt leider keine Antwort.,Unfortunately he isn't giving an answer.
+de-a1-0053,antworten,v.,,to answer,Er antwortet nicht.,He isn’t answering.
+de-a1-0054,die Anzeige,n.,feminine · die · plural Anzeigen,advert,Ich habe Ihre Anzeige in der Zeitung gelesen.,I read your advert in the newspaper.
+de-a1-0055,das Apartment,n.,neuter · das · plural Apartments,small apartment; apartment,Wir haben ein Apartment gemietet.,We rented a apartment.
+de-a1-0056,der Apfel,n.,masculine · der · plural Äpfel,apple,Ein Pfund Äpfel bitte.,"One pound of apples, please."
+de-a1-0057,der Appetit,n.,masculine · der,appetite,Guten Appetit!,Bon appetit!
+de-a1-0058,der April,n.,masculine · der,April,Mein Geburtstag ist im April.,My birthday is in April.
+de-a1-0059,die Arbeit,n.,feminine · die · plural Arbeiten,work,Mein Bruder sucht Arbeit.,My brother is looking for work.
+de-a1-0060,arbeiten,v.,,to work,Wo arbeiten Sie?,Where do you work?
+de-a1-0061,arbeitslos,adj.,,unemployed,"Es gibt bei uns viele Leute, die schon lange arbeitslos sind.",We have a lot of people who have been unemployed for a long time.
+de-a1-0062,der Arbeitsplatz,n.,masculine · der · plural Arbeitsplätze,workplace,An meinem Arbeitsplatz fehlt ein Drucker.,There is no printer at my workplace.
+de-a1-0063,der Arm,n.,masculine · der · plural Arme,arm,Mein Arm tut weh.,My arm hurts.
+de-a1-0064,der Arzt,n.,masculine · der · plural Ärzte,doctor (medical professional),Morgen habe ich einen Termin bei meiner Ärztin.,Tomorrow I have an appointment with my doctor.
+de-a1-0065,auch,part.,,also,Ich bin auch Spanier.,I am also Spanish.
+de-a1-0066,auf,prep.,,on; in; open,Die Kinder spielen auf der Straße.,The children play on the street.
+de-a1-0067,auf sein,v.,,to be open,Du brauchst den Schlüssel nicht. Die Wohnung ist auf.,You don't need the key. The apartment is unlocked.
+de-a1-0068,das Auf Wiederhören!,phrase,neuter · das,goodbye (on the phone),Wir müssen jetzt Schluss machen. Also auf Wiederhören!,We have to stop now. So goodbye!
+de-a1-0069,das Auf Wiedersehen!,phrase,neuter · das,goodbye,Auf Wiedersehen!,Goodbye!
+de-a1-0070,die Aufgabe,n.,feminine · die · plural Aufgaben,task,Das ist eine schwere Aufgabe.,That is a difficult task.
+de-a1-0071,aufhören,v.,,to stop; to finish,Der Kurs hört in einer Woche auf.,The course ends in a week.
+de-a1-0072,aufstehen,v.,,to get up,Ich muss immer um vier Uhr aufstehen.,I always need to get up at 4 am.
+de-a1-0073,der Aufzug,n.,masculine · der · plural Aufzüge,elevator,In diesem Haus gibt es keinen Aufzug.,There is no elevator in this building.
+de-a1-0074,das Auge,n.,neuter · das · plural Augen,eye,Er hat blaue Augen.,He has blue eyes.
+de-a1-0075,der August,n.,masculine · der,August,Mein Geburtstag ist im August.,My birthday is in August.
+de-a1-0076,aus,prep.,,from; out of,Er kommt aus Brasilien.,He comes from Brazil.
+de-a1-0077,aus sein,v.,,to be (switched) off; to be out,Das Licht ist aus.,The light is off.
+de-a1-0078,der Ausflug,n.,masculine · der,excursion,Morgen machen wir einen Ausflug nach Heidelberg.,Tomorrow we are going on an excursion to Heidelberg.
+de-a1-0079,ausfüllen,v.,,to fill out,Füllen Sie bitte dieses Formular aus.,Please fill out this form.
+de-a1-0080,der Ausgang,n.,masculine · der,exit,Wo ist der Ausgang?,Where is the exit?
+de-a1-0081,die Auskunft,n.,feminine · die · plural Auskünfte,information; answer; information desk,Können Sie mir eine Auskunft geben?,Can you give me some information?
+de-a1-0082,das Ausland,n.,neuter · das,abroad,Fahren Sie ins Ausland?,Do you travel abroad?
+de-a1-0083,der Ausländer,n.,masculine · der · plural Ausländer,foreigner,SInd Sie Ausländerin?,Are you a foreigner?
+de-a1-0084,ausländisch,adj.,,foreign; from abroad,Leider habe ich nur ausländisches Geld.,Unfortunately I only have foreign money.
+de-a1-0085,ausmachen,v.,,to switch off,Mach bitte das Licht aus!,Please switch off the light!
+de-a1-0086,die Aussage,n.,feminine · die · plural Aussagen,statement,Ist die Aussage richtig oder falsch?,Is the statement true or false?
+de-a1-0087,aussehen,v.,,to look,Das sieht schön aus.,That looks beautiful.
+de-a1-0088,aussteigen,v.,,to get off,Wo muss ich aussteigen?,Where do I need to alight?
+de-a1-0089,der Ausweis,n.,masculine · der,identity card,Hier ist mein Ausweis.,This is my identification.
+de-a1-0090,das Auto,n.,neuter · das · plural Autos,car,Er kommt mit dem Auto.,He’s coming by car.
+de-a1-0091,die Autobahn,n.,feminine · die · plural Autobahnen,highway,Wo geht‘s hier bitte zur Autobahn?,How do I get to the highway?
+de-a1-0092,der Automat,n.,masculine · der,vending or ticket machine,Die Fahrkarten gibt es nur am Automaten.,Tickets are only available from the machine.
+de-a1-0093,automatisch,adj.,,automatic,Du musst nichts machen. Das geht automatisch.,You don't have to do anything. This happens automatically.
+de-a1-0094,das Baby,n.,neuter · das · plural Babys,baby,Mein Kind ist noch ein Baby.,My child is still a baby.
+de-a1-0095,das Bad,n.,neuter · das,bathroom,Wir haben kein großes Bad.,We don’t have a large bathroom.
+de-a1-0096,baden,v.,,to bathe,"Ich bade nicht so gern, ich dusche lieber.","I don’t like bathing so much, I prefer to shower."
+de-a1-0097,die Bahn,n.,feminine · die,railway; train,Wir fahren lieber mit der Bahn.,We prefer to travel by train.
+de-a1-0098,der Bahnhof,n.,masculine · der,train station,Komme ich hier zum Bahnhof?,Is this the way to the train station?
+de-a1-0099,der Bahnsteig,n.,masculine · der,platform,Auf welchem Bahnsteig fährt der Zug?,From which platform does the train depart?
+de-a1-0100,bald,adv.,,soon,Ich komme bald.,I’m coming soon.
+de-a1-0101,der Balkon,n.,masculine · der,balcony,Die Wohnung hat auch einen kleinen Balkon.,The apartment also has a small balcony.
+de-a1-0102,die Banane,n.,feminine · die · plural Bananen,banana,"Drei Bananen, bitte!","Three bananas, please!"
+de-a1-0103,die Bank,n.,feminine · die,bank; bench,Die Bank schließt schon um vier Uhr.,The bank closes as early as four o'clock.
+de-a1-0104,bar,adj.,,cash,Muss ich bar zahlen oder geht‘s auch mit Karte?,"Do I have to pay in cash, or can I also pay by card?"
+de-a1-0105,der Bauch,n.,masculine · der,stomach,Seit gestern tut mir der Bauch weh.,My stomach has been hurting since yesterday.
+de-a1-0106,der Baum,n.,masculine · der · plural Bäume,tree,"Vorsicht, fahr nicht an den Baum!","Careful, don’t drive into the tree!"
+de-a1-0107,der Beamte,n.,masculine · der · plural Beamten,public official; civil servant,Fragen Sie die Beamtin an Schalter acht!,Ask the official at counter eight!
+de-a1-0108,bedeuten,v.,,to mean,Was bedeutet das Wort?,What does that word mean?
+de-a1-0109,beginnen,v.,,to begin; to commence,Das Spiel beginnt um 15.30 Uhr.,The game begins at 3:30 pm.
+de-a1-0110,bei,prep.,,near; with; at; for,Offenbach liegt bei Frankfurt.,Offenbach is next to Frankfurt.
+de-a1-0111,beide,det.,,both,Beide Eltern arbeiten.,Both parents work.
+de-a1-0112,das Bein,n.,neuter · das · plural Beine,leg,Mein rechtes Bein tut weh.,My right leg hurts.
+de-a1-0113,das Beispiel,n.,neuter · das · plural Beispiele,example,Kannst du mir ein Beispiel sagen?,Can you give me an example?
+de-a1-0114,bekannt,adj.,,well known,Picasso ist sehr bekannt.,Picasso is very well known.
+de-a1-0115,der/die Bekannte,n.,m/f · der/die · plural Bekannten,acquaintance,Ein Bekannter von mir heißt Klaus.,An acquaintance of mine is called Klaus.
+de-a1-0116,bekommen,v.,,to get; to receive,Haben Sie meinen Brief bekommen?,Did you receive my letter?
+de-a1-0117,benutzen,v.,,to use,Die Aufzüge bitte nicht benutzen!,Please don’t use the elevators!
+de-a1-0118,der Beruf,n.,masculine · der · plural Berufe,profession; occupation,Was sind Sie von Beruf?,What is your profession?
+de-a1-0119,besetzt,adj.,,busy; taken,Die Nummer ist immer besetzt.,The number is always busy.
+de-a1-0120,besichtigen,v.,,to visit or tour a place,Ich möchte gern den Dom besichtigen.,I would like to visit the cathedral.
+de-a1-0121,besser,adj.,,better,Es geht mir schon besser.,I'm already feeling better.
+de-a1-0122,best-,adj.,,best,Am besten treffen wir uns morgen.,It's best that we meet tomorrow.
+de-a1-0123,bestellen,v.,,to order,"Wir möchten bestellen, bitte.","We would like to order, please."
+de-a1-0124,besuchen,v.,,to visit a person or place,Darf ich dich besuchen?,May I visit you?
+de-a1-0125,das Bett,n.,neuter · das · plural Betten,bed,Wir brauchen noch ein Kinderbett.,We need another children’s bed.
+de-a1-0126,bezahlen,v.,,to pay for something,Wo muss ich bezahlen?,Where do I need to pay?
+de-a1-0127,das Bier,n.,neuter · das,beer,Noch ein Bier bitte.,"Another beer, please."
+de-a1-0128,das Bild,n.,neuter · das · plural Bilder,picture,Hast du ein Bild von deinem Sohn?,Do you have a picture of your son?
+de-a1-0129,billig,adj.,,cheap (often low-quality),Die Jacke kostet nur 10 Euro! Die ist aber billig!,The jacket only costs 10 euros! But it's cheap!
+de-a1-0130,die Birne,n.,feminine · die · plural Birnen,pear,"Ein Kilo Birnen, bitte!","One kilogram of pears, please!"
+de-a1-0131,bis,prep.,,to (as far as); until,Ich fahre nur bis Stuttgart.,I’m only traveling to Stuttgart.
+de-a1-0132,bisschen,pron.,,(a) little,"Ich spreche Englisch, Französisch und ein bisschen Deutsch.","I speak English, French, and a little German."
+de-a1-0133,bitte,part.,,please,"Eine Tasse Kaffee, bitte!","A cup of coffee, please!"
+de-a1-0134,die Bitte,n.,feminine · die · plural Bitten,request,Ich habe noch eine Bitte.,I have one more request.
+de-a1-0135,bitten,v.,,to ask someone; to request,Darf ich Sie um etwas bitten?,May I ask something of you?
+de-a1-0136,bitter,adj.,,bitter,Der Kaffee schmeckt bitter.,The coffee tastes bitter.
+de-a1-0137,blau,,,blue,Meine Lieblingsfarbe ist Blau.,My favorite color is blue.
+de-a1-0138,bleiben,v.,,to stay,Ich bleibe heute zu Hause.,I'm staying home today.
+de-a1-0139,der Bleistift,n.,masculine · der · plural Bleistifte,pencil,Hast du einen Bleistift?,Do you have a pencil?
+de-a1-0140,der Blick,n.,masculine · der,view,Von diesem Hotel hat man einen guten Blick auf den Rhein.,From this hotel you have a good view of the Rhine.
+de-a1-0141,die Blume,n.,feminine · die · plural Blumen,flower,Gefallen dir die Blumen?,Do you like the flowers?
+de-a1-0142,der Bogen,n.,masculine · der,sheet,Schreiben Sie Ihre Lösungen bitte auf den Antwortbogen.,Write your solutions on the answer sheet.
+de-a1-0143,brauchen,v.,,to need,Brauchst du die Zeitung noch?,Do you still need the newspaper?
+de-a1-0144,braun,,,brown,Meine Lieblingsfarbe ist Braun.,My favorite color is brown.
+de-a1-0145,breit,adj.,,wide,Wie breit ist der Schrank?,How wide is the cupboard?
+de-a1-0146,der Brief,n.,masculine · der · plural Briefe,letter,Haben Sie einen Brief für mich?,Do you have a letter for me?
+de-a1-0147,die Briefmarke,n.,feminine · die · plural Briefmarken,(postage) stamp,Kaufst du bitte Briefmarken bei der Post.,Could you please buy stamps at the post office.
+de-a1-0148,bringen,v.,,to bring; to take,Bringen Sie mir bitte noch einen Kaffee!,Please bring me another coffee!
+de-a1-0149,das Brot,n.,neuter · das · plural Brote,bread,Haben Sie auch Weißbrot?,"Do you have white bread, too?"
+de-a1-0150,der Bruder,n.,masculine · der · plural Brüder,brother,Sein Bruder arbeitet auch hier.,His brother also works here.
+de-a1-0151,das Brötchen,n.,neuter · das · plural Brötchen,bread roll,Möchtest du Brötchen zum Frühstück?,Would you like bread rolls for breakfast?
+de-a1-0152,das Buch,n.,neuter · das · plural Bücher,book,Gute Bücher sind oft sehr teuer.,Good books are often very expensive.
+de-a1-0153,der Buchstabe,n.,masculine · der · plural Buchstaben,letter (character),Diesen Buchstaben gibt es in meiner Sprache nicht.,We don't have this letter in my language.
+de-a1-0154,buchstabieren,v.,,to spell,Bitte buchstabieren Sie Ihren Namen.,Please spell your name.
+de-a1-0155,der Bus,n.,masculine · der · plural Busse,bus,Wann kommt der nächste Bus?,When does the next bus arrive?
+de-a1-0156,die Butter,n.,feminine · die,butter,Für mich bitte ein Brötchen mit Butter und Käse.,"A bread roll with butter and cheese for me, please."
+de-a1-0157,die Bäckerei,n.,feminine · die,bakery,Ich geh mal schnell zur Bäckerei.,I’m just popping to the bakery.
+de-a1-0158,böse,adj.,,angry,Sie ist böse auf mich.,She is angry with me.
+de-a1-0159,das Café,n.,neuter · das · plural Cafés,cafe,Sollen wir uns im Café treffen?,Should we meet at the cafe?
+de-a1-0160,die CD,n.,feminine · die · plural CDs,CD,Bring bitte deine Lieblings-CD mit.,Please bring your favorite CD with you.
+de-a1-0161,der Chef,n.,masculine · der,boss,Wir haben eine neue Chefin.,We have a new boss.
+de-a1-0162,circa/ca.,adv.,,approximately,Von Mainz nach Frankfurt sind es circa fünfzig Kilometer.,From Mainz to Frankfurt it is approximately 50 kilometers.
+de-a1-0163,der Computer,n.,masculine · der · plural Computer,computer,Wann bekommst du deinen neuen Computer?,When are you getting your new computer?
+de-a1-0164,da,adv.,,there; here,Da hinten ist er ja.,He’s back there.
+de-a1-0165,die Dame,n.,feminine · die · plural Damen,lady,Damen (an der Toilette),Ladies (toilet sign)
+de-a1-0166,daneben,adv.,,next to it,Du kennst doch die Post. Daneben ist die Bank.,You know the post office. Next to it is the bank.
+de-a1-0167,der Dank,n.,masculine · der,thanks,Vielen Dank!,Many thanks!
+de-a1-0168,danke,interj.,,thank you,"Soll ich Ihnen helfen?<br>- Nein, danke!",Do you want me to help you?<br>- No thanks!
+de-a1-0169,danken,v.,,to thank,Ich danke Ihnen für die Einladung.,I thank you for the invitation.
+de-a1-0170,dann,adv.,,then (afterwards),"Ich muss noch schnell zur Post, dann komme ich.","I still need to pop to the post office, then I’ll come."
+de-a1-0171,das Datum,n.,neuter · das,date,Bitte schreiben Sie noch das Datum auf das Formular.,Please write the date on the form.
+de-a1-0172,dauern,v.,,to last,Wie lange dauert der Film?,How long is the movie?
+de-a1-0173,dein-,det.,,your,Ist das dein Auto?,Is that your car?
+de-a1-0174,denn,conj.,,because,"Ich kann nicht kommen, denn ich bin krank.",I can’t come because I’m ill.
+de-a1-0175,der,"det., pron.",,that; the,Ich nehme das da.,I’ll take that there.
+de-a1-0176,Deutschland,n.,neuter,Germany,Sie kommt aus Deutschland.,She is from Germany.
+de-a1-0177,der Dezember,n.,masculine · der,December,Mein Geburtstag ist im Dezember.,My birthday is in December.
+de-a1-0178,dich,pron.,,you (accusative singular),Die Blumen sind für dich.,The flowers are for you.
+de-a1-0179,der Dienstag,n.,masculine · der,Tuesday,Am Dienstag habe ich frei.,I have Tuesday off.
+de-a1-0180,dies-,det.,,this,Ich nehme lieber diesen Kuchen.,I’d prefer to have this cake.
+de-a1-0181,dir,pron.,,you (dative singular),Gefallen dir die Blumen?,Do you like the flowers?
+de-a1-0182,die Disco,n.,feminine · die · plural Discos,disco; discotheque,Heute abend gehen wir in die Disco tanzen.,This evening we’re going dancing in the disco.
+de-a1-0183,der Doktor,n.,masculine · der,doctor (title or degree),Meine Tochter ist krank. Wir gehen zum Doktor.,My daughter is ill. We're going to the doctor.
+de-a1-0184,der Donnerstag,n.,masculine · der,Thursday,Am Donnerstag habe ich frei.,I have Thursday off.
+de-a1-0185,das Doppelzimmer,n.,neuter · das,double room,Wollen Sie ein Doppelzimmer oder ein Einzelzimmer?,Would you like a double room or a single room?
+de-a1-0186,das Dorf,n.,neuter · das · plural Dörfer,village,Meine Familie lebt in einem Dorf.,My family lives in a village.
+de-a1-0187,dort,adv.,,there,Deine Tasche kannst du dorthin stellen.,You can put your bag there.
+de-a1-0188,dorthin,adv.,,"there (to that place, in that direction)",Deine Tasche kannst du dorthin stellen.,You can put your bag there.
+de-a1-0189,draußen,adv.,,outside,Wollen wir draußen sitzen?,Shall we sit outside?
+de-a1-0190,drei,,,three,Die Antwort ist drei.,The answer is three.
+de-a1-0191,dreizehn,,,thirteen,Die Antwort ist dreizehn.,The answer is thirteen.
+de-a1-0192,dreißig,,,thirty,Die Antwort ist dreißig.,The answer is thirty.
+de-a1-0193,dritte,,,third,Die dritte Antwort ist richtig.,The third answer is correct.
+de-a1-0194,drucken,v.,,to print,Bitte drucke das Formular für mich.,Please print the form for me.
+de-a1-0195,der Drucker,n.,masculine · der · plural Drucker,printer,Mein Drucker ist kaputt.,My printer is broken.
+de-a1-0196,drücken,v.,,to press,"Drück hier, dann geht der Computer an.","Press here, then the computer turns on."
+de-a1-0197,durch,prep.,,through,Am besten gehen Sie durch die Breite Straße.,It's best to go through Breite Straße.
+de-a1-0198,die Durchsage,n.,feminine · die · plural Durchsagen,public announcement,Ich habe die Durchsage nicht verstanden.,I didn’t understand the announcement.
+de-a1-0199,der Durst,n.,masculine · der,thirst,Hast du etwas zu trinken? Ich habe großen Durst.,Do you have something to drink? I'm very thirsty.
+de-a1-0200,die Dusche,n.,feminine · die,shower,Unsere Wohnung hat nur eine Dusche.,Our apartment only has a shower.
+de-a1-0201,dürfen,v.,,to be allowed,Sie dürfen hier nicht rauchen.,You are not allowed to smoke here.
+de-a1-0202,die E-Mail,n.,feminine · die · plural E-Mails,email,Ich habe Ihre E-Mail nicht bekommen.,I didn’t receive your email.
+de-a1-0203,die Ecke,n.,feminine · die · plural Ecken,corner,An der nächsten Ecke links.,Left at the next corner.
+de-a1-0204,die Ehefrau,n.,feminine · die · plural Ehefrauen,wife,Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.,This is my husband/wife.
+de-a1-0205,der Ehemann,n.,masculine · der · plural Ehemänner,husband,Das ist mein (Ehe-) Mann/meine (Ehe-) Frau.,This is my husband/wife.
+de-a1-0206,das Ei,n.,neuter · das · plural Eier,egg,Möchtest du ein Ei zum Frühstück?,Would you like an egg for breakfast?
+de-a1-0207,eilig,adj.,,in a hurry,Hast du es eilig?,Are you in a hurry?
+de-a1-0208,ein Grad unter Null/minus ein Grad,phrase,,one degree below zero/minus one degree,Heute sind es minus ein Grad.,It is minus one degree today.
+de-a1-0209,ein halb; halb,,,one half; half,Ich möchte ein halbes Kilo Tomaten.,I would like half a kilo of tomatoes.
+de-a1-0210,ein Meter fünfzehn,phrase,,one meter fifteen,Das Kind ist ein Meter fünfzehn groß.,The child is one meter fifteen tall.
+de-a1-0211,ein Uhr,,,one o'clock,Wir treffen uns um ein Uhr.,We are meeting at one o'clock.
+de-a1-0212,ein Viertel; Viertel,,,one quarter; quarter,Ich warte noch ein Viertel Stunde.,I will wait another quarter of an hour.
+de-a1-0213,ein-,"det., pron.",,one; a; someone,Ich nehme ein Bier. Willst du auch eins?,I'll have a beer. Do you want one too?
+de-a1-0214,einfach,adj.,,a single (ticket); simple,Die Prüfung ist ganz einfach.,The test is very simple.
+de-a1-0215,der Eingang,n.,masculine · der,entrance,Der Eingang ist um die Ecke.,The entrance is round the corner.
+de-a1-0216,einkaufen,v.,,to go shopping,Ich muss noch für morgen einkaufen.,I still need to go shopping for tomorrow.
+de-a1-0217,einladen,v.,,to invite; treat,Darf ich Sie zu einem Kaffee einladen?,May I treat you to a coffee?
+de-a1-0218,die Einladung,n.,feminine · die,invitation,Danke für die Einladung!,Thank you for the invitation!
+de-a1-0219,einmal,adv.,,once,Diese Prüfung mache ich nicht noch einmal.,I won't take this test again.
+de-a1-0220,eins,,,one,Die Antwort ist eins.,The answer is one.
+de-a1-0221,einsteigen,v.,,to get on (board),"Schnell, steig ein, der Zug fährt gleich.","Quick, get on, the train is about to leave!"
+de-a1-0222,der Eintritt,n.,masculine · der,entry,Der Preis für den Eintritt ist 5 Euro.,The price for entry is 5 euros.
+de-a1-0223,einundzwanzig,,,twenty-one,Die Antwort ist einundzwanzig.,The answer is twenty-one.
+de-a1-0224,das Einzelzimmer,n.,neuter · das,single room,Haben Sie noch ein Einzelzimmer?,Do you have another single room?
+de-a1-0225,elf,,,eleven,Die Antwort ist elf.,The answer is eleven.
+de-a1-0226,die Eltern,n.,plural · die,parents,Meine Eltern leben in Spanien.,My parents live in spain.
+de-a1-0227,empfehlen,v.,,to recommend,Welchen Wein können Sie mir empfehlen?,Which wine can you recommend to me?
+de-a1-0228,der Empfänger,n.,masculine · der · plural Empfänger,recipient,"Auf dem Brief steht dein Name, also bist du der Empfänger.","Your name is on the letter, therefore you are the recipient."
+de-a1-0229,das Ende,n.,neuter · das,end; ending,Sie wohnt am Ende der Straße.,She lives at the end of the street.
+de-a1-0230,enden,v.,,to end,Die Straße endet hier.,The street ends here.
+de-a1-0231,entschuldigen,v.,,to excuse,Entschuldigen Sie bitte!,"Excuse me, please!"
+de-a1-0232,die Entschuldigung,n.,feminine · die,excuse me; sorry,Entschuldigung!<br>– Bitte.,Excuse me!<br>- Please.
+de-a1-0233,er,pron.,,he,Er heißt Ali.,He’s called Ali.
+de-a1-0234,das Ergebnis,n.,neuter · das · plural Ergebnisse,result,Das Ergebnis des Tests bekommen Sie in zwei Wochen.,You will receive the test results in two weeks.
+de-a1-0235,erklären,v.,,to explain,Kannst du mir das erklären?,Can you explain that to me?
+de-a1-0236,erlauben,v.,,to allow,Rauchen ist hier nicht erlaubt.,Smoking is not allowed here.
+de-a1-0237,erst-,adj.,,first,Ich war zum ersten Mal allein im Urlaub.,I went on vacation alone for the first time.
+de-a1-0238,der Erwachsene,n.,masculine · der · plural Erwachsenen,adult,Dieser Film ist nur für Erwachsene.,This movie is for adults only.
+de-a1-0239,erzählen,v.,,to tell,Wir müssen euch etwas erzählen!,We need to tell you something!
+de-a1-0240,es,pron.,,it,Es regnet.,It’s raining.
+de-a1-0241,essen,v.,,to eat,Was gibt es zu essen?,What is there to eat?
+de-a1-0242,das Essen,n.,neuter · das,food; meal,Das Essen ist heute sehr gut.,The food is very good today.
+de-a1-0243,euer,det.,,your (plural),Euer Kurs beginnt heute.,Your course begins today.
+de-a1-0244,Europa,n.,neuter,Europe,Deutschland liegt in Europa.,Germany is in Europe.
+de-a1-0245,fahren,v.,,to go or travel by vehicle; to drive,Ich fahre mit dem Auto zur Arbeit.,I go to work by car.
+de-a1-0246,der Fahrer,n.,masculine · der,driver,Bitte nicht mit dem Fahrer sprechen!,Please do not speak to the driver!
+de-a1-0247,die Fahrkarte,n.,feminine · die · plural Fahrkarten,(transport) ticket,Hast du schon eine Fahrkarte?,Do you already have a ticket?
+de-a1-0248,das Fahrrad,n.,neuter · das · plural Fahrräder,bicycle,Fährst du mit dem Fahrrad oder mit dem Auto?,Do you travel by bike or by car?
+de-a1-0249,falsch,adj.,,wrong; incorrect,Das ist falsch.,That is wrong.
+de-a1-0250,die Familie,n.,feminine · die · plural Familien,family,Meine Familie lebt in Spanien.,My family lives in Spain.
+de-a1-0251,der Familienname,n.,masculine · der,surname,Meine Familiennamen sind García González.,My surname is García González.
+de-a1-0252,der Familienstand,n.,masculine · der,marital status,Bei „Familienstand“ musst du „ledig“ ankreuzen.,"Under “marital status”, tick “single”."
+de-a1-0253,die Farbe,n.,feminine · die · plural Farben,color,Die Farbe gefällt mir gut.,I like the color.
+de-a1-0254,das Fax,n.,neuter · das · plural Faxe,fax,Schicken Sie uns einfach ein Fax!,Just send us a fax!
+de-a1-0255,der Februar,n.,masculine · der,February,Mein Geburtstag ist im Februar.,My birthday is in February.
+de-a1-0256,fehlen,v.,,to be absent; to be missing,"Herr Müller ist nicht da, er fehlt schon seit drei Tagen.","Mr Müller is not here, he’s been absent for three days."
+de-a1-0257,der Fehler,n.,masculine · der · plural Fehler,mistake,Diesen Fehler mache ich immer.,I always make this mistake.
+de-a1-0258,die Feier-,n.,feminine · die,celebration,"z. B. Feierabend, Feiertag",e.g. finishing time; public holiday
+de-a1-0259,der Feierabend,n.,masculine · der,end of the working day,Einen schönen Feierabend.,Have a pleasant evening after work.
+de-a1-0260,feiern,v.,,to celebrate,Wir feiern heute meinen Geburtstag.,Today we are celebrating my birthday.
+de-a1-0261,der Feiertag,n.,masculine · der · plural Feiertage,bank holiday,Am Montag ist Feiertag.,Monday is a bank holiday.
+de-a1-0262,fernsehen,v.,,to watch TV,Wollen wir heute Abend mal fernsehen?,Shall we watch TV this evening?
+de-a1-0263,fertig,adj.,,finished; ready; done,Bist du fertig?,Are you done?
+de-a1-0264,das Feuer,n.,neuter · das,fire; a light,Haben Sie Feuer?,Do you have a light?
+de-a1-0265,das Fieber,n.,neuter · das,fever,Mein Mann hat noch immer Fieber.,My husband still has a fever.
+de-a1-0266,der Film,n.,masculine · der · plural Filme,movie,Ich möchte gern diesen Film sehen.,I would like to see this movie.
+de-a1-0267,finden,v.,,to find,Wir müssen den Schlüssel finden.,We must find the key.
+de-a1-0268,Finnland,n.,neuter,Finland,Sie kommt aus Finnland.,She is from Finland.
+de-a1-0269,die Firma,n.,feminine · die,company,Er arbeitet jetzt bei einer anderen Firma.,He works for another company now.
+de-a1-0270,der Fisch,n.,masculine · der · plural Fische,fish,Ich esse gern Fisch. Fleisch mag ich nicht.,I like to eat fish. I don't like meat.
+de-a1-0271,die Flasche,n.,feminine · die · plural Flaschen,bottle,"Eine Flasche Bier, bitte.","A bottle of beer, please."
+de-a1-0272,das Fleisch,n.,neuter · das,meat,Fleisch mag ich nicht.,I don’t like meat.
+de-a1-0273,fliegen,v.,,to fly,Ich fliege nicht gern. Deshalb fahre ich mit dem Zug.,I don't like flying. That's why I take the train.
+de-a1-0274,der Flughafen,n.,masculine · der,airport,Kannst du mich zum Flughafen bringen?,Can you take me to the airport?
+de-a1-0275,das Flugzeug,n.,neuter · das,airplane,Das Flugzeug aus Berlin kommt heute später an.,The plane from Berlin will arrive later today.
+de-a1-0276,das Formular,n.,neuter · das · plural Formulare,form,Sie müssen dieses Formular ausfüllen.,You must fill out this form.
+de-a1-0277,das Foto,n.,neuter · das · plural Fotos,photograph,Darf ich ein Foto machen?,May I take a photo?
+de-a1-0278,die Frage,n.,feminine · die · plural Fragen,question,Ich habe eine Frage.,I have a question.
+de-a1-0279,fragen,v.,,to ask,Er möchte Sie etwas fragen. Wann kommen Sie?,He wants to ask you something. When are you coming?
+de-a1-0280,die Frau,n.,feminine · die,woman; Mrs; Ms,Das ist Frau Becker.,That is Ms Becker.
+de-a1-0281,frei,adj.,,free,Ist der Platz noch frei?,Is this seat still free?
+de-a1-0282,der Freitag,n.,masculine · der,Friday,Am Freitag habe ich frei.,I have Friday off.
+de-a1-0283,die Freizeit,n.,feminine · die,free time,In meiner Freizeit spiele ich oft Fußball.,I often play soccer in my free time.
+de-a1-0284,fremd,adj.,,foreign; unfamiliar; strange,Das weiß ich nicht; ich bin fremd hier.,I do not know; I am not from around here.
+de-a1-0285,der Freund,n.,masculine · der · plural Freunde,friend,Das ist ein Freund von mir.,That is a friend of mine.
+de-a1-0286,die Freundin,n.,feminine · die,friend; girlfriend,Das ist meine Freundin Susanne.,This is my friend Susanne.
+de-a1-0287,früher,adv.,,earlier; in the past,Früher waren wir oft zusammen im Kino.,In the past we often went to the movie theater together.
+de-a1-0288,der Frühling/das Frühjahr,n.,masculine · der,spring,Im Frühling sind wir oft draußen.,We are often outdoors in spring.
+de-a1-0289,das Frühstück,n.,neuter · das,breakfast,Möchtest du ein Ei zum Frühstück?,Would you like an egg for breakfast?
+de-a1-0290,frühstücken,v.,,to have breakfast,Am Sonntag frühstücke ich gern im Bett.,On Sunday I like to have breakfast in bed.
+de-a1-0291,der Fuß,n.,masculine · der · plural Füße,foot,Der linke Fuß tut mir weh.,My left foot hurts.
+de-a1-0292,der Fußball,n.,masculine · der,soccer,Spielt ihr gerne Fußball?,Do you like playing soccer?
+de-a1-0293,die Führung,n.,feminine · die,tour,Die Führung durch das Haus beginnt in 3 Minuten.,The tour of the house begins in 3 minutes.
+de-a1-0294,fünf,,,five,Die Antwort ist fünf.,The answer is five.
+de-a1-0295,fünf Minuten vor/nach eins (ein Uhr),,,five to/past one (one o’clock),Es ist fünf Minuten nach eins.,It is five minutes past one.
+de-a1-0296,fünfzehn,,,fifteen,Die Antwort ist fünfzehn.,The answer is fifteen.
+de-a1-0297,fünfzig,,,fifty,Die Antwort ist fünfzig.,The answer is fifty.
+de-a1-0298,für,prep.,,for,Das ist für Sie.,That's for you.
+de-a1-0299,der Garten,n.,masculine · der,garden,Wir haben leider keinen Garten.,Unfortunately we don't have a garden.
+de-a1-0300,der Gast,n.,masculine · der · plural Gäste,guest,Am Wochenende haben wir mehrere Gäste.,On the weekend we have several guests.
+de-a1-0301,geben,v.,,to give,Kannst du mir bitte deinen Kugelschreiber geben?,"Can you give me your pen, please?"
+de-a1-0302,geboren,adj.,,born,Ich bin in Zagreb geboren.,I was born in Zagreb.
+de-a1-0303,das Geburtsjahr,n.,neuter · das,birth year,"Das Geburtsjahr Ihres Sohnes, bitte?","Your son's year of birth, please?"
+de-a1-0304,der Geburtsort,n.,masculine · der,birthplace,Bitte schreiben Sie Ihren Geburtsort auf das Formular.,Please write your birthplace on the form.
+de-a1-0305,der Geburtstag,n.,masculine · der,birthday,Herzlichen Glückwunsch zum Geburtstag!,Best wishes on your birthday!
+de-a1-0306,gefallen,v.,,to appeal to; to be pleasing to,Das gefällt mir.,I like that.
+de-a1-0307,gegen,prep.,,into; against,Fahr nicht gegen den Baum!,Don’t drive into the tree!
+de-a1-0308,gehen,v.,,to work/function; to go; to be okay,"Ich weiß nicht, wie das geht.",I don’t know how it works./I don't know how to do that.
+de-a1-0309,gehören,v.,,to belong,Wem gehört das?,To whom does that belong?
+de-a1-0310,gelb,,,yellow,Meine Lieblingsfarbe ist Gelb.,My favorite color is yellow.
+de-a1-0311,das Geld,n.,neuter · das,money,Hast du noch Geld?,Do you still have money?
+de-a1-0312,das Gemüse,n.,neuter · das,vegetables,Gemüse brauchen wir auch noch.,We also need vegetables.
+de-a1-0313,das Gepäck,n.,neuter · das,luggage,Wollen Sie Ihr Gepäck mitnehmen?,Do you want to take your luggage with you?
+de-a1-0314,gerade,adv.,,just now; currently,Da kommt er ja gerade.,There he comes now.
+de-a1-0315,geradeaus,adv.,,straight on,Gehen Sie immer geradeaus!,Keep going straight on!
+de-a1-0316,gern(e),adv.,,gladly; to like doing something,Ich gehe gerne einkaufen.,I like to go shopping.
+de-a1-0317,das Geschenk,n.,neuter · das · plural Geschenke,present,Danke für das schöne Geschenk.,Thank you for the beautiful present.
+de-a1-0318,geschlossen,adj.,,closed,Die Bank hat am Samstag geschlossen.,The bank is closed on Saturday.
+de-a1-0319,die Geschwister,n.,plural · die,siblings,Ich habe leider keine Geschwister.,Unfortunately I have no siblings.
+de-a1-0320,das Geschäft,n.,neuter · das · plural Geschäfte,shop; business,Die Geschäfte schließen um 18.30 Uhr.,The shops close at 6:30 pm.
+de-a1-0321,das Gespräch,n.,neuter · das · plural Gespräche,conversation; discussion; call,Das Gespräch mit Frau Kunz ist um 14 Uhr.,The conversation with Ms Kunz is at 2 pm.
+de-a1-0322,gestern,adv.,,yesterday,Gestern war ich krank.,Yesterday I was ill.
+de-a1-0323,gestorben,v.,,died,Meine Frau ist gestern gestorben.,My wife died yesterday.
+de-a1-0324,das Getränk,n.,neuter · das · plural Getränke,drink,Mein Lieblingsgetränk ist Tomatensaft.,My favorite drink is tomato juice.
+de-a1-0325,das Gewicht,n.,neuter · das,weight,Bei „Gewicht“ schreibst du: 62 Kilo.,"For “weight”, write 62 kg."
+de-a1-0326,gewinnen,v.,,to win,Wer gewinnt das Spiel?,Who is winning the game?
+de-a1-0327,geöffnet,adj.,,open,Der Laden ist samstags bis 16.00 Uhr geöffnet.,The store is open on Saturdays until 4 p.m.
+de-a1-0328,das Glas,n.,neuter · das · plural Gläser,glass,Bitte noch ein Glas Wein!,"Another glass of wine, please!"
+de-a1-0329,glauben,v.,,to believe; to think,"Sie können mir glauben, es ist so.","You can believe me, it’s true."
+de-a1-0330,gleich,adj.,,same; in a moment,Das ist mir gleich.,It’s all the same to me.
+de-a1-0331,das Gleis,n.,neuter · das · plural Gleise,track; platform number,Der ICE nach Berlin hält heute an Gleis 12.,The ICE to Berlin is stopping on platform 12 today.
+de-a1-0332,das Glück,n.,neuter · das,luck,Viel Glück!,Good luck!
+de-a1-0333,glücklich,adj.,,happy,Meine Kinder sind glücklich verheiratet.,My children are happily married.
+de-a1-0334,der Glückwunsch,n.,masculine · der,congratulations,Herzlichen Glückwunsch zum Geburtstag.,Best wishes on your birthday!
+de-a1-0335,der Grad (Celsius),n.,masculine · der,degrees,Heute haben wir dreißig Grad.,Today it is thirty degrees.
+de-a1-0336,das Gramm,n.,neuter · das · plural Gramm,gram,Für den Kuchen brauche ich 200 Gramm Mehl.,I need 200 grams of flour for the cake.
+de-a1-0337,gratulieren,v.,,to congratulate,Ich gratuliere dir!,Congratulations!
+de-a1-0338,grau,,,gray,Meine Lieblingsfarbe ist Grau.,My favorite color is gray.
+de-a1-0339,grillen,v.,,to (have a) barbecue,Heute grillen wir im Garten.,Today we are having a barbecue in the garden.
+de-a1-0340,groß,adj.,,tall; large,Mein Bruder und ich sind gleich groß.,My brother and I are the same height.
+de-a1-0341,die Großeltern,n.,plural · die,grandparents,Meine Großeltern leben in Japan.,My grandparents live in Japan.
+de-a1-0342,die Großmutter,n.,feminine · die,grandmother (neutral/formal),Meine Großmutter heißt Eva.,My grandmother is called Eva.
+de-a1-0343,der Großvater,n.,masculine · der,grandfather (neutral/formal),Mein Großvater ist schon 80.,My grandfather is already 80.
+de-a1-0344,die Gruppe,n.,feminine · die · plural Gruppen,group,Die erste Gruppe beginnt um 16 Uhr.,The first group begins at 4 pm.
+de-a1-0345,der Gruß,n.,masculine · der · plural Grüße,regards,Viele Grüße an Ihre Frau.,Give my regards to your wife.
+de-a1-0346,die Größe,n.,feminine · die,size,Haben Sie das auch in Größe 40?,Do you also have that in size 40?
+de-a1-0347,grün,,,green,Meine Lieblingsfarbe ist Grün.,My favorite color is green.
+de-a1-0348,gut,adj.,,good,Das finde ich gut.,I think that’s good.
+de-a1-0349,gültig,adj.,,valid,Der Pass ist nicht mehr gültig.,The passport is no longer valid.
+de-a1-0350,günstig,adj.,,inexpensive; good value,Dort gibt es günstige Angebote.,There are cheap offers there.
+de-a1-0351,das Haar,n.,neuter · das · plural Haare,hair,Sie hat lange Haare.,She has long hair.
+de-a1-0352,haben,v.,,to have,Ich habe ein neues Auto.,I have a new car.
+de-a1-0353,halb drei,,,half past two,Der Film beginnt um halb drei.,The movie starts at half past two.
+de-a1-0354,die Halbpension,n.,feminine · die,half board,Möchten Sie Vollpension oder Halbpension?,Would you like full or half-board?
+de-a1-0355,die Halle,n.,feminine · die,hall,Wir treffen uns in Halle B,We'll meet in Hall B
+de-a1-0356,hallo,interj.,,hello,Hallo Inge! Wie geht’s?,Hello Inge! How are you?
+de-a1-0357,halten,v.,,to stop; to hold,Dieser Zug hält nicht in Rüdesheim.,This train does not stop in Rüdesheim.
+de-a1-0358,die Haltestelle,n.,feminine · die,(public transport) stop,An der nächsten Haltestelle müssen Sie aussteigen.,At the next stop you must alight.
+de-a1-0359,die Hand,n.,feminine · die · plural Hände,hand,Er gibt mir die Hand.,He shakes my hand.
+de-a1-0360,das Handy,n.,neuter · das · plural Handys,cell phone,In der Schule bitte die Handys ausmachen!,Please turn off your cell phones in school!
+de-a1-0361,das Haus,n.,neuter · das · plural Häuser,house; building; home,In welchem Haus wohnst du?,Which house do you live in?
+de-a1-0362,die Hausaufgabe,n.,feminine · die · plural Hausaufgaben,homework,Kannst du mir bei den Hausaufgaben helfen?,Can you help me with the homework?
+de-a1-0363,die Hausfrau,n.,feminine · die · plural Hausfrauen,housewife,"Die Hausfrau/der Hausmann wäscht, kocht und kauft ein.","The homemaker does the laundry, cooks and shops."
+de-a1-0364,der Hausmann,n.,masculine · der,househusband,"Die Hausfrau/der Hausmann wäscht, kocht und kauft ein.","The homemaker does the laundry, cooks and shops."
+de-a1-0365,die Heimat,n.,feminine · die,home,Ich komme aus der Schweiz. Das ist meine Heimat.,I come from Switzerland. This is my home.
+de-a1-0366,heiraten,v.,,to marry,Meine Schwester heiratet einen Japaner.,My sister is marrying a Japanese man.
+de-a1-0367,heißen,v.,,to be called,Ich heiße Charlotte Meier.,I’m called Charlotte Meier.
+de-a1-0368,helfen,v.,,to help,"Können Sie mir helfen, bitte?","Can you help me, please?"
+de-a1-0369,hell,adj.,,bright; light (adjective),Im Sommer ist es bis 21 Uhr hell.,In summer it is light until 9 pm.
+de-a1-0370,der Herbst,n.,masculine · der,fall,Im Herbst sind wir oft draußen.,We are often outdoors in fall.
+de-a1-0371,der Herd,n.,masculine · der,stove,In der neuen Küche fehlt noch der Herd.,The stove is still missing from the new kitchen.
+de-a1-0372,der Herr,n.,masculine · der · plural Herren,Mr; gentleman,"Guten Tag, Herr Sommer!","Good day, Mr Sommer!"
+de-a1-0373,herzlich,adj.,,warm; sincere,Herzlichen Glückwunsch!,Congratulations!
+de-a1-0374,heute,adv.,,today,Heute ist ein schöner Tag.,Today is a beautiful day.
+de-a1-0375,hier,adv.,,here,"Hier ist 06131-553221, Pamela Linke.","This is 06131-553221, Pamela Linke."
+de-a1-0376,die Hilfe,n.,feminine · die,help,Hilfe! Bitte helfen Sie mir!,Help! Please help me!
+de-a1-0377,hinten,adv.,,at/in the back,Die Tür zum Aussteigen ist hinten.,The exit door is at the back.
+de-a1-0378,das Hobby,n.,neuter · das · plural Hobbys,hobby,Meine Hobbys sind Wandern und Schwimmen.,My hobbies are hiking and swimming.
+de-a1-0379,hoch,adj.,,high,Der Mount Everest ist 8.880 Meter hoch.,"Mount Everest is 8,880 meters high."
+de-a1-0380,die Hochzeit,n.,feminine · die,wedding,Zur dieser Hochzeit kommen mehr als fünfzig Gäste.,More than fifty guests are coming to this wedding.
+de-a1-0381,holen,v.,,to fetch,Ich hole zwei Flaschen Wasser aus der Küche.,I’m fetching two bottles of water from the kitchen.
+de-a1-0382,das Hotel,n.,neuter · das · plural Hotels,hotel,Im Urlaub sind wir in einem Hotel am Meer.,On vacation we are in a hotel by the sea.
+de-a1-0383,der Hund,n.,masculine · der · plural Hunde,dog,Der Hund ist noch jung.,The dog is still young.
+de-a1-0384,hunderteins,,,one hundred and one,Die Zahl ist hunderteins.,The number is one hundred and one.
+de-a1-0385,der Hunger,n.,masculine · der,hunger,Ich habe Hunger! Wann ist das Essen fertig?,I'm hungry! When is the food ready?
+de-a1-0386,das Hähnchen,n.,neuter · das · plural Hähnchen,chicken,Ein Hähnchen mit Pommes bitte!,"Chicken with fries, please!"
+de-a1-0387,hören,v.,,to listen; to hear,Hör mal! Was ist das?,Listen! What is that?
+de-a1-0388,ich,pron.,,I,Ich heiße Veronika.,I’m called Veronika.
+de-a1-0389,ihm/ihr,pron.,,him/her,Gib ihr/ihm bitte das Buch.,Please give her/him the book.
+de-a1-0390,immer,adv.,,always,Frau Bast kommt immer zu spät.,Ms Bast is always late.
+de-a1-0391,in,prep.,,in; to,Ich wohne in Wiesbaden.,I live in Wiesbaden.
+de-a1-0392,die Information,n.,feminine · die · plural Informationen,information; information desk,"Wenn Sie Fragen haben, gehen Sie zur Information.","If you have questions, go to the information point."
+de-a1-0393,international,adj.,,international,"Unser Deutschkurs ist international: Silvana kommt aus Italien, Conchi aus Spanien, Yin aus China ...","Our German course is international: Silvana comes from Italy, Conchi from Spain, Yin from China, …"
+de-a1-0394,das Internet,n.,neuter · das,internet,Das findest du im Internet.,You will find that on the internet.
+de-a1-0395,ja,interj.,,yes,Sind Sie Herr Watanabe?<br>– Ja.,Are you Mr. Watanabe?<br>– Yes.
+de-a1-0396,die Jacke,n.,feminine · die · plural Jacken,jacket,Zieh dir eine Jacke an. Es ist kalt.,Put on a jacket. It's cold.
+de-a1-0397,das Jahr,n.,neuter · das · plural Jahre,year,Sie wohnt seit einem Jahr hier.,She has lived here for a year.
+de-a1-0398,der Januar,n.,masculine · der,January,Mein Geburtstag ist im Januar.,My birthday is in January.
+de-a1-0399,jed-,det.,,every,Blumen kannst du in jedem Bahnhof kaufen.,You can buy flowers at every station.
+de-a1-0400,jetzt,adv.,,now; at this moment,Jetzt machen wir eine Pause.,Now we will take a break.
+de-a1-0401,der Job,n.,masculine · der · plural Jobs,job,Jenny hat einen neuen Job bei der Post.,Jenny has a new job at the post office.
+de-a1-0402,der Jugendliche,n.,masculine · der · plural Jugendlichen,young person; teenager,Viele Jugendliche kaufen gern ein.,Many youths like shopping.
+de-a1-0403,der Juli,n.,masculine · der,July,Mein Geburtstag ist im Juli.,My birthday is in July.
+de-a1-0404,jung,adj.,,young,Claudia ist 21.<br>– Was? Noch so jung?,Claudia is 21.<br>– What? Still so young?
+de-a1-0405,der Junge,n.,masculine · der · plural Jungen,boy,Ich habe zwei Kinder. Einen Jungen und ein Mädchen.,I have two children. A boy and a girl.
+de-a1-0406,der Juni,n.,masculine · der,June,Mein Geburtstag ist im Juni.,My birthday is in June.
+de-a1-0407,der Kaffee,n.,masculine · der,coffee,Zum Frühstück trinke ich immer Kaffee.,For breakfast I always drink coffee.
+de-a1-0408,kaputt,adj.,,broken,Das Glas war teuer. Es geht sehr leicht kaputt.,The glass was expensive. It breaks very easily.
+de-a1-0409,die Karte,n.,feminine · die · plural Karten,card; menu,Ich schreibe meinen Bekannten eine Karte aus dem Urlaub.,I’ll write my acquaintances a card from vacation.
+de-a1-0410,die Kartoffel,n.,feminine · die · plural Kartoffeln,potato,Für Pommes frites braucht man Kartoffeln.,For fries you need potatoes.
+de-a1-0411,die Kasse,n.,feminine · die,till,Zahlen Sie bitte an der Kasse.,Please pay at the till.
+de-a1-0412,kein,det.,,no; not any; none,Es gibt keine Eintrittskarten mehr.,There are no more tickets.
+de-a1-0413,kennen,v.,,to know or be familiar with a person/place,"Kennen Sie diese Frau?<br>– Nein, leider nicht.","Do you know this woman?<br>- No, unfortunately not."
+de-a1-0414,kennenlernen,v.,,to get to know,Wir sind neu hier. Wir möchten Sie kennenlernen.,We're new here. We would like to get to know you.
+de-a1-0415,das Kilogramm,n.,neuter · das · plural Kilogramm,kilogram,Das Paket wiegt drei Kilogramm.,The package weighs three kilograms.
+de-a1-0416,der Kilometer,n.,masculine · der · plural Kilometer,kilometer,Der Bahnhof ist drei Kilometer entfernt.,The train station is three kilometers away.
+de-a1-0417,das Kind,n.,neuter · das · plural Kinder,child,Wie viele Kinder haben Sie?,How many children do you have?
+de-a1-0418,der Kindergarten,n.,masculine · der,kindergarten,Die kleine Laura geht schon in den Kindergarten.,Little Laura is already going to kindergarten.
+de-a1-0419,das Kino,n.,neuter · das · plural Kinos,movie theater,Wir sehen heute Abend im Kino einen schönen Film.,We’re watching a lovely movie this evening.
+de-a1-0420,der Kiosk,n.,masculine · der,kiosk,"Am Kiosk bekommen Sie Getränke, Zigaretten und Zeitungen.","At the kiosk you can get drinks, cigarettes, and newspapers."
+de-a1-0421,klar,interj.,,of course; naturally,Kommst du mit?<br>– Klar!,Are you coming with me?<br>– Sure!
+de-a1-0422,die Klasse,n.,feminine · die,class; group,In unserer Klasse sind fünfundzwanzig Schüler.,In our class there are twenty five pupils.
+de-a1-0423,die Kleidung,n.,feminine · die,clothes,"Wo finde ich Kleidung?<br>– Jacken im ersten, Jeans im zweiten Stock.","Where can I find clothes?<br>– Jackets on the first floor, jeans on the third floor."
+de-a1-0424,klein,adj.,,small,Eltville ist eine kleine Stadt am Rhein.,Eltville is a small town on the Rhine.
+de-a1-0425,kochen,v.,,to cook,Herr Georgi kann gut kochen.,Mr Georgi is good at cooking.
+de-a1-0426,der Koffer,n.,masculine · der · plural Koffer,suitcase,Ist das Ihr Koffer?,Is that your suitcase?
+de-a1-0427,der Kollege,n.,masculine · der · plural Kollegen,colleague,Wie heißt die neue Kollegin?,What’s the new colleague called?
+de-a1-0428,kommen,v.,,to come,Woher kommen Sie?<br>– Aus Frankreich.,Where are you from?<br>– From France.
+de-a1-0429,das Konto,n.,neuter · das,account,Das Geld überweisen wir am ersten März auf Ihr Konto.,We will transfer the money to your account on the first of March.
+de-a1-0430,der Kopf,n.,masculine · der,head,Mein Kopf tut weh!,My head hurts!
+de-a1-0431,kosten,v.,,to cost,Wie viel kostet das?<br>– 10 Euro.,How much does that cost?<br>– 10 euros.
+de-a1-0432,krank,adj.,,ill,"Ich kann heute nicht zur Arbeit kommen, ich bin krank und liege im Bett.","I can’t come to work today, I’m ill in bed."
+de-a1-0433,kriegen,v.,,to get,Ich kriege 15 Euro in der Stunde für meine Arbeit.,I get 15 euros an hour for my work.
+de-a1-0434,der Kuchen,n.,masculine · der,cake,Ich nehme ein Stück Kuchen.,I’ll have a piece of cake.
+de-a1-0435,der Kugelschreiber,n.,masculine · der,ball-point pen,Hast du einen Kugelschreiber für mich?,Do you have a pen I can borrow?
+de-a1-0436,kulturell,adj.,,cultural,Ich bin kulturell interessiert. Ich gehe oft ins Museum.,I am interested in culture. I often go to the museum.
+de-a1-0437,der Kunde,n.,masculine · der · plural Kunden,customer,"Einen Moment, bitte. Ich habe eine Kundin.","One moment, please. I am serving a customer."
+de-a1-0438,der Kurs,n.,masculine · der · plural Kurse,course,Der Deutschkurs geht bis zum Sommer.,The German course runs until summer.
+de-a1-0439,kurz,adj.,,short,Ricardo hat kurzes Haar.,Ricardo has short hair.
+de-a1-0440,können,v.,,to be able to,Ich kann Deutsch und Russisch.,I can speak German and Russian.
+de-a1-0441,die Küche,n.,feminine · die,kitchen,Der neue Herd kommt in die Küche.,The new stove goes in the kitchen.
+de-a1-0442,der Kühlschrank,n.,masculine · der,fridge,"Haben wir noch Milch?<br>– Ja, im Kühlschrank.","Do we still have milk?<br>– Yes, in the fridge."
+de-a1-0443,lachen,v.,,to laugh,Die Kinder lachen viel.,The children laugh a lot.
+de-a1-0444,der Laden,n.,masculine · der · plural Läden,shop; store,Im Buchladen können Sie Bücher kaufen.,In the bookshop you can buy books.
+de-a1-0445,das Land,n.,neuter · das · plural Länder,country,Italien ist ein schönes Land.,Italy is a beautiful country.
+de-a1-0446,lang,adj.,,long (adjective),Die Jeans ist zu lang.,The jeans are too long.
+de-a1-0447,lange,adv.,,long; for a long time,Wie lange fährt der Zug von Hamburg nach Berlin?,How long is the train journey from Hamburg to Berlin?
+de-a1-0448,langsam,adj.,,slow,Könnten Sie bitte etwas langsamer sprechen?,Can you please speak a little slower?
+de-a1-0449,laufen,v.,,to walk; to run,"Ich möchte nicht Auto fahren, ich möchte laufen.","I don’t want to go by car, I want to walk."
+de-a1-0450,laut,adj.,,loud,Nicht so laut! Das Baby schläft.,Not so loud! The baby is sleeping.
+de-a1-0451,leben,v.,,to live; to be alive,Sie lebt bei ihrer Schwester.,She lives at her sister‘s.
+de-a1-0452,das Leben,n.,neuter · das,life,Das Leben in diesem Land ist teuer.,Life in this country is expensive.
+de-a1-0453,die Lebensmittel,n.,plural · die,food; groceries,Lebensmittel bekommen Sie im Supermarkt.,You can get food from the supermarket.
+de-a1-0454,ledig,adj.,,single,Sind Sie verheiratet?<br>– Nein. Ledig.,Are you married?<br>- No. Single.
+de-a1-0455,legen,v.,,to put or lay horizontally,Legen Sie das Buch auf den Tisch.,Put the book on the table.
+de-a1-0456,der Lehrer,n.,masculine · der · plural Lehrer,teacher,Unsere Deutschlehrerin heißt Frau Müller.,Our German teacher is called Ms Müller.
+de-a1-0457,leicht,adj.,,light (weight); easy,Der Koffer ist leicht.,The suitcase is light.
+de-a1-0458,leider,adv.,,unfortunately,Leider kann ich nicht kommen. Ich muss zum Arzt.,Unfortunately I can't come. I have to go to the doctor.
+de-a1-0459,leise,adj.,,quiet; softly (low volume),Seid leise. Die anderen schlafen schon.,Be quiet. The others are already asleep.
+de-a1-0460,lernen,v.,,to learn,Wie lange lernen Sie schon Deutsch?,How long have you been learning German?
+de-a1-0461,lesen,v.,,to read,Ich lese ein Buch von García Márquez.,I’m reading a book by García Márquez.
+de-a1-0462,letzt-,adj.,,last,Morgen ist der letzte Kurstag.,Tomorrow is the last day of the course.
+de-a1-0463,die Leute,n.,plural · die,people,In der Disko sind viele Leute.,There are a lot of people at the disco.
+de-a1-0464,das Licht,n.,neuter · das,light (noun),Wo macht man hier das Licht an?,Where do you switch on the light here?
+de-a1-0465,lieb,adj.,,dear; kind,"Liebe Susanne, lieber Hans,","Dear Susanne, dear Hans,"
+de-a1-0466,lieben,v.,,to love,Ich liebe dich!,I love you!
+de-a1-0467,lieber,adv.,,rather; preferably,Sie fährt lieber mit der Bahn.,She prefers to travel by train.
+de-a1-0468,Lieblings-,adj.,,favorite,Mein Lieblingsfilm ist „Schwarze Augen“.,My favorite movie is “Dark Eyes”.
+de-a1-0469,das Lied,n.,neuter · das · plural Lieder,song,Welches ist dein Lieblingslied?,Which is your favorite song?
+de-a1-0470,liegen,v.,,to lie; to be located,Um neun Uhr liegt Judith noch im Bett.,At 9 am Judith is still (lying) in bed.
+de-a1-0471,links,adv.,,left,Gehen Sie die nächste Straße links.,Go down the next street on the left.
+de-a1-0472,der/das Liter,n.,m/n · der/das · plural Liter,liter,Ich kaufe zwei Liter Milch.,I'm buying two liters of milk.
+de-a1-0473,der Lkw,n.,masculine · der · plural Lkws,truck,Dieser Lastkraftwagen ist sehr groß.,That heavy goods vehicle is very large.
+de-a1-0474,das Lokal,n.,neuter · das,restaurant; bar,In unserer Straße gibt es ein neues Lokal.,There is a new pub on our street.
+de-a1-0475,lustig,adj.,,funny,Frau Mertens ist lustig. Sie lacht immer.,Ms. Mertens is funny. She's always laughing.
+de-a1-0476,die Lösung,n.,feminine · die · plural Lösungen,solution,Die Lösung ist ganz einfach.,The solution is quite simple.
+de-a1-0477,machen,v.,,to do; to make,Was machst du heute Abend?,What are you doing this evening?
+de-a1-0478,der Mai,n.,masculine · der,May,Mein Geburtstag ist im Mai.,My birthday is in May.
+de-a1-0479,man,pron.,,one; impersonal ‘you’,Hier darf man nicht rauchen.,You may not smoke here.
+de-a1-0480,der Mann,n.,masculine · der · plural Männer,man; husband,Mein Mann arbeitet bei der Polizei.,My husband works for the police.
+de-a1-0481,die Maschine,n.,feminine · die · plural Maschinen,machine (general),Die Waschmaschine ist günstig.,The washing machine is cheap.
+de-a1-0482,das Meer,n.,neuter · das,sea,Wir machen Urlaub am Meer.,We are holidaying by the sea.
+de-a1-0483,mehr,adv.,,more,Dieses Auto kostet 1.000 Euro mehr als das andere.,This car costs 1000 euros more than the other.
+de-a1-0484,mein,det.,,my,Mein Vater ist Arzt.,My father is a doctor.
+de-a1-0485,meist-,det.,,most,Die meisten Norddeutschen sind sehr groß.,Most northern Germans are very tall.
+de-a1-0486,der Mensch,n.,masculine · der · plural Menschen,person,Die Menschen sind hier anders als bei uns.,The people here are different from the people back home.
+de-a1-0487,der Meter,n.,masculine · der · plural Meter,meter,Der Tisch ist zwei Meter lang.,The table is two meters long.
+de-a1-0488,Mexiko,n.,neuter,Mexico,Sie kommt aus Mexiko.,She is from Mexico.
+de-a1-0489,die Miete,n.,feminine · die,rent,Die Miete für diese Wohnung ist 600 Euro.,The rent for this apartment is 600 euros.
+de-a1-0490,mieten,v.,,to rent,Ich möchte ein Auto mieten.,I would like to rent a car.
+de-a1-0491,die Milch,n.,feminine · die,milk,Die Milch steht im Kühlschrank.,The milk is in the fridge.
+de-a1-0492,die Milliarde,n.,feminine · die · plural Milliarden,one billion,Eine Milliarde ist tausend Millionen.,One billion is one thousand million.
+de-a1-0493,die Million,n.,feminine · die · plural Millionen,one million,Die Stadt hat eine Million Einwohner.,The city has one million residents.
+de-a1-0494,die Minute,n.,feminine · die · plural Minuten,minute,Der Bus kommt in zehn Minuten.,The bus will arrive in ten minutes.
+de-a1-0495,mit,prep.,,with,Trinken Sie den Kaffee mit Milch?,Do you take milk with your coffee?
+de-a1-0496,mitbringen,v.,,to bring along,Ich gehe einkaufen. Soll ich dir was mitbringen?,I am going shopping. Do you want me to bring you something?
+de-a1-0497,mitkommen,v.,,to come with,Ich gehe ins Kino. Kommst du mit?,I am going to the movie theater. Are you coming with me?
+de-a1-0498,mitmachen,v.,,to join in,Warum macht ihr nicht mit?,Why don‘t you join in?
+de-a1-0499,mitnehmen,v.,,to take with,Nehmen wir meine Schwester ins Kino mit?,Are we taking my sister with us to the movie theater?
+de-a1-0500,der Mittag,n.,masculine · der,midday,Wir essen um zwölf Uhr zu Mittag.,We have lunch at twelve.
+de-a1-0501,die Mitte,n.,feminine · die,middle,Der Lehrer steht in der Mitte des Klassenzimmers.,The teacher stands in the middle of the classroom.
+de-a1-0502,der Mittwoch,n.,masculine · der,Wednesday,Am Mittwoch habe ich frei.,I have Wednesday off.
+de-a1-0503,der Moment,n.,masculine · der,moment,Moment mal bitte!,"Just a moment, please!"
+de-a1-0504,der Montag,n.,masculine · der,Monday,Am Montag habe ich frei.,I have Monday off.
+de-a1-0505,morgen,adv.,,tomorrow,Morgen beginnt die Schule um 10 Uhr.,Tomorrow school begins at 10 am.
+de-a1-0506,der Morgen,n.,masculine · der,morning,Am Morgen trinke ich Kaffee.,I drink coffee in the morning.
+de-a1-0507,der Mund,n.,masculine · der,mouth,Öffnen Sie den Mund.,Open your mouth.
+de-a1-0508,die Mutter,n.,feminine · die · plural Mütter,mother,Frau Berghäuser ist die Mutter von Michaela.,Ms Berghäuser is the mother of Michaela.
+de-a1-0509,das Mädchen,n.,neuter · das · plural Mädchen,girl,Familie Kurz bekommt ein Baby.<br>– Junge oder Mädchen?,The Kurz family are expecting a baby.<br>– Boy or girl?
+de-a1-0510,männlich,adj.,,male,Kreuzen Sie bitte an: „weiblich“ oder „männlich“.,Please tick “female” or “male”.
+de-a1-0511,der März,n.,masculine · der,March,Mein Geburtstag ist im März.,My birthday is in March.
+de-a1-0512,die Möbel,n.,plural · die,furniture,Sind die Möbel neu?,Is the furniture new?
+de-a1-0513,möchten,v.,,would like to,Was möchten Sie trinken?,What would you like to drink?
+de-a1-0514,mögen,v.,,to like,Magst du Kaffee oder Tee?,Do you like coffee or tea?
+de-a1-0515,möglich,adj.,,possible,Mit dieser Fahrkarte ist die Fahrt ab 9 Uhr möglich.,"With this ticket, it is possible to travel after 9 am."
+de-a1-0516,müde,adj.,,tired,Ich bin müde. Ich gehe schlafen.,I'm tired. I'm going to sleep.
+de-a1-0517,müssen,v.,,to have to,Ich muss jeden Tag von 8 Uhr bis 18 Uhr arbeiten.,I have to work from 8 am to 6 pm every day.
+de-a1-0518,nach,prep.,,to (somewhere); after; past (time),Ich gehe jetzt nach Hause.,I’m going home now.
+de-a1-0519,der Nachmittag,n.,masculine · der · plural Nachmittage,afternoon,Am Nachmittag lerne ich Deutsch.,I study German in the afternoon.
+de-a1-0520,die Nacht,n.,feminine · die · plural Nachte,night,In der Nacht ist es ruhig.,It is quiet at night.
+de-a1-0521,der Name,n.,masculine · der · plural Namen,name,Mein Name ist Thomas Schmidt.,My name is Thomas Schmidt.
+de-a1-0522,nehmen,v.,,to have (food/drink); to take,Heute gibt es Hähnchen. Das nehme ich.,Today we have chicken. I'll take that.
+de-a1-0523,nein,interj.,,no,"Fährst du auch nach München?<br>– Nein, ich habe keine Zeit.","Are you also going to Munich?<br>– No, I don't have time."
+de-a1-0524,neu,adj.,,new,Ich bin der neue Kollege.,I am the new colleague.
+de-a1-0525,neun,,,nine,Die Antwort ist neun.,The answer is nine.
+de-a1-0526,neunzehn,,,nineteen,Die Antwort ist neunzehn.,The answer is nineteen.
+de-a1-0527,neunzehnhundertneunundneunzig,,,nineteen ninety-nine,Er wurde neunzehnhundertneunundneunzig geboren.,He was born in nineteen ninety-nine.
+de-a1-0528,neunzig,,,ninety,Die Antwort ist neunzig.,The answer is ninety.
+de-a1-0529,nicht,part.,,not,Das stimmt nicht.,That’s not right.
+de-a1-0530,nichts,pron.,,nothing,Das macht nichts.,"It's okay, don't worry."
+de-a1-0531,nie,adv.,,never,Er kommt nie pünktlich.,He is never on time.
+de-a1-0532,noch,adv.,,another; still,Vielleicht kommt er noch.,Perhaps he will still come.
+de-a1-0533,der Norden,n.,masculine · der,north,Wir fahren in den Norden.,We are traveling north.
+de-a1-0534,normal,adj.,,normal,75 kg. Sein Gewicht ist normal.,75kg. His weight is normal.
+de-a1-0535,der November,n.,masculine · der,November,Mein Geburtstag ist im November.,My birthday is in November.
+de-a1-0536,die Nummer,n.,feminine · die · plural Nummern,number,Sie haben Zimmer Nummer zwölf.,You have room number twelve.
+de-a1-0537,nur,part.,,only,Ich möchte nur ein Glas Wasser.,I only want a glass of water.
+de-a1-0538,nächst-,adj.,,next,Sehen wir uns nächste Woche?,Are we seeing each other next week?
+de-a1-0539,oben,adv.,,upstairs,Ich wohne oben.,I live upstairs.
+de-a1-0540,das Obst,n.,neuter · das,fruit,Im Sommer ist das Obst billig.,In summer fruit is cheap.
+de-a1-0541,oder,conj.,,or,Wann können Sie kommen – heute oder morgen?,When can you come – today or tomorrow?
+de-a1-0542,oft,adv.,,often,Petra treffe ich oft.,I often meet Petra.
+de-a1-0543,ohne,prep.,,without,Ohne Geld kann er nichts kaufen.,Without money he can’t buy anything.
+de-a1-0544,der Oktober,n.,masculine · der,October,Mein Geburtstag ist im Oktober.,My birthday is in October.
+de-a1-0545,die Oma,n.,feminine · die · plural Omas,grandma,Meine Oma ist schon tot.,My grandmother is already dead.
+de-a1-0546,der Opa,n.,masculine · der · plural Opas,grandad; grandpa,Mein Opa heißt Hans.,My grandfather is called Hans.
+de-a1-0547,die Ordnung,n.,feminine · die,order; tidiness; all right,Das ist in Ordnung.,That is in order/acceptable/fine.
+de-a1-0548,der Ort,n.,masculine · der · plural Orte,location; place,Der Ort liegt am Meer.,That place is by the sea.
+de-a1-0549,der Osten,n.,masculine · der,east,Wir fahren in den Osten.,We are traveling east.
+de-a1-0550,das Papier,n.,neuter · das,paper,Hier sind Papier und Bleistift.,Here is a pencil and paper.
+de-a1-0551,die Papiere,n.,plural · die,papers,Haben Sie Ihre Papiere dabei?,Do you have your papers with you?
+de-a1-0552,der Partner,n.,masculine · der · plural Partner,(male) partner,Sie ist meine Partnerin.,She is my partner.
+de-a1-0553,die Partnerin,n.,feminine · die · plural Partnerinnen,(female) partner,Sie ist meine Partnerin.,She is my partner.
+de-a1-0554,die Party,n.,feminine · die,party,Heute Abend machen wir eine Party.,This evening we are having a party.
+de-a1-0555,der Pass,n.,masculine · der · plural Pässe,passport,Im Hotel brauchst du deinen Pass.,In the hotel you need your passport.
+de-a1-0556,die Pause,n.,feminine · die · plural Pausen,break,Von 12.00 bis 12.30 Uhr haben wir Mittagspause.,We have a lunch break from 12:00 p.m. to 12:30 p.m.
+de-a1-0557,das Pfund,n.,neuter · das · plural Pfunde,pound,Sie kauft ein Pfund Äpfel.,She buys a pound of apples.
+de-a1-0558,der Plan,n.,masculine · der · plural Pläne,map; plan,Ich kaufe mir einen Stadtplan.,I will buy myself a map of the town.
+de-a1-0559,der Platz,n.,masculine · der · plural Plätze,seat; square,"Tut mir leid, der Platz ist besetzt.","I’m sorry, this seat is taken."
+de-a1-0560,die Polizei,n.,feminine · die,police,Holen Sie die Polizei!,Call the police!
+de-a1-0561,die Pommes frites,n.,plural · die,fries,Die Kinder essen Hähnchen mit Pommes frites.,The children are eating chicken and fries.
+de-a1-0562,die Post,n.,feminine · die,post office; post; mail,"Wo ist die Post, bitte?","Where is the post office, please?"
+de-a1-0563,die Postleitzahl,n.,feminine · die,ZIP code,Wie ist Ihre Postleitzahl?,What is your ZIP code?
+de-a1-0564,das Praktikum,n.,neuter · das,internship,Ich mache ein Praktikum bei Siemens.,I am doing an internship at Siemens.
+de-a1-0565,die Praxis,n.,feminine · die,practice,Die Praxis ist ab acht Uhr geöffnet.,The practice is open from 8 am.
+de-a1-0566,der Preis,n.,masculine · der · plural Preise,price,Die Preise sind hoch.,The prices are high.
+de-a1-0567,das Problem,n.,neuter · das · plural Probleme,problem,Mein Problem ist die Sprache.,My problem is the language.
+de-a1-0568,der Prospekt,n.,masculine · der · plural Prospekte,brochure,Bitte schicken Sie mir einen Prospekt von Ihrem Hotel.,Please send me a brochure for your hotel.
+de-a1-0569,das Prozent,n.,neuter · das · plural Prozente,percent,Das Getränk hat fünf Prozent Alkohol.,The drink contains five percent alcohol.
+de-a1-0570,die Prüfung,n.,feminine · die,examination,Die Prüfung ist am Montag um 8.00 Uhr.,The exam is on Monday at 8:00 a.m.
+de-a1-0571,pünktlich,adj.,,punctual; on time,Der Bus fährt pünktlich um acht Uhr.,The bus leaves at 8 am sharp.
+de-a1-0572,der Quadratmeter,n.,masculine · der · plural Quadratmeter,square meter,Das Zimmer ist zwanzig Quadratmeter groß.,The room is twenty square meters.
+de-a1-0573,Rad fahren,v.,,to cycle,Das Kind kann schon Rad fahren.,The child can already ride a bike.
+de-a1-0574,rauchen,v.,,to smoke,Ich rauche nicht.,I don’t smoke.
+de-a1-0575,der Raum,n.,masculine · der · plural Räume,room; space,Der Unterricht ist in Raum 332.,The class is in room 332.
+de-a1-0576,die Rechnung,n.,feminine · die · plural Rechnungen,bill,"Die Rechnung, bitte.","The check, please."
+de-a1-0577,rechts,adv.,,right,Die Schillerstraße ist hier rechts.,Schillerstraße is on the right here.
+de-a1-0578,der Regen,n.,masculine · der,rain,Bei diesem Regen gehe ich nicht raus.,I’m not going out in this rain.
+de-a1-0579,regnen,v.,,to rain,Heute regnet es.,Today it’s raining.
+de-a1-0580,der Reis,n.,masculine · der,rice,Ich esse gern Reis.,I like eating rice.
+de-a1-0581,die Reise,n.,feminine · die,journey; trip,Wir machen eine Reise nach Österreich.,We are going on a trip to Austria.
+de-a1-0582,das Reisebüro,n.,neuter · das · plural Reisebüros,travel agency,Mein Mann arbeitet im Reisebüro.,My husband works at a travel agency.
+de-a1-0583,der Reiseführer,n.,masculine · der,travel guide; tour guide,Ich kaufe mir einen Reiseführer von Berlin.,I will buy myself a travel guide for Berlin.
+de-a1-0584,reisen,v.,,to travel,Ich reise gern.,I like to travel.
+de-a1-0585,die Reparatur,n.,feminine · die,repair,Die Reparatur ist sehr teuer.,The repair is very expensive.
+de-a1-0586,reparieren,v.,,to repair,Er hat das Fahrrad repariert.,He repaired the bicycle.
+de-a1-0587,das Restaurant,n.,neuter · das · plural Restaurants,restaurant,Wir essen heute in einem Restaurant.,We are eating at a restaurant today.
+de-a1-0588,die Rezeption,n.,feminine · die · plural Rezeptionen,reception; front desk,Fragen Sie bitte im Hotel an der Rezeption.,Please ask at the hotel reception.
+de-a1-0589,richtig,adj.,,right; correct,Habe ich das richtig verstanden?,Have I understood that correctly?
+de-a1-0590,riechen,v.,,to smell,Dieser Wein riecht gut.,This wine smells good.
+de-a1-0591,rot,,,red,Meine Lieblingsfarbe ist Rot.,My favorite color is red.
+de-a1-0592,ruhig,adj.,,quiet; calm,Ich möchte ein ruhiges Zimmer.,I would like a quiet room.
+de-a1-0593,die S-Bahn,n.,feminine · die,commuter train,Ich nehme lieber die S-Bahn.,I prefer to take the commuter train.
+de-a1-0594,der Saft,n.,masculine · der,juice,Möchtest du einen Apfelsaft?,Would you like an apple juice?
+de-a1-0595,sagen,v.,,to say; to tell,"Sag mal, wie geht es dir denn?","Tell me, how’s it going?"
+de-a1-0596,der Salat,n.,masculine · der,salad,Wie schmeckt dir der Salat?,How does the salad taste?
+de-a1-0597,das Salz,n.,neuter · das,salt,"Herr Ober, kann ich bitte Salz haben?","Waiter, can I have some salt please?"
+de-a1-0598,der Samstag/Sonnabend,n.,masculine · der,Saturday,„Samstag/Sonnabend“ bezeichnet denselben Wochentag.,“Samstag/Sonnabend” denotes the same day of the week.
+de-a1-0599,der Satz,n.,masculine · der · plural Sätze,sentence,Dieser Satz ist sehr einfach.,This sentence is very simple.
+de-a1-0600,der Schalter,n.,masculine · der,counter,Gehen Sie bitte zum Schalter drei!,Please go to counter 3!
+de-a1-0601,scheinen,v.,,to shine,Die Sonne scheint.,The sun is shining.
+de-a1-0602,schicken,v.,,to send,Bitte schicken Sie mir eine E-Mail.,Please send me an email.
+de-a1-0603,das Schild,n.,neuter · das · plural Schilder,sign,Haben Sie nicht das Schild gesehen?,Did you not see the sign?
+de-a1-0604,der Schinken,n.,masculine · der · plural Schinken,ham,Ich möchte gern ein Schinkenbrot.,I would like a ham roll.
+de-a1-0605,schlafen,v.,,to sleep,Ich schlafe meistens acht Stunden.,I usually sleep for eight hours.
+de-a1-0606,schlecht,adj.,,bad; unwell,Mir ist schlecht!,I feel sick!
+de-a1-0607,schließen,v.,,to close,"Bitte, schließen Sie die Tür.",Please close the door.
+de-a1-0608,der Schluss,n.,masculine · der,end; conclusion; finish,Ich muss jetzt Schluss machen.,I need to finish/wrap up now.
+de-a1-0609,der Schlüssel,n.,masculine · der · plural Schlüssel,key,Ich gebe Ihnen noch den Zimmerschlüssel.,I’ll give you the room key as well.
+de-a1-0610,schmecken,v.,,to taste,Schmeckt das gut?,Does that taste good?
+de-a1-0611,schnell,adj.,,quick; fast,Er fährt schnell.,He drives fast.
+de-a1-0612,schon,adv.,,already,Ist das Essen schon fertig?,Is the food done already?
+de-a1-0613,der Schrank,n.,masculine · der · plural Schränke,cupboard,Die Gläser stehen im Schrank.,The glasses are in the cupboard.
+de-a1-0614,schreiben,v.,,to write,Er schreibt jeden Tag fünfzig E-Mails.,He writes fifty emails a day.
+de-a1-0615,der Schuh,n.,masculine · der · plural Schuhe,shoe,Zieh die Schuhe aus!,Take your shoes off!
+de-a1-0616,die Schule,n.,feminine · die,school,Meine Tochter geht schon in die Schule.,My daughter is already going to school.
+de-a1-0617,schwarz,,,black,Meine Lieblingsfarbe ist Schwarz.,My favorite color is black.
+de-a1-0618,schwer,adj.,,heavy; difficult,Ist Ihr Gepäck sehr schwer?,Is your luggage very heavy?
+de-a1-0619,die Schwester,n.,feminine · die · plural Schwestern,sister,Meine Schwester kommt am Dienstag.,My sister is coming on Tuesday.
+de-a1-0620,das Schwimmbad,n.,neuter · das,swimming pool,Kommst du mit ins Schwimmbad?,Are you coming to the swimming pool with us?
+de-a1-0621,schwimmen,v.,,to swim,Ich schwimme jeden Tag einen Kilometer.,I swim a kilometer every day.
+de-a1-0622,schön,adj.,,lovely; beautiful,Schönen Urlaub!,Have a lovely vacation!
+de-a1-0623,der Schüler,n.,masculine · der · plural Schüler,pupil,In meinem Kurs sind acht Schülerinnen und fünf Schüler.,There are eight female and five male students in my course.
+de-a1-0624,sechs,,,six,Die Antwort ist sechs.,The answer is six.
+de-a1-0625,sechzehn,,,sixteen,Die Antwort ist sechzehn.,The answer is sixteen.
+de-a1-0626,sechzig,,,sixty,Die Antwort ist sechzig.,The answer is sixty.
+de-a1-0627,der See,n.,masculine · der,lake,"Komm, wir fahren zum Starnberger See.","Come, we’re going to Starnberg lake."
+de-a1-0628,sehen,v.,,to see,Ich kann dich nicht sehen.,I can’t see you.
+de-a1-0629,die Sehenswürdigkeit,n.,feminine · die · plural Sehenswürdigkeiten,sight; tourist attraction,Welche Sehenswürdigkeiten gibt es in Frankfurt?,Which sights are there to see in Frankfurt?
+de-a1-0630,sehr,adv.,,very,Danke sehr!,Thank you very much!
+de-a1-0631,sein,v.,,to be,Herr Müller ist in seinem Zimmer.,Mr. Müller is in his room.
+de-a1-0632,seit,prep.,,for (an amount of time),Ich wohne seit drei Jahren in Köln.,I have lived in Cologne for three years.
+de-a1-0633,die Sekunde,n.,feminine · die · plural Sekunden,second (unit of time),Warten Sie bitte eine Sekunde.,Please wait a second.
+de-a1-0634,selbstständig,adj.,,independent,Er ist selbstständig.,He is independent.
+de-a1-0635,der September,n.,masculine · der,September,Mein Geburtstag ist im September.,My birthday is in September.
+de-a1-0636,sich,pron.,,oneself,Sie müssen sich erst anmelden.,You have to register first.
+de-a1-0637,sich anmelden,v.,,to register; to sign up,Wo kann ich mich anmelden?,Where can I register or sign up?
+de-a1-0638,sich kümmern,v.,,to look after,Jede Mutter kümmert sich um ihre kleinen Kinder.,Every mother looks after her little children.
+de-a1-0639,sie,pron.,,she,Wie heißt sie?,What is she called?
+de-a1-0640,Sie,pron.,,you (polite),"Wie heißen Sie, bitte?","What is your name, please?"
+de-a1-0641,sieben,,,seven,Die Antwort ist sieben.,The answer is seven.
+de-a1-0642,siebzehn,,,seventeen,Die Antwort ist siebzehn.,The answer is seventeen.
+de-a1-0643,siebzig,,,seventy,Die Antwort ist siebzig.,The answer is seventy.
+de-a1-0644,sitzen,v.,,to sit,Wo sitzen Sie?,Where are you sitting?
+de-a1-0645,so,adv.,,like this; so; as,Sie müssen das so machen!,You must do it like this!
+de-a1-0646,das Sofa,n.,neuter · das,sofa,Das Sofa ist neu.,The sofa is new.
+de-a1-0647,sofort,adv.,,immediately,Bitte antworten Sie sofort.,Please answer immediately.
+de-a1-0648,der Sohn,n.,masculine · der · plural Söhne,son,"Das ist Hans, mein Sohn.","That is Hans, my son."
+de-a1-0649,sollen,v.,,should,Soll ich kommen?,Should I come?
+de-a1-0650,der Sommer,n.,masculine · der,summer,Im Sommer sind wir oft draußen.,We are often outdoors in summer.
+de-a1-0651,die Sonne,n.,feminine · die,sun,Die Sonne scheint.,The sun is shining.
+de-a1-0652,der Sonntag,n.,masculine · der,Sunday,Am Sonntag habe ich frei.,I have Sunday off.
+de-a1-0653,die Speisekarte,n.,feminine · die,menu,"Bringen Sie mir die Speisekarte, bitte.","Bring me the menu, please."
+de-a1-0654,spielen,v.,,to play,Die Kinder spielen draußen.,The children are playing outside.
+de-a1-0655,der Sport,n.,masculine · der,sport,Ich mache viel Sport.,I do a lot of sport.
+de-a1-0656,die Sprache,n.,feminine · die · plural Sprachen,language,Welche Sprachen sprichst du?,Which languages do you speak?
+de-a1-0657,sprechen,v.,,to speak,Kann ich (mit) Herrn Klein sprechen?,Can I speak with Mr Klein?
+de-a1-0658,spät,adj.,,late,"Es ist schon spät, ich muss gehen.","It is already late, I need to go."
+de-a1-0659,später,adv.,,later,Das können wir später machen.,We can do that later.
+de-a1-0660,die Stadt,n.,feminine · die · plural Städte,town; city,Heidelberg ist eine alte Stadt.,Heidelberg is an old town.
+de-a1-0661,stehen,v.,,to stand; to be written; to be located,"Ich glaube es nicht, aber es steht in der Zeitung.","I don’t believe it, but it says so in the paper."
+de-a1-0662,die Stelle,n.,feminine · die · plural Stellen,place; job; position,Ich habe eine neue Stelle.,I have a new job.
+de-a1-0663,stellen,v.,,to put or place upright,Stell die Tasche rechts in die Ecke!,Put your bag on the right in the corner.
+de-a1-0664,der Stock,n.,masculine · der,floor (of a building),Unsere Wohnung liegt im ersten Stock.,Our apartment is on the second floor.
+de-a1-0665,die Straße,n.,feminine · die · plural Straßen,street,In welcher Straße wohnen Sie?,Which street do you live on?
+de-a1-0666,die Straßenbahn,n.,feminine · die,tram,Wo fährt die Straßenbahn ab?,From where does the tram depart?
+de-a1-0667,der Student,n.,masculine · der · plural Studenten,student,Ich bin Studentin.,I am a student.
+de-a1-0668,studieren,v.,,to study,Ich studiere in Mainz.,I study in Mainz.
+de-a1-0669,das Studium,n.,neuter · das,degree course,Das Studium beginnt im Oktober.,The degree course begins in October.
+de-a1-0670,die Stunde,n.,feminine · die · plural Stunden,hour,Ich bin in einer Stunde zurück.,I'll be back in an hour.
+de-a1-0671,suchen,v.,,to look for; to search for,Suchst du etwas?,Are you looking for something?
+de-a1-0672,der Süden,n.,masculine · der,south,Wir fahren in den Süden.,We are traveling south.
+de-a1-0673,der Tag,n.,masculine · der · plural Tage,day,Heute ist ein schöner Tag.,Today is a beautiful day.
+de-a1-0674,tanzen,v.,,to dance,Tanzen Sie gern?,Do you like to dance?
+de-a1-0675,die Tasche,n.,feminine · die · plural Taschen,bag,Ich habe die Schlüssel in der Tasche.,I have the keys in my bag.
+de-a1-0676,das Taxi,n.,neuter · das · plural Taxis,taxi,Es gibt heute keinen Bus mehr. Er fährt mit dem Taxi.,There are no more buses today. He takes a taxi.
+de-a1-0677,der Tee,n.,masculine · der,tea,Ich trinke morgens immer Tee.,I always drink tea in the morning.
+de-a1-0678,der Teil,n.,masculine · der · plural Teile,part,Lies bitte auch den zweiten Teil.,Please also read the second part.
+de-a1-0679,das Telefon,n.,neuter · das,telephone,Haben Sie Telefon?,Do you have a telephone?
+de-a1-0680,telefonieren,v.,,to telephone,Darf ich mal telefonieren?,May I make a phone call?
+de-a1-0681,der Termin,n.,masculine · der · plural Termine,appointment,Am besten machen wir sofort einen Termin.,It's best to make an appointment immediately.
+de-a1-0682,der Test,n.,masculine · der,test,Der Test war einfach.,The test was simple.
+de-a1-0683,teuer,adj.,,expensive,Das ist mir zu teuer.,That is too expensive for me.
+de-a1-0684,der Text,n.,masculine · der · plural Texte,text,Lesen Sie bitte diesen Text.,Please read this text.
+de-a1-0685,das Thema,n.,neuter · das,topic,Wir sprechen heute über das Thema „Essen und Trinken“.,Today we are talking about the topic “Food and Drink”.
+de-a1-0686,das Ticket,n.,neuter · das · plural Tickets,ticket,Wie viel kostet das Ticket?,How much does the ticket cost?
+de-a1-0687,der Tisch,n.,masculine · der · plural Tische,table,Die Fotos liegen auf dem Tisch.,The photos are on the table.
+de-a1-0688,die Tochter,n.,feminine · die · plural Töchter,daughter,Das ist meine Tochter Katharina.,That is my daughter Katharina.
+de-a1-0689,die Toilette,n.,feminine · die · plural Toiletteen,toilet,"Wo ist die Toilette, bitte?","Where is the toilet, please?"
+de-a1-0690,die Tomate,n.,feminine · die · plural Tomaten,tomato,Die Tomate ist noch grün.,The tomato is still green.
+de-a1-0691,tot,adj.,,dead,Sein Vater ist schon lange tot.,His father has been dead for a long time.
+de-a1-0692,die Treppe,n.,feminine · die · plural Treppen,stairs,Die Toilette? Die Treppe hoch und dann links.,The toilet? Up the stairs and then left.
+de-a1-0693,trinken,v.,,to drink,Möchtest du etwas trinken?,Would you like something to drink?
+de-a1-0694,tschüss,interj.,,bye,Junge Leute sagen meistens „tschüss!“ und nicht „auf Wiedersehen“.,Young people mostly say “tschüss!” and not “auf Wiedersehen”.
+de-a1-0695,tun,v.,,to do,Ich habe noch etwas zu tun.,I still have something to do.
+de-a1-0696,die Türkei,n.,feminine · die,Turkey,Sie kommt aus der Türkei.,She is from Turkey.
+de-a1-0697,die Uhr,n.,feminine · die,clock/watch; o'clock,Es ist vier Uhr.,It is four o’clock.
+de-a1-0698,um,prep.,,at; around,Er kommt um sieben Uhr.,He is coming at seven o’clock.
+de-a1-0699,umziehen,v.,,to move (residence),Nächsten Monat ziehen wir um.,Next month we are moving.
+de-a1-0700,und,conj.,,and,Peter und Helmut sind meine Söhne.,Peter and Helmut are my sons.
+de-a1-0701,unser-,det.,,our,Das ist unsere Lehrerin.,That is our teacher.
+de-a1-0702,unten,adv.,,at the bottom,Er wohnt ganz unten im Haus.,He lives right at the bottom of the house.
+de-a1-0703,unter,prep.,,below,Unter uns wohnt eine Familie mit drei Kindern.,Below us lives a family with three children.
+de-a1-0704,der Unterricht,n.,masculine · der,lesson; class instruction,Wir haben Unterricht von 8.00 bis 12.00 Uhr.,We have classes from 8 a.m. to 12 p.m.
+de-a1-0705,unterschreiben,v.,,to sign,Wo muss ich unterschreiben?,Where do I need to sign?
+de-a1-0706,die Unterschrift,n.,feminine · die,signature,Hier fehlt noch Ihre Unterschrift.,Your signature is missing here.
+de-a1-0707,der Urlaub,n.,masculine · der,vacation,Ich nehme im September Urlaub.,I’m taking vacation in September.
+de-a1-0708,usw.,phrase,,etc.,"Wir brauchen Brot, Milch, Käse usw.","We need bread, milk, cheese, etc."
+de-a1-0709,der Vater,n.,masculine · der · plural Väter,father,Mein Vater ist Arbeiter.,My father is a worker.
+de-a1-0710,verboten,adj.,,forbidden,Hier ist Rauchen verboten.,Smoking is forbidden here.
+de-a1-0711,verdienen,v.,,to earn,Ich verdiene 1.500 Euro im Monat.,"I earn 1,500 euros per month."
+de-a1-0712,der Verein,n.,masculine · der,club,Es gibt einen neuen Sportverein in der Stadt.,There is a new sports club in the town.
+de-a1-0713,verheiratet,adj.,,married,Ich bin verheiratet und habe drei Kinder.,I am married and have three children.
+de-a1-0714,verkaufen,v.,,to sell,Er verkauft sein altes Auto.,He is selling his old car.
+de-a1-0715,der Verkäufer,n.,masculine · der · plural Verkäufer,salesperson,Meine Mutter ist Verkäuferin im Kaufhaus.,My mother is a saleswoman in a department store.
+de-a1-0716,vermieten,v.,,to rent out,Die Wohnung ist schon vermietet.,The apartment is already rented out.
+de-a1-0717,der Vermieter,n.,masculine · der,landlord,Unser Vermieter heißt Huber. Er wohnt auch hier.,Our landlord is called Huber. He lives here too.
+de-a1-0718,verstehen,v.,,to understand,Können Sie mich verstehen?,Can you understand me?
+de-a1-0719,der Verwandte,n.,masculine · der · plural Verwandten,relative,Peter besucht seine Verwandten in Polen.,Peter visits his relatives in Poland.
+de-a1-0720,viel,adv.,,a lot,Hier regnet es viel.,It rains a lot here.
+de-a1-0721,vielleicht,adv.,,perhaps; maybe,Ich komme vielleicht mit dem Bus.,I may come by bus.
+de-a1-0722,vier,,,four,Die Antwort ist vier.,The answer is four.
+de-a1-0723,vier Grad über Null/plus vier Grad,phrase,,four degrees above zero/plus four degrees,Heute sind es plus vier Grad.,It is plus four degrees today.
+de-a1-0724,vierte,,,fourth,Heute ist der vierte Mai.,Today is May fourth.
+de-a1-0725,Viertel vor/nach zwei,phrase,,quarter to/past two,„Viertel vor/nach zwei“ ist eine umgangssprachliche Zeitangabe.,“Viertel vor/nach zwei” is a colloquial way of telling time.
+de-a1-0726,vierundzwanzig Uhr,,,time: 24:00,Der Zug kommt um vierundzwanzig Uhr an.,The train arrives at midnight.
+de-a1-0727,vierzehn,,,fourteen,Die Antwort ist vierzehn.,The answer is fourteen.
+de-a1-0728,vierzig,,,forty,Die Antwort ist vierzig.,The answer is forty.
+de-a1-0729,von,prep.,,"of (possessive “s""); from",Das Auto von Felix ist kaputt.,Felix’s car is broken.
+de-a1-0730,vor,prep.,,ago; in front of,Der Termin war vor einer Stunde.,The appointment was an hour ago.
+de-a1-0731,der Vormittag,n.,masculine · der · plural Vormittage,late morning; before noon,Am Vormittag bin ich im Büro.,I'm at the office in the morning.
+de-a1-0732,der Vorname,n.,masculine · der · plural Vornamen,first name,"Ich heiße Müller, mein Vorname ist Eva.","I’m called Müller, my first name is Eva."
+de-a1-0733,die Vorsicht,n.,feminine · die,watch out; caution,Vorsicht! Da kommt ein Auto.,Caution! There's a car coming.
+de-a1-0734,die Vorwahl,n.,feminine · die,area code,Wie ist die Vorwahl von München?,What is the area code for Munich?
+de-a1-0735,wandern,v.,,to hike,Wir wandern um den Chiemsee.,We are hiking around the Chiem lake.
+de-a1-0736,wann,adv.,,when,Wann bist du fertig?,When will you be finished?
+de-a1-0737,warten,v.,,to wait,Können Sie ein paar Minuten warten?,Can you wait a few minutes?
+de-a1-0738,warum,adv.,,why,Warum kommt er nicht?,Why isn’t he coming?
+de-a1-0739,was,pron.,,what,Was ist das?,What is that?
+de-a1-0740,was für ein,det.,,what kind of,Was für eine Farbe möchten Sie?,What color would you like?
+de-a1-0741,das Wasser,n.,neuter · das,water,"Ein Glas Wasser, bitte.","A glass of water, please."
+de-a1-0742,weg sein,v.,,to be gone,Herr Meier ist schon weg.,Mr Meier is already gone.
+de-a1-0743,wehtun,v.,,to hurt,Ich muss zum Arzt. Mein Bein tut weh.,I have to go to the doctor. My leg hurts.
+de-a1-0744,weiblich,adj.,,female,Kreuzen Sie bitte an: „weiblich“ oder „männlich“.,Please tick “female” or “male”.
+de-a1-0745,der Wein,n.,masculine · der,wine,"Nein danke, ich möchte keinen Wein.","No thank you, I don’t want any wine."
+de-a1-0746,weit,adj.,,far,Zum Bahnhof ist es nicht weit.,It is not far to the station.
+de-a1-0747,weiter,adv.,,further,Der Bus fährt nicht weiter.,The bus doesn’t go any further.
+de-a1-0748,weiß,,,white,Meine Lieblingsfarbe ist Weiß.,My favorite color is white.
+de-a1-0749,welch-,det.,,which,Welches Buch möchtest du?,Which book would you like?
+de-a1-0750,die Welt,n.,feminine · die,world,Es gibt viele Probleme auf der Welt.,There are many problems in the world.
+de-a1-0751,wenig,adv.,,little; not much,Ich habe leider nur wenig verstanden.,Unfortunately I didn't understand very much.
+de-a1-0752,wer,pron.,,who,Wer ist das?,Who is that?
+de-a1-0753,werden,v.,,to become,Mein Sohn will Arzt werden.,My son wants to become a doctor.
+de-a1-0754,der Westen,n.,masculine · der,west,Wir fahren in den Westen.,We are traveling west.
+de-a1-0755,das Wetter,n.,neuter · das,weather,Wir hatten schlechtes Wetter.,We had bad weather.
+de-a1-0756,wichtig,adj.,,important,Dieses Formular ist sehr wichtig.,This form is very important.
+de-a1-0757,wie,adv.,,how; like; as,Wie heißt du?,What are you called?
+de-a1-0758,wie viel,det.,,how much,Wie viel Milch nehmen Sie?,How much milk do you take?
+de-a1-0759,wiederholen,v.,,to repeat,Können Sie das bitte wiederholen?,"Can you repeat that, please?"
+de-a1-0760,willkommen,adj.,,welcome,Herzlich willkommen!,Welcome!
+de-a1-0761,der Wind,n.,masculine · der,wind,Der Wind kommt aus Osten.,The wind is coming from the east.
+de-a1-0762,der Winter,n.,masculine · der,winter,Im Winter sind wir oft draußen.,We are often outdoors in winter.
+de-a1-0763,wir,pron.,,we,Wir lernen Deutsch.,We are learning German.
+de-a1-0764,wissen,v.,,to know a fact,"Weißt du, wie er heißt?",Do you know what he is called?
+de-a1-0765,wo,adv.,,where,Wo waren Sie im Urlaub?,Where were you on vacation?
+de-a1-0766,die Woche,n.,feminine · die · plural Wochee,week,Ich arbeite fünf Tage pro Woche.,I work five days a week.
+de-a1-0767,das Wochenende,n.,neuter · das,weekend,Am Wochenende besuche ich meine Eltern.,I visit my parents on the weekend.
+de-a1-0768,der Wochentag,n.,masculine · der · plural Wochentage,weekday,Montag ist der erste Wochentag.,Monday is the first weekday.
+de-a1-0769,woher,adv.,,from where,Woher kommen Sie?,Where do you come from?
+de-a1-0770,wohin,adv.,,to where,Wohin fährt dieser Bus?,Where does this bus go?
+de-a1-0771,wohnen,v.,,to live; to reside,Ich wohne in München.,I live in Munich.
+de-a1-0772,die Wohnung,n.,feminine · die · plural Wohnungen,apartment; home,Seit wann haben Sie diese Wohnung?,How long have you had this apartment?
+de-a1-0773,wollen,v.,,to want,Wollen Sie einen Kaffee trinken?,Do you want to get a coffee?
+de-a1-0774,das Wort,n.,neuter · das · plural Wörter,word,Ich kenne das Wort nicht.,I don’t know that word.
+de-a1-0775,wunderbar,adj.,,wonderful,Das Essen schmeckt wunderbar.,The food tastes wonderful.
+de-a1-0776,das Wörterbuch,n.,neuter · das · plural Wörterbucher,dictionary,Ich muss das Wort im Wörterbuch nachschlagen.,I have to look the word up in the dictionary.
+de-a1-0777,zahlen,v.,,to pay; to make a payment,"Zahlen, bitte!","The check, please!"
+de-a1-0778,zehn,,,ten,Die Antwort ist zehn.,The answer is ten.
+de-a1-0779,die Zeit,n.,feminine · die,time,Ich habe heute keine Zeit.,I have no time today
+de-a1-0780,die Zeitung,n.,feminine · die · plural Zeitungen,newspaper,Ich lese gern Zeitung.,I like to read the newspaper.
+de-a1-0781,der Zentimeter,n.,masculine · der · plural Zentimeter,centimeter,Das Buch ist zwanzig Zentimeter breit.,The book is twenty centimeters wide.
+de-a1-0782,die Zigarette,n.,feminine · die · plural Zigaretten,cigarette,Wie teuer sind die Zigaretten?,How expensive are the cigarettes?
+de-a1-0783,das Zimmer,n.,neuter · das · plural Zimmer,room (in a building),Das Zimmer ist groß.,The room is large.
+de-a1-0784,der Zoll,n.,masculine · der,customs,Wir müssen noch durch den Zoll.,We still need to go through customs.
+de-a1-0785,zu,prep.,,to; at,Der Bus fährt zum Bahnhof.,The bus goes to the station.
+de-a1-0786,zu sein,v.,,to be closed,Die Tür ist zu.,The door is closed.
+de-a1-0787,zufrieden,adj.,,satisfied,Ich bin mit der Wohnung zufrieden.,I am happy with the apartment.
+de-a1-0788,der Zug,n.,masculine · der · plural Züge,train (a specific rail service),Ich fahre gern mit dem Zug.,I like to travel by train.
+de-a1-0789,zum Beispiel,phrase,,for example,"Viele meiner Verwandten, z. B. meine beiden Brüder, arbeiten auch hier.","Many of my relatives, for example, both of my brothers, also work here."
+de-a1-0790,zurzeit,adv.,,at the moment,Zurzeit habe ich sehr viel zu tun.,I have a lot to do at the moment.
+de-a1-0791,zurück,adv.,,back,Einmal Frankfurt und zurück.,A return to Frankfurt.
+de-a1-0792,zusammen,adv.,,together,Sollen wir zusammen essen gehen?,Should we go out to eat together?
+de-a1-0793,zwanzig,,,twenty,Die Antwort ist zwanzig.,The answer is twenty.
+de-a1-0794,zwei,,,two,Die Antwort ist zwei.,The answer is two.
+de-a1-0795,zweihundert,,,two hundred,Das kostet zweihundert Euro.,That costs two hundred euros.
+de-a1-0796,zweitausendvierzehn,,,two thousand and fourteen,Sie wurde zweitausendvierzehn geboren.,She was born in two thousand fourteen.
+de-a1-0797,zweite,,,second,Die zweite Antwort ist richtig.,The second answer is correct.
+de-a1-0798,zwischen,prep.,,between,Heidelberg liegt zwischen Frankfurt und Stuttgart.,Heidelberg is located between Frankfurt and Stuttgart.
+de-a1-0799,zwölf,,,twelve,Die Antwort ist zwölf.,The answer is twelve.
+de-a1-0800,öffnen,v.,,to open,Ich öffne die Tür.,I open the door.
+de-a1-0801,das Öl,n.,neuter · das,oil,Den Salat machen wir ohne Öl.,We make the salad without oil.
+de-a1-0802,über,prep.,,across; above; over,Gehen Sie hier über die Straße.,Go across the street here.
+de-a1-0803,übernachten,v.,,to stay overnight,Du kannst bei mir übernachten.,You can stay at mine overnight.
+de-a1-0804,überweisen,v.,,to transfer,Sie können das Geld auch überweisen.,You can also transfer the money.
