@@ -110,7 +110,7 @@
         { ko: "[[Im|g:u6-1]] [[Dezember|w:Dezember]] [[ist|g:u1-4]] [[der|g:u1-1]] [[Weihnachtsmarkt|w:Weihnachtsmarkt]] in [[der|g:u5-1]] [[Stadt|w:Stadt]].", en: "In December, there are Christmas markets in the city." },
         { ko: "[[Es|w:es]] [[gibt|w:geben]] [[viele|w:viel]] [[Stände|w:Stand]] mit [[Glühwein|w:Glühwein]] und [[Lebkuchen|w:Lebkuchen]].", en: "There are lots of stalls selling mulled wine and gingerbread." },
         { ko: "[[Ich|w:ich]] [[gehe|w:gehen]] mit [[meiner|g:u3-2]] [[Freundin|w:Freundin]] [[zum|g:u5-3]] [[Markt|w:Markt]].", en: "My girlfriend and I go to the market." },
-        { ko: "[[Wir|w:wir]] [[stellen|g:u4-4]] [[uns|g:u4-4]] [[neben|g:u5-3]] [[den|g:u2-2]] [[großen|g:u3-4]] [[Baum|w:Baum]].", en: "We stood next to the big tree." },
+        { ko: "[[Wir|w:wir]] [[stellen|g:u4-4]] [[uns|g:u4-4]] [[neben|g:u5-3]] [[den|g:u2-2]] [[großen|g:u3-4]] [[Baum|w:Baum]].", en: "We stand next to the big tree." },
         { ko: "[[Der|g:u1-1]] [[Baum|w:Baum]] [[ist|g:u1-4]] [[grün|w:grün]] und [[sehr|w:sehr]] [[schön|w:schön]].", en: "The tree is green and very beautiful." },
         { ko: "[[Auf|g:u5-4]] [[dem|g:u5-4]] [[Markt|w:Markt]] [[riecht|w:riechen]] [[es|w:es]] nach [[Zimt|w:Zimt]].", en: "You can smell cinnamon in the market." },
         { ko: "[[Ich|w:ich]] [[habe|g:u6-2]] [[ein|g:u3-1]] [[Geschenk|w:Geschenk]] für [[meine|g:u3-2]] [[Mutter|w:Mutter]] [[gekauft|g:u6-2]].", en: "I bought a gift for my mother." },
