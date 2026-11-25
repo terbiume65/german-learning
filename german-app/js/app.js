@@ -895,6 +895,37 @@
     );
   }
 
+  function autoWordParts(card) {
+    var base = String(card.lemma || "").replace(/^\([^)]*\)\s*/, "").trim();
+    if (base.length < 6) return null;
+    var lower = base.toLowerCase();
+    var rules = [
+      ["keit", "-keit = noun suffix"],
+      ["heit", "-heit = noun suffix"],
+      ["schaft", "-schaft = noun suffix"],
+      ["ung", "-ung = noun suffix"],
+      ["chen", "-chen = small / diminutive"],
+      ["lich", "-lich = adjective suffix"],
+      ["isch", "-isch = adjective suffix"],
+    ];
+    for (var i = 0; i < rules.length; i++) {
+      var suffix = rules[i][0];
+      if (lower.length > suffix.length + 2 && lower.slice(-suffix.length) === suffix) {
+        return [
+          { text: base.slice(0, -suffix.length), type: "root", note: "stem of " + base },
+          { text: base.slice(-suffix.length), type: "suffix", note: rules[i][1] },
+        ];
+      }
+    }
+    if (card.gender === "f." && lower.slice(-2) === "in" && lower.length > 5) {
+      return [
+        { text: base.slice(0, -2), type: "root", note: "stem of " + base },
+        { text: "in", type: "suffix", note: "-in = female person" },
+      ];
+    }
+    return null;
+  }
+
   function wordPartsFor(card) {
     var map = window.WORD_PARTS || {};
     if (!card) return null;
@@ -904,7 +935,7 @@
     for (var i = 0; i < candidates.length; i++) {
       if (candidates[i] && map[candidates[i]]) return map[candidates[i]];
     }
-    return null;
+    return autoWordParts(card);
   }
 
   function renderWordParts(card) {

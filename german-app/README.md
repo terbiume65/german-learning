@@ -92,9 +92,13 @@ Selected cards show an interactive **Word building** panel on the answer side. I
 The breakdowns live in `data/word-parts.js`. They focus on separable verbs and transparent compounds, such as:
 
 - `Anrufbeantworter` → An + ruf + be + antwort + er
+- `Reisebüro` → Reise + Büro
+- `Hausfrau` → Haus + Frau
 - `ausziehen` → aus + zieh + en
 - `Fahrkarte` → Fahr + Karte
 - `Wohnung` → wohn + ung
+
+There are 130+ curated breakdowns plus automatic detection for common suffixes such as `-ung`, `-in`, `-chen`, `-lich`, `-isch`, `-heit` and `-keit`.
 
 ## Grammar
 
