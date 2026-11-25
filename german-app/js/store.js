@@ -121,6 +121,7 @@
     if (state.cafe.starsEarned == null) state.cafe.starsEarned = 0;
     if (!state.cafe.starUnits) state.cafe.starUnits = {};
     if (!state.cafe.charms) state.cafe.charms = {};
+    ensureCafe(state);
     normalizeDaily(state);
     return state;
   }
