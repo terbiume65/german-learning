@@ -167,10 +167,18 @@
     Object.keys(b.upgrades || {}).forEach(function (id) {
       upgrades[id] = Math.max(Number(upgrades[id]) || 1, Number(b.upgrades[id]) || 1);
     });
-    var latestReport = a.lastMarketReport;
-    if (!latestReport || (b.lastMarketReport && (Number(b.lastMarketReport.at) || 0) > (Number(latestReport.at) || 0))) {
-      latestReport = b.lastMarketReport || latestReport;
-    }
+    // Visitors and supplies are consumable. Taking the maximum from both sides
+    // would restore a served queue on the next sync (an infinite Taler loop),
+    // so the most recently updated market snapshot wins for those fields.
+    var aAt = Number(a.marketUpdatedAt) || 0;
+    var bAt = Number(b.marketUpdatedAt) || 0;
+    var newer = bAt > aAt ? b : a;
+    var aReport = a.lastMarketReport;
+    var bReport = b.lastMarketReport;
+    var latestReport =
+      (Number(bReport && bReport.at) || 0) > (Number(aReport && aReport.at) || 0)
+        ? bReport
+        : aReport;
     return {
       items: items,
       charms: charms,
@@ -180,14 +188,15 @@
       totalEarned: Math.max(Number(a.totalEarned) || 0, Number(b.totalEarned) || 0),
       stars: Math.max(Number(a.stars) || 0, Number(b.stars) || 0),
       starsEarned: Math.max(Number(a.starsEarned) || 0, Number(b.starsEarned) || 0),
-      visitors: Math.max(Number(a.visitors) || 0, Number(b.visitors) || 0),
-      stock: Math.max(Number(a.stock) || 0, Number(b.stock) || 0),
+      visitors: Math.max(0, Number(newer.visitors) || 0),
+      stock: Math.max(0, Number(newer.stock) || 0),
       reputation: Math.max(Number(a.reputation) || 0, Number(b.reputation) || 0),
       served: Math.max(Number(a.served) || 0, Number(b.served) || 0),
-      servedToday: Math.max(Number(a.servedToday) || 0, Number(b.servedToday) || 0),
-      revenueToday: Math.max(Number(a.revenueToday) || 0, Number(b.revenueToday) || 0),
-      lastMarketDay: a.lastMarketDay > b.lastMarketDay ? a.lastMarketDay : b.lastMarketDay,
-      lastMarketReport: latestReport,
+      servedToday: Math.max(0, Number(newer.servedToday) || 0),
+      revenueToday: Math.max(0, Number(newer.revenueToday) || 0),
+      lastMarketDay: newer.lastMarketDay || null,
+      lastMarketReport: latestReport || null,
+      marketUpdatedAt: Math.max(aAt, bAt),
       marketMigrated: true,
       lastDailyBonus: a.lastDailyBonus > b.lastDailyBonus ? a.lastDailyBonus : b.lastDailyBonus,
       lastGoalBonus: a.lastGoalBonus > b.lastGoalBonus ? a.lastGoalBonus : b.lastGoalBonus,

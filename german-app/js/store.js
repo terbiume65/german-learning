@@ -207,6 +207,7 @@
     cafe.beans += beans;
     cafe.totalEarned += beans;
     cafe.visitors += visitors + visitorsBonus;
+    cafe.marketUpdatedAt = Number(now) || Date.now();
     save(state);
     return {
       card: updated,
@@ -268,6 +269,7 @@
     if (state.cafe.lastMarketDay == null) state.cafe.lastMarketDay = null;
     if (state.cafe.servedToday == null) state.cafe.servedToday = 0;
     if (state.cafe.revenueToday == null) state.cafe.revenueToday = 0;
+    if (state.cafe.marketUpdatedAt == null) state.cafe.marketUpdatedAt = 0;
     if (!state.cafe.marketMigrated) {
       state.cafe.reputation = Math.max(
         Number(state.cafe.reputation) || 0,
@@ -313,6 +315,7 @@
       levelAfter: cafeLevel(state),
       at: Date.now(),
     };
+    cafe.marketUpdatedAt = Date.now();
     save(state);
     return {
       ok: true,
@@ -335,6 +338,7 @@
     if (cafe.beans < cost) return { ok: false, reason: "beans", cost: cost };
     cafe.beans -= cost;
     cafe.stock = (Number(cafe.stock) || 0) + qty;
+    cafe.marketUpdatedAt = Date.now();
     save(state);
     return { ok: true, quantity: qty, cost: cost };
   }
