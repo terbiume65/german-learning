@@ -11,6 +11,7 @@ const path = require("path");
 
 global.window = {};
 require(path.join(__dirname, "..", "german-app", "data", "vocab.js"));
+require(path.join(__dirname, "..", "german-app", "data", "dictation-data.js"));
 require(path.join(__dirname, "..", "german-app", "data", "grammar-de.js"));
 require(path.join(__dirname, "..", "german-app", "data", "reader-de.js"));
 
@@ -55,6 +56,8 @@ function add(text) {
 });
 
 Object.keys(window.GRAMMAR_GLOSSARY || {}).forEach(add);
+
+((window.DICTATION_DATA || {}).fixed || []).forEach((item) => add(item.de));
 
 fs.mkdirSync(path.join(__dirname, "work"), { recursive: true });
 fs.writeFileSync(

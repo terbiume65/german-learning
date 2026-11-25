@@ -1,6 +1,6 @@
 # Deutsch — Learn German
 
-A small, local-first German learning app built on the Goethe-Zertifikat A1 word list, with a visual A1–A2 grammar path, a graded reader and a Christmas market that grows as you study.
+A small, local-first German learning app built on the Goethe-Zertifikat A1 word list, with a visual A1–A2 grammar path, a graded reader, a daily-life dictation mode and a Christmas market that grows as you study.
 
 The interface, vocabulary meanings, example translations, grammar notes and reader translations are all in English. Progress stays in the browser.
 
@@ -24,7 +24,8 @@ The app itself is static. The fixed German speech is pre-generated and checked i
 - **28 visual grammar lessons** in 7 units, covering a curated A1–A2 core path: gender and articles, plurals, the present tense, cases, negation, questions, possessives, adjective endings, modals, separable verbs, the imperative, reflexives, the dative, prepositions, the perfect tense, word order, subordinate and relative clauses, comparison, the future and Konjunktiv II.
 - **Original grammar diagrams**: gender columns, case tables, verb grids, sentence flows, two-way preposition diagrams, timelines and comparison bars. Many elements are tappable.
 - **9 original graded reader texts** from first introductions to longer stories, with hover/tap glosses, English translation on demand, line-by-line and whole-text recorded German audio, new-word lists and grammar links.
-- **Recorded neural German audio**: 2,445 short clips generated with the `de-DE-TanjaNeural` voice cover every word, example, grammar sentence and reader line. Playback is consistent across browsers and devices.
+- **Dictation mode**: 821 recorded daily sentences (771 vocabulary examples and 50 daily phrases) plus a daily-life generator with thousands of combinations. Hear a sentence, type it, and get a word-level diff, an English hint on request, and Taler/visitors/streak progress.
+- **Recorded neural German audio**: 2,487 short clips generated with the `de-DE-TanjaNeural` voice cover every word, example, grammar sentence, reader line and dictation phrase. Playback is consistent across browsers and devices.
 - **Browser voice fallback** for any text without a recorded clip, with a voice picker in Settings. Installed Premium/Enhanced voices are preferred and novelty voices are ranked last.
 - **Weihnachtsmarkt management sim**: reviews attract visitors; visitors queue at the market. Serve the queue, consume supplies, earn Taler and reputation, then buy and upgrade stalls and premium attractions. Completing a grammar unit earns a star; stars plus Taler synthesize permanent study charms for the market wall.
 - **Progress, streaks, forecasts, a searchable word list and local export/import.**
@@ -50,7 +51,7 @@ The deck emits English meanings and example translations; the source already pro
 
 The app ships with pre-generated MP3s rather than relying on the visitor's system voice. The voice is **Tanja**, a German neural voice. Files live in `german-app/audio/text/`; `german-app/data/speech.js` maps each normalized text to its clip.
 
-Rebuild the audio pack after changing vocabulary, grammar examples or reader lines:
+Rebuild the audio pack after changing vocabulary, grammar examples, reader lines or dictation phrases:
 
 ```bash
 cd german-learning
@@ -145,27 +146,48 @@ Each can be upgraded to level 5. Upgrades increase market income, stock capacity
 
 Completing a grammar lesson gives **+10 Taler**; completing a whole unit gives **+1 grammar star**. Stars and Taler synthesize five permanent charms: Case Star, Verb Bell, Sentence Star, Preposition Lantern and Sound Angel.
 
+## Dictation
+
+Dictation trains listening and sentence-level comprehension without adding new FSRS cards.
+
+- Each session mixes recorded vocabulary examples with generated daily-life sentences.
+- Playback uses the recorded Tanja clip when the sentence has one; otherwise the browser's German voice reads it.
+- Typing is checked tolerantly: capitalisation, punctuation, hyphens and `ae/oe/ue/ss` for umlauts are accepted. A word-level diff highlights missing or extra words.
+- An English hint can be revealed before checking. Hinted attempts still count as correct but not as “clean”.
+- Rewards: **+1 Taler** for a correct sentence; **+1 market visitor** for every checked sentence, plus **+1 extra** for a clean, unhinted answer. Attempts also keep the daily streak alive and are saved in dictation accuracy/best-streak stats.
+- Session lengths are 5, 10 or 20 sentences. Recent attempts are stored locally and merged through cloud sync.
+
+The recorded core is created from the 771 vocabulary examples that already have Tanja audio plus the 50 phrases in `DICTATION_DATA.fixed`. Generated combinations use the curated chunks in `data/dictation-data.js`; add a phrase to `fixed` and rebuild the audio pack to make it recorded:
+
+```bash
+cd german-learning
+node pipeline/export_speech.js
+pipeline/.venv/bin/python pipeline/build_audio.py
+```
+
 ## Files
 
 | Path | Purpose |
 | --- | --- |
 | `index.html` | Page shell and script order |
 | `css/styles.css` | Design system, visual grammar, market scene |
-| `js/app.js` | Routing, study sessions, grammar, reader, glosses, TTS, UI |
+| `js/app.js` | Routing, study sessions, dictation UI, grammar, reader, glosses, TTS, UI |
 | `js/data.js` | Deck helpers, search, multiple-choice generation, recorded-audio lookup, TTS fallback |
-| `js/store.js` | Local progress, FSRS state, streaks, Taler, stars, export/import |
+| `js/store.js` | Local progress, FSRS state, streaks, dictation stats, Taler, stars, export/import |
 | `js/sync.js` | Optional Supabase sign-in, merge and push/pull |
 | `js/sync-config.js` | Supabase project URL, publishable key and app id |
 | `supabase/schema.sql` | Progress table and row-level security policy |
 | `js/fsrs.js` | FSRS scheduler |
 | `js/cafe.js` | Market catalog, charms and SVG scene |
+| `js/dictation.js` | Daily-life sentence generator, session builder and tolerant checker |
 | `data/vocab.js` | Generated 804-card deck |
 | `data/grammar-de.js` | 28 visual grammar lessons |
 | `data/reader-de.js` | 9 graded texts, glossary and levels |
 | `data/glossary-en.js` | English glosses for the reader hover cards |
 | `data/word-parts.js` | Interactive word-building breakdowns |
+| `data/dictation-data.js` | Curated dictation lexicon, daily phrases and grammar chunks |
 | `data/speech.js` | Generated text → MP3 manifest |
-| `audio/text/` | 2,445 recorded neural German clips |
+| `audio/text/` | 2,487 recorded neural German clips |
 | `pipeline/export_speech.js` | Collects the fixed strings that need audio |
 | `pipeline/build_audio.py` | Generates the MP3 pack and `speech.js` |
 
@@ -175,5 +197,5 @@ Completing a grammar lesson gives **+10 Taler**; completing a whole unit gives *
 - **Settings → Reset all progress** clears the deck, grammar, reader and market while keeping the app installed.
 - Export produces `deutsch-a1-progress.json`; import accepts that file.
 - Recorded audio works without a German system voice. The browser voice picker is only a fallback for strings that have no clip.
-- The audio pack adds roughly 37 MB to the app; it is still well under the GitHub Pages 1 GB site limit.
+- The audio pack adds roughly 38 MB to the app; it is still well under the GitHub Pages 1 GB site limit.
 - The market and charms are cosmetic and never change scheduling or review load.

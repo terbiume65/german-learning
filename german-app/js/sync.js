@@ -222,6 +222,40 @@
     };
   }
 
+  function mergeDictation(a, b) {
+    a = a || {};
+    b = b || {};
+    var aAt = Number(a.lastAt) || 0;
+    var bAt = Number(b.lastAt) || 0;
+    var newer = bAt > aAt ? b : a;
+    var seen = {};
+    var recent = [];
+    (a.recent || []).concat(b.recent || []).forEach(function (item) {
+      if (!item) return;
+      var key = String(item.hash || item.at + "|" + item.de);
+      if (seen[key]) return;
+      seen[key] = true;
+      recent.push(item);
+    });
+    recent.sort(function (x, y) {
+      return (Number(y.at) || 0) - (Number(x.at) || 0);
+    });
+    recent = recent.slice(0, 60);
+    return {
+      attempts: Math.max(Number(a.attempts) || 0, Number(b.attempts) || 0),
+      correct: Math.max(Number(a.correct) || 0, Number(b.correct) || 0),
+      clean: Math.max(Number(a.clean) || 0, Number(b.clean) || 0),
+      bestStreak: Math.max(Number(a.bestStreak) || 0, Number(b.bestStreak) || 0),
+      streak: Number(newer.streak) || 0,
+      lastAt: Math.max(aAt, bAt),
+      lastDay: newer.lastDay || null,
+      todayAttempts: Number(newer.todayAttempts) || 0,
+      todayCorrect: Number(newer.todayCorrect) || 0,
+      recent: recent,
+      sessionSize: Number(newer.sessionSize) || 10,
+    };
+  }
+
   function mergeState(local, remote) {
     local = local || {};
     remote = remote || {};
@@ -235,6 +269,7 @@
     out.daily = mergeDaily(local.daily, remote.daily);
     out.cafe = mergeCafe(local.cafe, remote.cafe);
     out.streak = mergeStreak(local.streak, remote.streak);
+    out.dictation = mergeDictation(local.dictation, remote.dictation);
     out.createdAt = Math.min(
       Number(local.createdAt) || Date.now(),
       Number(remote.createdAt) || Number(local.createdAt) || Date.now()

@@ -45,6 +45,19 @@
       revenueToday: 0,
       marketMigrated: false,
     },
+    dictation: {
+      attempts: 0,
+      correct: 0,
+      clean: 0,
+      streak: 0,
+      bestStreak: 0,
+      lastAt: null,
+      lastDay: null,
+      todayAttempts: 0,
+      todayCorrect: 0,
+      recent: [],
+      sessionSize: 10,
+    },
     streak: { current: 0, longest: 0, lastStudy: null },
     createdAt: null,
   };
@@ -122,6 +135,7 @@
     if (!state.cafe.starUnits) state.cafe.starUnits = {};
     if (!state.cafe.charms) state.cafe.charms = {};
     ensureCafe(state);
+    ensureDictation(state);
     normalizeDaily(state);
     return state;
   }
@@ -367,6 +381,87 @@
     cafe.marketUpdatedAt = Date.now();
     save(state);
     return cafe.beans;
+  }
+
+  function ensureDictation(state) {
+    if (!state.dictation) state.dictation = clone(DEFAULTS.dictation);
+    var d = state.dictation;
+    if (d.attempts == null) d.attempts = 0;
+    if (d.correct == null) d.correct = 0;
+    if (d.clean == null) d.clean = 0;
+    if (d.streak == null) d.streak = 0;
+    if (d.bestStreak == null) d.bestStreak = 0;
+    if (d.lastAt == null) d.lastAt = null;
+    if (d.lastDay == null) d.lastDay = null;
+    if (d.todayAttempts == null) d.todayAttempts = 0;
+    if (d.todayCorrect == null) d.todayCorrect = 0;
+    if (!Array.isArray(d.recent)) d.recent = [];
+    if (d.sessionSize == null) d.sessionSize = 10;
+    return d;
+  }
+
+  function recordDictation(state, result) {
+    var d = ensureDictation(state);
+    var now = Date.now();
+    var day = dateKey(new Date(now));
+    var correct = !!(result && result.correct);
+    var hinted = !!(result && result.hinted);
+    if (d.lastDay !== day) {
+      d.lastDay = day;
+      d.todayAttempts = 0;
+      d.todayCorrect = 0;
+    }
+    d.attempts += 1;
+    d.todayAttempts += 1;
+    if (correct) {
+      d.correct += 1;
+      d.todayCorrect += 1;
+      d.streak += 1;
+      d.bestStreak = Math.max(d.bestStreak, d.streak);
+      if (!hinted) d.clean += 1;
+    } else {
+      d.streak = 0;
+    }
+    var hash = String((result && result.hash) || result && result.de || "").slice(0, 16);
+    d.lastAt = now;
+    d.recent = [{ hash: hash, de: (result && result.de) || "", correct: correct, hinted: hinted, at: now }]
+      .concat((d.recent || []).filter(function (item) { return item.hash !== hash; }))
+      .slice(0, 60);
+    updateStreak(state, now);
+
+    var cafe = ensureCafe(state);
+    var beans = correct ? 1 : 0;
+    var visitors = 1 + (correct && !hinted ? 1 : 0);
+    cafe.beans += beans;
+    cafe.totalEarned += beans;
+    cafe.visitors += visitors;
+    cafe.marketUpdatedAt = now;
+    save(state);
+    return {
+      beans: beans,
+      visitors: visitors,
+      streak: d.streak,
+      bestStreak: d.bestStreak,
+    };
+  }
+
+  function dictationStats(state) {
+    var d = ensureDictation(state);
+    var today = d.lastDay === dateKey() ? d.todayAttempts : 0;
+    var todayCorrect = d.lastDay === dateKey() ? d.todayCorrect : 0;
+    return {
+      attempts: d.attempts,
+      correct: d.correct,
+      clean: d.clean,
+      accuracy: d.attempts ? d.correct / d.attempts : 0,
+      cleanRate: d.correct ? d.clean / d.correct : 0,
+      streak: d.streak,
+      bestStreak: d.bestStreak,
+      today: today,
+      todayCorrect: todayCorrect,
+      recent: d.recent || [],
+      sessionSize: d.sessionSize || 10,
+    };
   }
 
   function unitCompleted(state, unitId) {
@@ -623,6 +718,7 @@
         reading: state.reading,
         daily: state.daily,
         cafe: state.cafe,
+        dictation: state.dictation,
         streak: state.streak,
       },
       null,
@@ -643,12 +739,15 @@
       reading: data.reading,
       daily: data.daily,
       cafe: data.cafe,
+      dictation: data.dictation,
       streak: data.streak,
       createdAt: Date.now(),
     });
     state.version = 2;
     if (!state.grammar) state.grammar = {};
     if (!state.reading) state.reading = {};
+    ensureCafe(state);
+    ensureDictation(state);
     normalizeDaily(state);
     return state;
   }
@@ -677,6 +776,9 @@
     marketYield: marketYield,
     marketStockCap: marketStockCap,
     upgradeCost: upgradeCost,
+    recordDictation: recordDictation,
+    dictationStats: dictationStats,
+    ensureDictation: ensureDictation,
     synthesize: synthesize,
     addBeans: addBeans,
     grammarProgress: grammarProgress,

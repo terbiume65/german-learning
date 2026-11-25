@@ -29,6 +29,7 @@
     toastTimer: null,
     autoNextTimer: null,
     summary: null,
+    dictation: null,
   };
 
   var GRAMMAR_ITEMS = window.GRAMMAR_ITEMS || [];
@@ -192,9 +193,10 @@
         getState: function () { return app.state; },
         setState: function (next) {
           var studying = location.hash.indexOf("#/learn") === 0 && app.session && !app.session.finished;
+          var dictating = app.view === "dictation" && app.dictation && !app.dictation.finished;
           app.state = next;
           Store.save(app.state);
-          if (!studying) render();
+          if (!studying && !dictating) render();
         },
       });
       window.addEventListener("cloud:changed", function () {
@@ -637,6 +639,11 @@
       render();
       return;
     }
+    if (view === "dictation") {
+      app.view = "dictation";
+      render();
+      return;
+    }
     if (view === "grammar") {
       app.view = "grammar";
       app.grammarRoute = (location.hash.replace(/^#\/?/, "").split("/") || []).slice(1);
@@ -669,6 +676,7 @@
       '<a class="brand" href="#/" data-nav="dashboard"><span class="brand-mark">D</span><span>Deutsch<small>Learn German</small></span></a>' +
       '<nav class="nav">' +
       '<a href="#/" data-nav="dashboard" class="' + (active === "dashboard" ? "active" : "") + '">Today</a>' +
+      '<a href="#/dictation" data-nav="dictation" class="' + (active === "dictation" ? "active" : "") + '">Dictation</a>' +
       '<a href="#/reader" data-nav="reader" class="' + (active === "reader" ? "active" : "") + '">Reader</a>' +
       '<a href="#/grammar" data-nav="grammar" class="' + (active === "grammar" ? "active" : "") + '">Grammar</a>' +
       '<a href="#/stats" data-nav="stats" class="' + (active === "stats" ? "active" : "") + '">Progress</a>' +
@@ -703,6 +711,8 @@
       html = shell(renderGrammar(), "grammar");
     } else if (app.view === "reader") {
       html = shell(renderReader(), "reader");
+    } else if (app.view === "dictation") {
+      html = shell(renderDictation(), "dictation");
     } else if (app.view === "settings") {
       html = shell(renderSettings(), "settings");
     } else {
@@ -765,6 +775,7 @@
     var grammarStarStats = Store.grammarStars(app.state);
     var readingProg = Store.readingProgress(app.state);
     var readingNext = readerNextText();
+    var dictStats = Store.dictationStats(app.state);
     var modeSwitch =
       '<div class="mode-switch">' +
       '<button class="mode-btn ' + (!isRev ? "active" : "") + '" data-action="set-direction" data-direction="forward">German → English<small>Recognition</small></button>' +
@@ -824,6 +835,11 @@
       '<div class="cafe-mini-art">📖</div>' +
       '<div><h2>Reader · ' + readingProg.read + " / " + readingProg.total + " texts</h2><p>" + (readingNext ? "Next: " + esc(readingNext.title) + " · Level " + esc(String(readingNext.level)) + " · " + readerWordCount(readingNext) + " words" : "Every text read — revisit any level") + "</p></div>" +
       '<a class="btn btn-soft" href="#/reader">Open reader ' + icon("arrow") + "</a>" +
+      "</section>" +
+      '<section class="cafe-mini-strip dictation-mini-strip">' +
+      '<div class="cafe-mini-art">🎧</div>' +
+      '<div><h2>Dictation · ' + (dictStats.today ? dictStats.today + " today" : "train your ear") + "</h2><p>" + (dictStats.attempts ? Math.round(dictStats.accuracy * 100) + "% accuracy · " + dictStats.clean + " clean · best streak " + dictStats.bestStreak : "Recorded examples and generated daily-life sentences.") + "</p></div>" +
+      '<button class="btn btn-soft" data-action="dictation-start" data-size="' + dictationSize() + '">Start dictation ' + icon("arrow") + "</button>" +
       "</section>" +
       '<section class="two-col">' +
       '<div class="panel"><div class="panel-head"><h2>Next 7 days · ' + (isRev ? "recall" : "recognition") + '</h2><span>' + forecast.reduce(function (a, b) { return a + b.count; }, 0) + ' scheduled</span></div><div class="bars">' + bars + "</div></div>" +
@@ -1256,6 +1272,294 @@
     );
   }
 
+  function dictationSize() {
+    return Math.max(5, Math.min(20, Number(app.state.dictation && app.state.dictation.sessionSize) || 10));
+  }
+
+  function playDictation(slow) {
+    var d = app.dictation;
+    if (!d || !d.current || app.view !== "dictation") return;
+    var base = Number(app.state.settings.audioRate) || 0.94;
+    var rate = slow ? Math.min(0.76, base) : base;
+    playAudio(Deck.audioFor(d.current.de) || "tts:" + d.current.de, rate);
+  }
+
+  function startDictation(size) {
+    if (!window.Dictation) {
+      toast("Dictation could not load — refresh the page.");
+      return;
+    }
+    size = Math.max(5, Math.min(20, Number(size) || dictationSize()));
+    var recent = Store.dictationStats(app.state).recent;
+    var queue = window.Dictation.buildSession(size, recent);
+    if (!queue.length) {
+      toast("No dictation sentences are available yet.");
+      return;
+    }
+    app.state.dictation.sessionSize = size;
+    Store.save(app.state);
+    readerStop();
+    app.dictation = {
+      queue: queue,
+      index: 0,
+      current: queue[0],
+      checked: false,
+      result: null,
+      hinted: false,
+      input: "",
+      correctCount: 0,
+      cleanCount: 0,
+      missed: [],
+      beans: 0,
+      visitors: 0,
+      startedAt: Date.now(),
+      shownAt: Date.now(),
+      finished: false,
+      lastReward: null,
+    };
+    app.view = "dictation";
+    if (location.hash !== "#/dictation") location.hash = "#/dictation";
+    else render();
+    setTimeout(function () {
+      playDictation(false);
+      var input = document.querySelector("[data-role='dictation-input']");
+      if (input) input.focus();
+    }, 180);
+  }
+
+  function checkDictation() {
+    var d = app.dictation;
+    if (!d || !d.current || d.checked) return;
+    var input = document.querySelector("[data-role='dictation-input']");
+    var value = input ? input.value : d.input;
+    if (!value || !value.trim()) {
+      toast("Type the sentence you hear first.");
+      if (input) input.focus();
+      return;
+    }
+    var result = window.Dictation.check(d.current.de, value);
+    var reward = Store.recordDictation(app.state, {
+      correct: result.correct,
+      hinted: d.hinted,
+      de: d.current.de,
+      hash: d.current.hash,
+    });
+    d.checked = true;
+    d.result = result;
+    d.input = value;
+    d.lastReward = reward;
+    d.beans += reward.beans;
+    d.visitors += reward.visitors;
+    if (result.correct) d.correctCount += 1;
+    if (result.correct && !d.hinted) d.cleanCount += 1;
+    if (!result.correct || d.hinted) {
+      d.missed.push({
+        de: d.current.de,
+        en: d.current.en,
+        correct: result.correct,
+        hinted: d.hinted,
+      });
+    }
+    render();
+    setTimeout(function () {
+      var next = document.querySelector("[data-action='dictation-next']");
+      if (next) next.focus();
+    }, 40);
+  }
+
+  function nextDictation() {
+    var d = app.dictation;
+    if (!d) return;
+    if (!d.checked) {
+      checkDictation();
+      return;
+    }
+    if (d.index + 1 >= d.queue.length) {
+      d.finished = true;
+      readerStop();
+      render();
+      return;
+    }
+    d.index += 1;
+    d.current = d.queue[d.index];
+    d.checked = false;
+    d.result = null;
+    d.hinted = false;
+    d.input = "";
+    d.shownAt = Date.now();
+    d.lastReward = null;
+    render();
+    setTimeout(function () {
+      playDictation(false);
+      var input = document.querySelector("[data-role='dictation-input']");
+      if (input) input.focus();
+    }, 160);
+  }
+
+  function exitDictation() {
+    readerStop();
+    app.dictation = null;
+    render();
+  }
+
+  function dictationSizeButtons(size) {
+    return [5, 10, 20]
+      .map(function (n) {
+        return '<button class="dictation-size-btn ' + (n === size ? "active" : "") + '" data-action="dictation-size" data-size="' + n + '">' + n + "</button>";
+      })
+      .join("");
+  }
+
+  function dictationLanding() {
+    var stats = Store.dictationStats(app.state);
+    var size = dictationSize();
+    var recorded = window.Dictation ? window.Dictation.coreCount() + window.Dictation.fixedCount() : 0;
+    var recent = stats.recent.slice(0, 6);
+    var recentHtml = recent.length
+      ? recent
+          .map(function (item) {
+            var good = item.correct && !item.hinted;
+            var when = new Date(item.at || Date.now()).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+            return (
+              '<div class="dictation-recent-row">' +
+              '<span class="dictation-dot ' + (good ? "good" : "bad") + '"></span>' +
+              '<div class="dictation-recent-text"><strong>' + esc(item.de) + "</strong><span>" + (item.hinted ? "with hint" : good ? "clean" : "needs review") + " · " + when + "</span></div>" +
+              '<button class="speaker small soft" data-action="dictation-say" data-text="' + esc(item.de) + '" aria-label="Play sentence">' + icon("speaker", 15) + "</button>" +
+              "</div>"
+            );
+          })
+          .join("")
+      : '<div class="empty">Your first session will appear here.</div>';
+    return (
+      '<div class="dictation-page">' +
+      '<div class="page-head dictation-head"><div><p class="eyebrow">Listening lab · Diktat</p><h1>Dictation</h1><p>Hear a German sentence, type what you hear, and check it word by word.</p></div><div class="dictation-head-art">🎧</div></div>' +
+      '<section class="dictation-hero">' +
+      '<div class="dictation-hero-main"><p class="eyebrow">Comprehensible input</p><h2>Train your ear with everyday German</h2>' +
+      '<p>Short recorded examples and thousands of generated daily-life sentences. Every answer shows the German sentence, the English meaning, and the words you missed.</p>' +
+      '<div class="dictation-size-row"><span>Session length</span><div class="dictation-size-options">' + dictationSizeButtons(size) + "</div></div>" +
+      '<button class="btn btn-primary btn-lg" data-action="dictation-start" data-size="' + size + '">Start dictation ' + icon("arrow") + "</button>" +
+      "</div>" +
+      '<div class="dictation-stat-grid">' +
+      '<div class="dictation-stat"><strong>' + stats.attempts + "</strong><span>sentences</span></div>" +
+      '<div class="dictation-stat"><strong>' + (stats.attempts ? Math.round(stats.accuracy * 100) + "%" : "—") + "</strong><span>accuracy</span></div>" +
+      '<div class="dictation-stat"><strong>' + stats.clean + "</strong><span>clean answers</span></div>" +
+      '<div class="dictation-stat"><strong>' + stats.bestStreak + "</strong><span>best streak</span></div>" +
+      "</div>" +
+      "</section>" +
+      '<section class="dictation-features">' +
+      '<div class="dictation-feature"><span>🎙️</span><div><strong>' + recorded + " recorded sentences</strong><p>Natural Tanja audio from the vocabulary examples and daily phrases.</p></div></div>" +
+      '<div class="dictation-feature"><span>🧩</span><div><strong>Thousands of combinations</strong><p>Generated from your A1 words with controlled grammar and daily-life situations.</p></div></div>' +
+      '<div class="dictation-feature"><span>⌨️</span><div><strong>Tolerant checking</strong><p>Capitalisation and punctuation are forgiving; umlauts can be typed as ae, oe, ue.</p></div></div>' +
+      "</section>" +
+      '<section class="panel dictation-recent-panel"><div class="panel-head"><h2>Recent dictation</h2><span>' + (stats.today ? stats.today + " today" : "not started today") + '</span></div><div class="dictation-recent-list">' + recentHtml + "</div></section>" +
+      "</div>"
+    );
+  }
+
+  function dictationResultHtml(d) {
+    var r = d.result;
+    if (!r) return "";
+    var expected = r.expected
+      .map(function (word) {
+        return '<span class="diff-word ' + (word.ok ? "ok" : "miss") + '">' + esc(word.text) + "</span>";
+      })
+      .join(" ");
+    var actual = r.actual.length
+      ? r.actual
+          .map(function (word) {
+            return '<span class="diff-word ' + (word.ok ? "ok" : "extra") + '">' + esc(word.text) + "</span>";
+          })
+          .join(" ")
+      : '<span class="diff-empty">—</span>';
+    var chips = (d.current.words || [])
+      .slice(0, 6)
+      .map(function (word) {
+        return '<button class="dictation-word" data-action="dictation-say" data-text="' + esc(word.de) + '"><strong>' + esc(word.de) + "</strong><span>" + esc(word.en) + "</span></button>";
+      })
+      .join("");
+    return (
+      '<div class="dictation-result ' + (r.correct ? "good" : "bad") + '" aria-live="polite">' +
+      '<div class="dictation-verdict">' +
+      '<span class="dictation-verdict-icon">' + (r.correct ? icon("check") : icon("x")) + "</span>" +
+      "<div><strong>" + (r.correct ? "Exactly right" : "Not quite yet") + "</strong><span>" + (r.correct ? "You caught every word." : Math.round(r.score * 100) + "% word match — compare the highlights.") + "</span></div>" +
+      "</div>" +
+      '<div class="dictation-diff"><div class="diff-row"><span>Correct</span><div>' + expected + "</div></div>" +
+      '<div class="diff-row"><span>You wrote</span><div>' + actual + "</div></div></div>" +
+      '<div class="dictation-translation"><span>English</span><p>' + esc(d.current.en) + "</p></div>" +
+      (chips ? '<div class="dictation-words"><span>Words in this sentence</span><div>' + chips + "</div></div>" : "") +
+      '<div class="dictation-reward"><span>+' + (d.lastReward ? d.lastReward.beans : 0) + " Taler</span><span>+" + (d.lastReward ? d.lastReward.visitors : 0) + " market visitors</span></div>" +
+      "</div>"
+    );
+  }
+
+  function dictationSession() {
+    var d = app.dictation;
+    var total = d.queue.length;
+    var progress = Math.round(((d.index + (d.checked ? 1 : 0)) / total) * 100);
+    var recorded = !!Deck.audioFor(d.current.de);
+    return (
+      '<div class="dictation-page dictation-live">' +
+      '<div class="dictation-toolbar"><button class="btn btn-ghost btn-sm" data-action="dictation-exit">' + icon("back") + " Exit</button>" +
+      '<div class="dictation-progress"><div class="level-track"><div class="level-fill" style="width:' + progress + '%"></div></div><span>' + (d.index + 1) + " / " + total + "</span></div>" +
+      '<div class="dictation-session-meta"><span>' + d.correctCount + " correct</span><span>" + d.cleanCount + " clean</span></div></div>" +
+      '<section class="dictation-card">' +
+      '<div class="dictation-card-head"><div><p class="eyebrow">Sentence ' + (d.index + 1) + " of " + total + '</p><h2>Listen and type</h2></div><span class="pill ' + (recorded ? "mature" : "") + '">' + (recorded ? "Recorded voice" : "Browser voice") + "</span></div>" +
+      '<div class="dictation-audio-row"><button class="dictation-play" data-action="dictation-play" aria-label="Play sentence">' + icon("speaker", 26) + "<span>Play sentence</span></button>" +
+      '<button class="btn btn-ghost btn-sm" data-action="dictation-slow">Play slower</button>' +
+      '<span class="dictation-audio-note">' + (recorded ? "Tanja · natural speed" : "Uses your browser's German voice") + "</span></div>" +
+      '<label class="dictation-input-wrap"><span>Type what you hear</span><textarea data-role="dictation-input" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Schreibe den Satz auf Deutsch …"' + (d.checked ? " disabled" : "") + ">" + esc(d.input || "") + "</textarea></label>" +
+      '<div class="dictation-actions">' +
+      (!d.checked
+        ? '<button class="btn btn-ghost" data-action="dictation-hint">' + (d.hinted ? "English hint shown" : "Show English hint") + '</button><button class="btn btn-primary" data-action="dictation-check">Check sentence</button>'
+        : '<button class="btn btn-ghost" data-action="dictation-play">Replay</button><button class="btn btn-primary" data-action="dictation-next">' + (d.index + 1 >= total ? "See summary" : "Next sentence") + " " + icon("arrow") + "</button>") +
+      "</div>" +
+      (d.hinted && !d.checked ? '<div class="dictation-hint"><span>English hint</span><p>' + esc(d.current.en) + "</p></div>" : "") +
+      (d.checked ? dictationResultHtml(d) : "") +
+      '<p class="dictation-shortcuts">' + (d.checked ? "Press Enter for the next sentence." : "Press Enter to check · Shift + Enter for a new line.") + "</p>" +
+      "</section>" +
+      "</div>"
+    );
+  }
+
+  function dictationSummary() {
+    var d = app.dictation;
+    var total = d.queue.length;
+    var accuracy = total ? Math.round((d.correctCount / total) * 100) : 0;
+    var missed = d.missed || [];
+    var review = missed.length
+      ? missed
+          .map(function (item) {
+            return (
+              '<div class="dictation-review-row">' +
+              '<button class="speaker small soft" data-action="dictation-say" data-text="' + esc(item.de) + '" aria-label="Play sentence">' + icon("speaker", 15) + "</button>" +
+              '<div><strong>' + esc(item.de) + "</strong><span>" + esc(item.en) + "</span></div>" +
+              '<span class="pill ' + (item.hinted ? "" : "bad") + '">' + (item.hinted ? "hinted" : "missed") + "</span>" +
+              "</div>"
+            );
+          })
+          .join("")
+      : '<div class="empty">Clean sweep — every sentence was correct.</div>';
+    return (
+      '<div class="dictation-page dictation-summary">' +
+      '<div class="dictation-summary-head"><p class="eyebrow">Session complete</p><h1>' + (accuracy === 100 ? "Perfect listening." : "Good work — keep listening.") + "</h1><p>" + total + " sentences · " + accuracy + "% correct · " + d.cleanCount + " clean answers</p></div>" +
+      '<div class="dictation-summary-stats">' +
+      '<div class="dictation-stat"><strong>' + d.correctCount + " / " + total + "</strong><span>correct</span></div>" +
+      '<div class="dictation-stat"><strong>' + accuracy + "%</strong><span>accuracy</span></div>" +
+      '<div class="dictation-stat"><strong>+' + d.beans + "</strong><span>Taler</span></div>" +
+      '<div class="dictation-stat"><strong>+' + d.visitors + "</strong><span>visitors</span></div>" +
+      "</div>" +
+      '<section class="panel dictation-review-panel"><div class="panel-head"><h2>Review</h2><span>' + missed.length + " to revisit</span></div>" + review + "</section>" +
+      '<div class="dictation-summary-actions"><button class="btn btn-primary" data-action="dictation-start" data-size="' + d.queue.length + '">New session ' + icon("arrow") + '</button><button class="btn btn-ghost" data-action="dictation-exit">Back to overview</button></div>' +
+      "</div>"
+    );
+  }
+
+  function renderDictation() {
+    if (!app.dictation) return dictationLanding();
+    if (app.dictation.finished) return dictationSummary();
+    return dictationSession();
+  }
+
   function renderBrowse() {
     var q = app.browse.query;
     var filter = app.browse.filter;
@@ -1313,6 +1617,7 @@
     var grammarStarStats = Store.grammarStars(app.state);
     var readingProg = Store.readingProgress(app.state);
     var readingNext = readerNextText();
+    var dictStats = Store.dictationStats(app.state);
     var forecast = Store.forecast(app.state, 14, Date.now(), direction);
     var maxF = Math.max.apply(
       null,
@@ -1392,6 +1697,16 @@
       '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">' +
       (readingNext ? '<a class="btn btn-soft btn-sm" href="#/reader/' + esc(readingNext.id) + '">Continue · ' + esc(readingNext.title) + "</a>" : '<span class="pill mature">All texts read</span>') +
       '<a class="btn btn-ghost btn-sm" href="#/reader">Reader index ' + icon("arrow") + "</a></div></div>" +
+      '<div class="panel" style="margin-bottom:18px"><div class="panel-head"><h2>Dictation</h2><span>' + dictStats.attempts + " sentences · " + dictStats.clean + " clean</span></div>" +
+      '<div class="dictation-stats-row">' +
+      '<div><strong>' + (dictStats.attempts ? Math.round(dictStats.accuracy * 100) + "%" : "—") + "</strong><span>accuracy</span></div>" +
+      '<div><strong>' + dictStats.bestStreak + "</strong><span>best streak</span></div>" +
+      '<div><strong>' + dictStats.today + "</strong><span>today</span></div>" +
+      '<div><strong>' + dictStats.clean + "</strong><span>clean answers</span></div>" +
+      "</div>" +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">' +
+      '<button class="btn btn-soft btn-sm" data-action="dictation-start" data-size="' + dictationSize() + '">Start dictation ' + icon("arrow") + "</button>" +
+      '<a class="btn btn-ghost btn-sm" href="#/dictation">Dictation overview ' + icon("arrow") + "</a></div></div>" +
       '<div class="two-col">' +
       '<div class="panel"><div class="panel-head"><h2>Leeches · ' + (isRev ? "recall" : "recognition") + '</h2><span>most lapses</span></div><div class="hard-list">' +
       (hard.length
@@ -2577,6 +2892,45 @@
         app.statsDirection = btn.getAttribute("data-direction") === "reverse" ? "reverse" : "forward";
         render();
         break;
+      case "dictation-start":
+        startDictation(btn.getAttribute("data-size"));
+        break;
+      case "dictation-size":
+        app.state.dictation.sessionSize = Math.max(5, Math.min(20, Number(btn.getAttribute("data-size")) || 10));
+        Store.save(app.state);
+        render();
+        break;
+      case "dictation-play":
+        playDictation(false);
+        break;
+      case "dictation-slow":
+        playDictation(true);
+        break;
+      case "dictation-hint":
+        if (app.dictation && !app.dictation.checked) {
+          app.dictation.hinted = true;
+          render();
+          setTimeout(function () {
+            var input = document.querySelector("[data-role='dictation-input']");
+            if (input) input.focus();
+          }, 30);
+        }
+        break;
+      case "dictation-check":
+        checkDictation();
+        break;
+      case "dictation-next":
+        nextDictation();
+        break;
+      case "dictation-exit":
+        exitDictation();
+        break;
+      case "dictation-say":
+        var dictationText = btn.getAttribute("data-text") || "";
+        if (dictationText) {
+          playAudio(Deck.audioFor(dictationText) || "tts:" + dictationText, Number(app.state.settings.audioRate) || 0.94);
+        }
+        break;
       case "cafe":
         navigate("#/cafe");
         break;
@@ -2889,6 +3243,11 @@
   }
 
   function onInput(e) {
+    var dictationInput = e.target.closest("[data-role='dictation-input']");
+    if (dictationInput) {
+      if (app.dictation) app.dictation.input = dictationInput.value;
+      return;
+    }
     var grammarSearch = e.target.closest("[data-role='grammar-search']");
     if (grammarSearch) {
       app.grammarSearch = grammarSearch.value;
@@ -2925,6 +3284,17 @@
     if (e.target && e.target.matches && e.target.matches("[data-role='g-fill']") && e.key === "Enter") {
       e.preventDefault();
       checkGrammarFill();
+      return;
+    }
+    if (e.target && e.target.matches && e.target.matches("[data-role='dictation-input']") && e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      if (app.dictation && app.dictation.checked) nextDictation();
+      else checkDictation();
+      return;
+    }
+    if (app.view === "dictation" && app.dictation && app.dictation.checked && e.key === "Enter" && e.target && !/^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(e.target.tagName)) {
+      e.preventDefault();
+      nextDictation();
       return;
     }
     if (e.key === "Escape") hideGloss();
