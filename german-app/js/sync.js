@@ -351,7 +351,14 @@
       if (read.error) throw read.error;
       var remote = read.data && read.data.state;
       var merged = mergeState(local, remote);
-      if (remote && JSON.stringify(merged) !== JSON.stringify(local)) {
+      // The request above can take a moment. If the user studied or spent
+      // Taler while it was in flight, fold those newer local changes back in
+      // instead of applying a stale snapshot over them.
+      var current = getState() || local;
+      if (JSON.stringify(current) !== JSON.stringify(local)) {
+        merged = mergeState(current, merged);
+      }
+      if (remote && JSON.stringify(merged) !== JSON.stringify(current)) {
         applying = true;
         try {
           setState(merged);
