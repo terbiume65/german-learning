@@ -34,6 +34,16 @@
       charms: {},
       lastDailyBonus: null,
       lastGoalBonus: null,
+      visitors: 0,
+      stock: 10,
+      reputation: 0,
+      served: 0,
+      upgrades: {},
+      lastMarketReport: null,
+      lastMarketDay: null,
+      servedToday: 0,
+      revenueToday: 0,
+      marketMigrated: false,
     },
     streak: { current: 0, longest: 0, lastStudy: null },
     createdAt: null,
@@ -178,30 +188,68 @@
     }
     updateStreak(state, now);
 
-    // Café rewards
-    if (!state.cafe) state.cafe = clone(DEFAULTS.cafe);
-    if (!state.cafe.items) state.cafe.items = clone(DEFAULTS.cafe.items);
-    var beans = 1 + (correct ? 1 : 0) + (wasNew ? 2 : 0);
-    var bonus = 0;
+    // Christmas market rewards: reviews attract visitors, not a large pile of Taler.
+    var cafe = ensureCafe(state);
+    var beans = correct ? 1 : 0;
+    var visitors = 1 + (wasNew ? 1 : 0);
+    var visitorsBonus = 0;
     var k = dateKey(new Date(now));
-    if (state.cafe.lastDailyBonus !== k) {
-      bonus += 5;
-      state.cafe.lastDailyBonus = k;
+    if (cafe.lastDailyBonus !== k) {
+      visitorsBonus += 5;
+      cafe.lastDailyBonus = k;
     }
     var totalReviews = d.reviews + d.reverseReviews;
     var goal = Math.max(1, Number(state.settings.dailyGoal) || 20);
-    if (totalReviews >= goal && state.cafe.lastGoalBonus !== k) {
-      bonus += 15;
-      state.cafe.lastGoalBonus = k;
+    if (totalReviews >= goal && cafe.lastGoalBonus !== k) {
+      visitorsBonus += 10;
+      cafe.lastGoalBonus = k;
     }
-    state.cafe.beans += beans + bonus;
-    state.cafe.totalEarned += beans + bonus;
+    cafe.beans += beans;
+    cafe.totalEarned += beans;
+    cafe.visitors += visitors + visitorsBonus;
     save(state);
-    return { card: updated, beans: beans + bonus, base: beans, bonus: bonus, wasNew: wasNew };
+    return {
+      card: updated,
+      beans: beans,
+      base: beans,
+      bonus: 0,
+      wasNew: wasNew,
+      visitors: visitors + visitorsBonus,
+      visitorsBase: visitors,
+      visitorsBonus: visitorsBonus,
+    };
   }
 
   function cafeLevel(state) {
-    return 1 + Math.floor((state.cafe ? state.cafe.totalEarned || 0 : 0) / 200);
+    var reputation = state.cafe ? Number(state.cafe.reputation) || 0 : 0;
+    return Math.max(1, Math.min(20, 1 + Math.floor(reputation / 50)));
+  }
+
+  function ownedMarketItems(cafe) {
+    var items = (root.Cafe && root.Cafe.items) || [];
+    return items.filter(function (item) { return !!(cafe.items && cafe.items[item.id]); });
+  }
+
+  function upgradeTotal(cafe) {
+    return Object.keys(cafe.upgrades || {}).reduce(function (sum, id) {
+      return sum + Math.max(0, (Number(cafe.upgrades[id]) || 1) - 1);
+    }, 0);
+  }
+
+  function marketYield(state) {
+    var cafe = ensureCafe(state);
+    var owned = ownedMarketItems(cafe).length;
+    return 2 + Math.floor(owned / 4) + Math.floor(upgradeTotal(cafe) / 3);
+  }
+
+  function marketStockCap(state) {
+    var cafe = ensureCafe(state);
+    return 30 + ownedMarketItems(cafe).length * 4 + upgradeTotal(cafe) * 2;
+  }
+
+  function upgradeCost(item, currentLevel) {
+    var factor = [3, 7, 15, 30][Math.max(0, Math.min(3, currentLevel - 1))] || 30;
+    return Math.round((item.cost * factor) / 10) * 10;
   }
 
   function ensureCafe(state) {
@@ -213,7 +261,97 @@
     if (state.cafe.starsEarned == null) state.cafe.starsEarned = 0;
     if (!state.cafe.starUnits) state.cafe.starUnits = {};
     if (!state.cafe.charms) state.cafe.charms = {};
+    if (state.cafe.visitors == null) state.cafe.visitors = 0;
+    if (state.cafe.stock == null) state.cafe.stock = 10;
+    if (state.cafe.served == null) state.cafe.served = 0;
+    if (!state.cafe.upgrades) state.cafe.upgrades = {};
+    if (state.cafe.lastMarketDay == null) state.cafe.lastMarketDay = null;
+    if (state.cafe.servedToday == null) state.cafe.servedToday = 0;
+    if (state.cafe.revenueToday == null) state.cafe.revenueToday = 0;
+    if (!state.cafe.marketMigrated) {
+      state.cafe.reputation = Math.max(
+        Number(state.cafe.reputation) || 0,
+        Math.min(360, Math.floor((Number(state.cafe.totalEarned) || 0) / 10))
+      );
+      state.cafe.marketMigrated = true;
+    }
+    if (state.cafe.reputation == null) state.cafe.reputation = 0;
     return state.cafe;
+  }
+
+  function serveMarket(state) {
+    var cafe = ensureCafe(state);
+    var visitors = Math.max(0, Math.floor(Number(cafe.visitors) || 0));
+    var stock = Math.max(0, Math.floor(Number(cafe.stock) || 0));
+    if (!visitors) return { ok: false, reason: "visitors" };
+    if (!stock) return { ok: false, reason: "stock" };
+    var served = Math.min(visitors, stock);
+    var missed = visitors - served;
+    var revenue = served * marketYield(state);
+    var oldLevel = cafeLevel(state);
+    var reputationDelta = served;
+    cafe.stock -= served;
+    cafe.visitors = 0;
+    cafe.beans += revenue;
+    cafe.totalEarned += revenue;
+    cafe.served += served;
+    cafe.reputation = Math.max(0, (Number(cafe.reputation) || 0) + reputationDelta);
+    var today = dateKey(new Date());
+    if (cafe.lastMarketDay !== today) {
+      cafe.lastMarketDay = today;
+      cafe.servedToday = 0;
+      cafe.revenueToday = 0;
+    }
+    cafe.servedToday += served;
+    cafe.revenueToday += revenue;
+    cafe.lastMarketReport = {
+      served: served,
+      missed: missed,
+      revenue: revenue,
+      reputation: reputationDelta,
+      levelBefore: oldLevel,
+      levelAfter: cafeLevel(state),
+      at: Date.now(),
+    };
+    save(state);
+    return {
+      ok: true,
+      served: served,
+      missed: missed,
+      revenue: revenue,
+      reputation: reputationDelta,
+      levelBefore: oldLevel,
+      levelAfter: cafeLevel(state),
+    };
+  }
+
+  function buyStock(state, quantity) {
+    var cafe = ensureCafe(state);
+    var cap = marketStockCap(state);
+    var space = Math.max(0, cap - (Number(cafe.stock) || 0));
+    var qty = Math.min(Number(quantity) || 25, space);
+    if (qty < 1) return { ok: false, reason: "full" };
+    var cost = Math.ceil((qty * 40) / 25);
+    if (cafe.beans < cost) return { ok: false, reason: "beans", cost: cost };
+    cafe.beans -= cost;
+    cafe.stock = (Number(cafe.stock) || 0) + qty;
+    save(state);
+    return { ok: true, quantity: qty, cost: cost };
+  }
+
+  function upgradeItem(state, item) {
+    var cafe = ensureCafe(state);
+    if (!cafe.items[item.id]) return { ok: false, reason: "unowned" };
+    var current = Math.max(1, Number(cafe.upgrades[item.id]) || 1);
+    if (current >= 5) return { ok: false, reason: "max" };
+    var required = item.level + current;
+    if (cafeLevel(state) < required) return { ok: false, reason: "level", required: required };
+    var cost = upgradeCost(item, current);
+    if (cafe.beans < cost) return { ok: false, reason: "beans", cost: cost };
+    cafe.beans -= cost;
+    cafe.upgrades[item.id] = current + 1;
+    save(state);
+    return { ok: true, level: current + 1, cost: cost };
   }
 
   function addBeans(state, amount) {
@@ -340,6 +478,7 @@
     if (cafe.beans < item.cost) return { ok: false, reason: "beans" };
     cafe.beans -= item.cost;
     cafe.items[item.id] = true;
+    if (!cafe.upgrades[item.id]) cafe.upgrades[item.id] = 1;
     save(state);
     return { ok: true };
   }
@@ -519,6 +658,12 @@
     totals: totals,
     cafeLevel: cafeLevel,
     buyItem: buyItem,
+    upgradeItem: upgradeItem,
+    serveMarket: serveMarket,
+    buyStock: buyStock,
+    marketYield: marketYield,
+    marketStockCap: marketStockCap,
+    upgradeCost: upgradeCost,
     synthesize: synthesize,
     addBeans: addBeans,
     grammarProgress: grammarProgress,

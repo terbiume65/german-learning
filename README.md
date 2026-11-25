@@ -1,6 +1,6 @@
 # German Learning
 
-A self-contained German A1 study project: vocabulary deck, visual A1–A2 grammar course, graded reader and a Christmas market reward system.
+A self-contained German A1 study project: vocabulary deck, visual A1–A2 grammar course, graded reader and a Christmas market management sim. After Show answer, ratings are Again/Hard; Good/Easy are earned through the quiz.
 
 ## Contents
 

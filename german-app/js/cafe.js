@@ -15,6 +15,9 @@
     { id: "gifts", name: "Gift stall", cost: 340, level: 4, icon: "🎁", desc: "Presents wrapped in red and gold." },
     { id: "reindeer", name: "Reindeer", cost: 380, level: 5, icon: "🦌", desc: "A quiet reindeer at the edge of the market." },
     { id: "starnight", name: "Starry night", cost: 420, level: 5, icon: "🌟", desc: "A sky full of winter stars." },
+    { id: "icerink", name: "Ice rink", cost: 8000, level: 8, icon: "⛸️", desc: "A little rink where visitors can skate." },
+    { id: "stage", name: "Market stage", cost: 15000, level: 10, icon: "🎭", desc: "Music and theatre on the market square." },
+    { id: "train", name: "Christmas train", cost: 24000, level: 12, icon: "🚂", desc: "A miniature train circling the market." },
   ];
 
   var CHARMS = [
@@ -25,18 +28,21 @@
     { id: "sound", name: "Sound Angel", glyph: "A", color: "#c9a96b", stars: 7, beans: 340, desc: "An angel for listening and speaking." },
   ];
 
-  function ownedClass(owned, id) {
-    return owned && owned[id] ? "cafe-item owned" : "cafe-item";
+  function ownedClass(owned, upgrades, id) {
+    if (!owned || !owned[id]) return "cafe-item";
+    var level = Math.max(1, Math.min(5, Number(upgrades && upgrades[id]) || 1));
+    return "cafe-item owned level-" + level;
   }
 
-  function customerClass(words, threshold) {
-    return words >= threshold ? "cafe-customer show" : "cafe-customer";
+  function customerClass(visitors, threshold) {
+    return visitors >= threshold ? "cafe-customer show" : "cafe-customer";
   }
 
-  function scene(owned, words, level, charms) {
+  function scene(owned, visitors, level, charms, upgrades) {
     owned = owned || {};
-    words = words || 0;
+    visitors = visitors || 0;
     charms = charms || {};
+    upgrades = upgrades || {};
     var ownedCharms = CHARMS.filter(function (charm) { return charms[charm.id]; });
     var charmWall = ownedCharms.length
       ? '<g class="cafe-grammar-wall">' +
@@ -103,43 +109,56 @@
       // warm lantern glows
       '<circle cx="178" cy="330" r="58" fill="url(#warmglow)"/><circle cx="718" cy="330" r="58" fill="url(#warmglow)"/>' +
       // visitors
-      '<g class="' + customerClass(words, 25) + ' cafe-customer-1"><circle cx="365" cy="350" r="15" fill="#5b4636"/><rect x="345" y="364" width="40" height="50" rx="10" fill="#b23a32"/><rect x="351" y="410" width="10" height="35" rx="4" fill="#2f2a24"/><rect x="369" y="410" width="10" height="35" rx="4" fill="#2f2a24"/></g>' +
-      '<g class="' + customerClass(words, 120) + ' cafe-customer-2"><circle cx="535" cy="356" r="14" fill="#6b4c3a"/><rect x="517" y="369" width="36" height="44" rx="9" fill="#2f6b5a"/><rect x="523" y="410" width="9" height="30" rx="4" fill="#2f2a24"/><rect x="539" y="410" width="9" height="30" rx="4" fill="#2f2a24"/></g>' +
-      '<g class="' + customerClass(words, 300) + ' cafe-customer-3"><circle cx="90" cy="320" r="13" fill="#8a5b34"/><rect x="74" y="332" width="32" height="40" rx="8" fill="#7a5b8c"/><rect x="79" y="369" width="8" height="28" rx="4" fill="#2f2a24"/><rect x="93" y="369" width="8" height="28" rx="4" fill="#2f2a24"/></g>' +
-      '<g class="' + customerClass(words, 600) + ' cafe-customer-4"><circle cx="815" cy="320" r="13" fill="#5b4636"/><rect x="799" y="332" width="32" height="38" rx="8" fill="#c26d4a"/><rect x="804" y="367" width="8" height="26" rx="4" fill="#2f2a24"/><rect x="818" y="367" width="8" height="26" rx="4" fill="#2f2a24"/></g>' +
+      '<g class="' + customerClass(visitors, 5) + ' cafe-customer-1"><circle cx="365" cy="350" r="15" fill="#5b4636"/><rect x="345" y="364" width="40" height="50" rx="10" fill="#b23a32"/><rect x="351" y="410" width="10" height="35" rx="4" fill="#2f2a24"/><rect x="369" y="410" width="10" height="35" rx="4" fill="#2f2a24"/></g>' +
+      '<g class="' + customerClass(visitors, 15) + ' cafe-customer-2"><circle cx="535" cy="356" r="14" fill="#6b4c3a"/><rect x="517" y="369" width="36" height="44" rx="9" fill="#2f6b5a"/><rect x="523" y="410" width="9" height="30" rx="4" fill="#2f2a24"/><rect x="539" y="410" width="9" height="30" rx="4" fill="#2f2a24"/></g>' +
+      '<g class="' + customerClass(visitors, 30) + ' cafe-customer-3"><circle cx="90" cy="320" r="13" fill="#8a5b34"/><rect x="74" y="332" width="32" height="40" rx="8" fill="#7a5b8c"/><rect x="79" y="369" width="8" height="28" rx="4" fill="#2f2a24"/><rect x="93" y="369" width="8" height="28" rx="4" fill="#2f2a24"/></g>' +
+      '<g class="' + customerClass(visitors, 60) + ' cafe-customer-4"><circle cx="815" cy="320" r="13" fill="#5b4636"/><rect x="799" y="332" width="32" height="38" rx="8" fill="#c26d4a"/><rect x="804" y="367" width="8" height="26" rx="4" fill="#2f2a24"/><rect x="818" y="367" width="8" height="26" rx="4" fill="#2f2a24"/></g>' +
       // wooden stall item (extra decoration)
-      '<g class="' + ownedClass(owned, "stall") + '" data-item="stall"><rect x="354" y="286" width="192" height="95" rx="7" fill="url(#woodw)"/><path d="M344 286h212l14-34H330z" fill="#c26d4a"/><path d="M344 286h212l14-34H330z" fill="none" stroke="#8f3f2c" stroke-width="2"/><rect x="380" y="312" width="52" height="30" rx="4" fill="#f5e3c2"/><rect x="452" y="312" width="52" height="30" rx="4" fill="#f5e3c2"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "stall") + '" data-item="stall"><rect x="354" y="286" width="192" height="95" rx="7" fill="url(#woodw)"/><path d="M344 286h212l14-34H330z" fill="#c26d4a"/><path d="M344 286h212l14-34H330z" fill="none" stroke="#8f3f2c" stroke-width="2"/><rect x="380" y="312" width="52" height="30" rx="4" fill="#f5e3c2"/><rect x="452" y="312" width="52" height="30" rx="4" fill="#f5e3c2"/></g>' +
       // fairy lights
-      '<g class="' + ownedClass(owned, "lights") + '" data-item="lights"><path d="M40 110c120 38 250 38 370 0s250-38 390 0" stroke="#3a2a1d" stroke-width="2" fill="none"/>' +
+      '<g class="' + ownedClass(owned, upgrades, "lights") + '" data-item="lights"><path d="M40 110c120 38 250 38 370 0s250-38 390 0" stroke="#3a2a1d" stroke-width="2" fill="none"/>' +
       '<g fill="#ffe6a3">' + [80,130,180,230,280,330,380,430,480,530,580,630,680,730,780,830].map(function (x, i) { return '<circle cx="' + x + '" cy="' + (116 + Math.sin(i * 0.8) * 10) + '" r="4"/>'; }).join("") + '</g></g>' +
       // gluhwein stand
-      '<g class="' + ownedClass(owned, "gluhwein") + '" data-item="gluhwein"><rect x="100" y="300" width="66" height="46" rx="5" fill="#2f2a24"/><text x="133" y="320" text-anchor="middle" font-size="7" fill="#ffe5b0" font-family="sans-serif">GLÜHWEIN</text><rect x="112" y="330" width="14" height="16" rx="2" fill="#b23a32"/><rect x="132" y="330" width="14" height="16" rx="2" fill="#b23a32"/><path class="steam" d="M118 326c-5-8 5-10 0-18M138 326c-5-8 5-10 0-18" stroke="#fff" stroke-width="2" fill="none" opacity=".55" stroke-linecap="round"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "gluhwein") + '" data-item="gluhwein"><rect x="100" y="300" width="66" height="46" rx="5" fill="#2f2a24"/><text x="133" y="320" text-anchor="middle" font-size="7" fill="#ffe5b0" font-family="sans-serif">GLÜHWEIN</text><rect x="112" y="330" width="14" height="16" rx="2" fill="#b23a32"/><rect x="132" y="330" width="14" height="16" rx="2" fill="#b23a32"/><path class="steam" d="M118 326c-5-8 5-10 0-18M138 326c-5-8 5-10 0-18" stroke="#fff" stroke-width="2" fill="none" opacity=".55" stroke-linecap="round"/></g>' +
       // gingerbread hearts
-      '<g class="' + ownedClass(owned, "gingerbread") + '" data-item="gingerbread"><path d="M210 304c-10-12-30-2-24 12 5 10 24 22 24 22s19-12 24-22c6-14-14-24-24-12Z" fill="#b97843"/><path d="M210 304c-10-12-30-2-24 12 5 10 24 22 24 22s19-12 24-22c6-14-14-24-24-12Z" fill="none" stroke="#6f4628" stroke-width="2"/><text x="210" y="324" text-anchor="middle" font-size="7" fill="#fff6e5" font-family="sans-serif">ICH LIEBE DICH</text></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "gingerbread") + '" data-item="gingerbread"><path d="M210 304c-10-12-30-2-24 12 5 10 24 22 24 22s19-12 24-22c6-14-14-24-24-12Z" fill="#b97843"/><path d="M210 304c-10-12-30-2-24 12 5 10 24 22 24 22s19-12 24-22c6-14-14-24-24-12Z" fill="none" stroke="#6f4628" stroke-width="2"/><text x="210" y="324" text-anchor="middle" font-size="7" fill="#fff6e5" font-family="sans-serif">ICH LIEBE DICH</text></g>' +
       // tree
-      '<g class="' + ownedClass(owned, "tree") + '" data-item="tree"><rect x="434" y="350" width="14" height="44" fill="#6f4628"/>' +
+      '<g class="' + ownedClass(owned, upgrades, "tree") + '" data-item="tree"><rect x="434" y="350" width="14" height="44" fill="#6f4628"/>' +
       '<path d="M440 210l62 72h-124z" fill="#1f5d46"/><path d="M440 250l70 78H370z" fill="#2d7a5a"/><path d="M440 292l78 84H362z" fill="#3b916c"/>' +
       '<circle cx="410" cy="282" r="4" fill="#ffd56b"/><circle cx="466" cy="300" r="4" fill="#b23a32"/><circle cx="432" cy="340" r="4" fill="#ffd56b"/><circle cx="480" cy="354" r="4" fill="#7a5b8c"/><circle cx="392" cy="350" r="4" fill="#b23a32"/><path d="M440 198l7 12h-14z" fill="#ffe6a3"/></g>' +
       // nutcracker
-      '<g class="' + ownedClass(owned, "nutcracker") + '" data-item="nutcracker"><rect x="742" y="330" width="30" height="54" rx="8" fill="#2f6b5a"/><circle cx="757" cy="318" r="15" fill="#f0c9a0"/><path d="M742 310h30l-3-18h-24z" fill="#b23a32"/><circle cx="752" cy="316" r="2" fill="#2f2a24"/><circle cx="762" cy="316" r="2" fill="#2f2a24"/><rect x="749" y="326" width="16" height="5" rx="2" fill="#fff"/><rect x="748" y="384" width="8" height="28" fill="#2f2a24"/><rect x="758" y="384" width="8" height="28" fill="#2f2a24"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "nutcracker") + '" data-item="nutcracker"><rect x="742" y="330" width="30" height="54" rx="8" fill="#2f6b5a"/><circle cx="757" cy="318" r="15" fill="#f0c9a0"/><path d="M742 310h30l-3-18h-24z" fill="#b23a32"/><circle cx="752" cy="316" r="2" fill="#2f2a24"/><circle cx="762" cy="316" r="2" fill="#2f2a24"/><rect x="749" y="326" width="16" height="5" rx="2" fill="#fff"/><rect x="748" y="384" width="8" height="28" fill="#2f2a24"/><rect x="758" y="384" width="8" height="28" fill="#2f2a24"/></g>' +
       // snowman
-      '<g class="' + ownedClass(owned, "snowman") + '" data-item="snowman"><circle cx="300" cy="376" r="27" fill="#f8fbff"/><circle cx="300" cy="338" r="20" fill="#f8fbff"/><circle cx="300" cy="312" r="13" fill="#f8fbff"/><circle cx="296" cy="309" r="2" fill="#2f2a24"/><circle cx="304" cy="309" r="2" fill="#2f2a24"/><path d="M300 313l10 5-10 4z" fill="#e58b3a"/><path d="M282 330c12 6 24 6 36 0" stroke="#b23a32" stroke-width="7" fill="none"/><path d="M289 338l-3 22M311 338l3 22" stroke="#3a2a1d" stroke-width="3"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "snowman") + '" data-item="snowman"><circle cx="300" cy="376" r="27" fill="#f8fbff"/><circle cx="300" cy="338" r="20" fill="#f8fbff"/><circle cx="300" cy="312" r="13" fill="#f8fbff"/><circle cx="296" cy="309" r="2" fill="#2f2a24"/><circle cx="304" cy="309" r="2" fill="#2f2a24"/><path d="M300 313l10 5-10 4z" fill="#e58b3a"/><path d="M282 330c12 6 24 6 36 0" stroke="#b23a32" stroke-width="7" fill="none"/><path d="M289 338l-3 22M311 338l3 22" stroke="#3a2a1d" stroke-width="3"/></g>' +
       // carousel
-      '<g class="' + ownedClass(owned, "carousel") + '" data-item="carousel"><rect x="642" y="330" width="86" height="12" rx="4" fill="#b23a32"/><path d="M648 330l-14-40h94l-14 40z" fill="#2f6b5a"/><path d="M660 290l-10-28h50l-10 28z" fill="#c26d4a"/><rect x="682" y="262" width="4" height="44" fill="#f5e3c2"/><circle cx="684" cy="258" r="6" fill="#ffd56b"/><rect x="650" y="342" width="70" height="8" rx="3" fill="#6f4628"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "carousel") + '" data-item="carousel"><rect x="642" y="330" width="86" height="12" rx="4" fill="#b23a32"/><path d="M648 330l-14-40h94l-14 40z" fill="#2f6b5a"/><path d="M660 290l-10-28h50l-10 28z" fill="#c26d4a"/><rect x="682" y="262" width="4" height="44" fill="#f5e3c2"/><circle cx="684" cy="258" r="6" fill="#ffd56b"/><rect x="650" y="342" width="70" height="8" rx="3" fill="#6f4628"/></g>' +
       // wreath
-      '<g class="' + ownedClass(owned, "wreath") + '" data-item="wreath"><circle cx="672" cy="314" r="22" fill="none" stroke="#1f5d46" stroke-width="10"/><circle cx="672" cy="314" r="22" fill="none" stroke="#3b916c" stroke-width="4" stroke-dasharray="5 5"/><circle cx="656" cy="300" r="3" fill="#b23a32"/><circle cx="688" cy="306" r="3" fill="#b23a32"/><circle cx="662" cy="330" r="3" fill="#b23a32"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "wreath") + '" data-item="wreath"><circle cx="672" cy="314" r="22" fill="none" stroke="#1f5d46" stroke-width="10"/><circle cx="672" cy="314" r="22" fill="none" stroke="#3b916c" stroke-width="4" stroke-dasharray="5 5"/><circle cx="656" cy="300" r="3" fill="#b23a32"/><circle cx="688" cy="306" r="3" fill="#b23a32"/><circle cx="662" cy="330" r="3" fill="#b23a32"/></g>' +
       // gifts
-      '<g class="' + ownedClass(owned, "gifts") + '" data-item="gifts"><rect x="350" y="352" width="34" height="28" rx="3" fill="#b23a32"/><rect x="384" y="360" width="28" height="20" rx="3" fill="#2f6b5a"/><path d="M350 362h34M367 352v28M384 368h28M398 360v20" stroke="#ffe6a3" stroke-width="3"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "gifts") + '" data-item="gifts"><rect x="350" y="352" width="34" height="28" rx="3" fill="#b23a32"/><rect x="384" y="360" width="28" height="20" rx="3" fill="#2f6b5a"/><path d="M350 362h34M367 352v28M384 368h28M398 360v20" stroke="#ffe6a3" stroke-width="3"/></g>' +
       // reindeer
-      '<g class="' + ownedClass(owned, "reindeer") + '" data-item="reindeer"><ellipse cx="90" cy="380" rx="32" ry="16" fill="#6f4628"/><circle cx="122" cy="364" r="12" fill="#6f4628"/><path d="M116 355l-8-14 12 6M128 355l9-14-13 6" fill="none" stroke="#6f4628" stroke-width="3"/><path d="M72 390v20M98 390v20" stroke="#4e321f" stroke-width="4"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "reindeer") + '" data-item="reindeer"><ellipse cx="90" cy="380" rx="32" ry="16" fill="#6f4628"/><circle cx="122" cy="364" r="12" fill="#6f4628"/><path d="M116 355l-8-14 12 6M128 355l9-14-13 6" fill="none" stroke="#6f4628" stroke-width="3"/><path d="M72 390v20M98 390v20" stroke="#4e321f" stroke-width="4"/></g>' +
       // starry night extra
-      '<g class="' + ownedClass(owned, "starnight") + '" data-item="starnight"><g fill="#ffe6a3">' + [120,220,320,420,520,620,720,820].map(function (x, i) { return '<path d="M' + x + ' ' + (130 + (i % 3) * 18) + 'l3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z"/>'; }).join("") + '</g></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "starnight") + '" data-item="starnight"><g fill="#ffe6a3">' + [120,220,320,420,520,620,720,820].map(function (x, i) { return '<path d="M' + x + ' ' + (130 + (i % 3) * 18) + 'l3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z"/>'; }).join("") + '</g></g>' +
+      // premium attractions
+      '<g class="' + ownedClass(owned, upgrades, "icerink") + '" data-item="icerink"><ellipse cx="450" cy="455" rx="132" ry="30" fill="#cfe7f3" opacity=".95"/><ellipse cx="450" cy="455" rx="118" ry="23" fill="#eef9ff" opacity=".9"/><path d="M414 446l12 18M486 446l-12 18" stroke="#3a2a1d" stroke-width="3" stroke-linecap="round"/><circle cx="414" cy="442" r="7" fill="#b23a32"/><circle cx="486" cy="442" r="7" fill="#2f6b5a"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "stage") + '" data-item="stage"><rect x="650" y="184" width="186" height="12" rx="4" fill="#6f4628"/><rect x="660" y="196" width="166" height="50" rx="4" fill="#8a4b32"/><path d="M660 196h166l-18-34h-130z" fill="#b23a32"/><path d="M660 196h166l-18-34h-130z" fill="none" stroke="#7d2822" stroke-width="2"/><circle cx="690" cy="238" r="5" fill="#ffd56b"/><circle cx="755" cy="238" r="5" fill="#ffd56b"/><circle cx="820" cy="238" r="5" fill="#ffd56b"/><path d="M716 146v-22M800 146v-22" stroke="#3a2a1d" stroke-width="3"/><circle cx="716" cy="120" r="5" fill="#ffe6a3"/><circle cx="800" cy="120" r="5" fill="#ffe6a3"/></g>' +
+      '<g class="' + ownedClass(owned, upgrades, "train") + '" data-item="train"><rect x="382" y="435" width="118" height="28" rx="9" fill="#b23a32"/><rect x="500" y="419" width="28" height="44" rx="5" fill="#2f6b5a"/><rect x="504" y="410" width="20" height="12" rx="3" fill="#3a2a1d"/><circle cx="402" cy="466" r="8" fill="#2f2a24"/><circle cx="438" cy="466" r="8" fill="#2f2a24"/><circle cx="474" cy="466" r="8" fill="#2f2a24"/><circle cx="510" cy="466" r="8" fill="#2f2a24"/><rect x="396" y="441" width="28" height="15" rx="2" fill="#ffe6a3"/><rect x="430" y="441" width="28" height="15" rx="2" fill="#ffe6a3"/><rect x="464" y="441" width="18" height="15" rx="2" fill="#ffe6a3"/></g>' +
       charmWall +
+      // live market status
+      '<g class="cafe-base"><rect x="24" y="24" width="128" height="34" rx="8" fill="#2f2a24" opacity=".94"/><text x="88" y="46" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffe5b0">👥 ' + visitors + ' waiting</text></g>' +
       // level badge
       '<g class="cafe-base"><rect x="760" y="24" width="82" height="34" rx="8" fill="#2f2a24"/><text x="801" y="46" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#ffe5b0">Lv ' + level + '</text></g>' +
       '</svg><div class="cafe-vignette"></div></div>'
     );
   }
 
-  root.Cafe = { items: ITEMS, charms: CHARMS, scene: scene };
+  root.Cafe = {
+    items: ITEMS,
+    charms: CHARMS,
+    scene: scene,
+    supplyPack: 25,
+    supplyCost: 40,
+    maxItemLevel: 5,
+  };
 })(typeof self !== "undefined" ? self : this);

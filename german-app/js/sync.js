@@ -160,14 +160,35 @@
     Object.keys(b.charms || {}).forEach(function (id) { if (b.charms[id]) charms[id] = true; });
     Object.keys(a.starUnits || {}).forEach(function (id) { if (a.starUnits[id]) starUnits[id] = true; });
     Object.keys(b.starUnits || {}).forEach(function (id) { if (b.starUnits[id]) starUnits[id] = true; });
+    var upgrades = {};
+    Object.keys(a.upgrades || {}).forEach(function (id) {
+      upgrades[id] = Math.max(Number(upgrades[id]) || 1, Number(a.upgrades[id]) || 1);
+    });
+    Object.keys(b.upgrades || {}).forEach(function (id) {
+      upgrades[id] = Math.max(Number(upgrades[id]) || 1, Number(b.upgrades[id]) || 1);
+    });
+    var latestReport = a.lastMarketReport;
+    if (!latestReport || (b.lastMarketReport && (Number(b.lastMarketReport.at) || 0) > (Number(latestReport.at) || 0))) {
+      latestReport = b.lastMarketReport || latestReport;
+    }
     return {
       items: items,
       charms: charms,
       starUnits: starUnits,
+      upgrades: upgrades,
       beans: Math.max(Number(a.beans) || 0, Number(b.beans) || 0),
       totalEarned: Math.max(Number(a.totalEarned) || 0, Number(b.totalEarned) || 0),
       stars: Math.max(Number(a.stars) || 0, Number(b.stars) || 0),
       starsEarned: Math.max(Number(a.starsEarned) || 0, Number(b.starsEarned) || 0),
+      visitors: Math.max(Number(a.visitors) || 0, Number(b.visitors) || 0),
+      stock: Math.max(Number(a.stock) || 0, Number(b.stock) || 0),
+      reputation: Math.max(Number(a.reputation) || 0, Number(b.reputation) || 0),
+      served: Math.max(Number(a.served) || 0, Number(b.served) || 0),
+      servedToday: Math.max(Number(a.servedToday) || 0, Number(b.servedToday) || 0),
+      revenueToday: Math.max(Number(a.revenueToday) || 0, Number(b.revenueToday) || 0),
+      lastMarketDay: a.lastMarketDay > b.lastMarketDay ? a.lastMarketDay : b.lastMarketDay,
+      lastMarketReport: latestReport,
+      marketMigrated: true,
       lastDailyBonus: a.lastDailyBonus > b.lastDailyBonus ? a.lastDailyBonus : b.lastDailyBonus,
       lastGoalBonus: a.lastGoalBonus > b.lastGoalBonus ? a.lastGoalBonus : b.lastGoalBonus,
     };

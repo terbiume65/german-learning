@@ -20,12 +20,13 @@ The app itself is static. The fixed German speech is pre-generated and checked i
 
 - **804 A1 vocabulary cards** from the official Goethe A1 word list, with articles, gender, plural forms, part of speech, an English meaning and an example sentence with an English translation.
 - **FSRS scheduling** for long-term retention. Recognition (German → English) and recall (English → German) have separate schedules.
+- After **Show answer**, only **Again** and **Hard** are offered. Choose **I know it · test me** if you want Good/Easy to be earned through a quiz answer.
 - **28 visual grammar lessons** in 7 units, covering a curated A1–A2 core path: gender and articles, plurals, the present tense, cases, negation, questions, possessives, adjective endings, modals, separable verbs, the imperative, reflexives, the dative, prepositions, the perfect tense, word order, subordinate and relative clauses, comparison, the future and Konjunktiv II.
 - **Original grammar diagrams**: gender columns, case tables, verb grids, sentence flows, two-way preposition diagrams, timelines and comparison bars. Many elements are tappable.
 - **9 original graded reader texts** from first introductions to longer stories, with hover/tap glosses, English translation on demand, line-by-line and whole-text recorded German audio, new-word lists and grammar links.
 - **Recorded neural German audio**: 2,445 short clips generated with the `de-DE-TanjaNeural` voice cover every word, example, grammar sentence and reader line. Playback is consistent across browsers and devices.
 - **Browser voice fallback** for any text without a recorded clip, with a voice picker in Settings. Installed Premium/Enhanced voices are preferred and novelty voices are ranked last.
-- **Weihnachtsmarkt**: reviews earn Taler; Taler buy wooden stalls, fairy lights, Glühwein, gingerbread, a tree, a carousel and more. Completing a grammar unit earns a star; stars plus Taler synthesize permanent study charms for the market wall.
+- **Weihnachtsmarkt management sim**: reviews attract visitors; visitors queue at the market. Serve the queue, consume supplies, earn Taler and reputation, then buy and upgrade stalls and premium attractions. Completing a grammar unit earns a star; stars plus Taler synthesize permanent study charms for the market wall.
 - **Progress, streaks, forecasts, a searchable word list and local export/import.**
 
 ## Vocabulary
@@ -124,11 +125,25 @@ Markup in a line uses `[[surface|w:lemma]]` for vocabulary and `[[surface|g:less
 
 ## Christmas market
 
-- Every review: **+1 Taler**; correct answer: **+1**; new card: **+2**.
-- First review of the day: **+5**; daily goal reached: **+15**.
-- Completing a grammar lesson: **+10 Taler**; completing a whole unit: **+1 grammar star**.
-- Stars and Taler synthesize five permanent charms: Case Star, Verb Bell, Sentence Star, Preposition Lantern and Sound Angel.
-- The scene is pure SVG in `js/cafe.js`; it scales cleanly and needs no images.
+The market is a small management loop, not just a shop.
+
+- A correct review earns **+1 Taler**.
+- Every card attracts **+1 visitor**; a new card adds another visitor.
+- The first review of the day adds **+5 visitors**; reaching the daily goal adds **+10 visitors**.
+- Visitors wait in the market until you **serve the queue**.
+- Serving consumes **supplies** and pays Taler based on your stalls and upgrades. Missed visitors are lost.
+- **Reputation** comes from serving visitors and unlocks market levels, upgrades and premium attractions.
+- Buy supplies in packs of 25 for 40 Taler. The stockroom capacity grows with stalls and upgrades.
+
+There are 12 original stalls and attractions plus three premium late-game additions:
+
+- Ice rink (reputation level 8)
+- Market stage (reputation level 10)
+- Christmas train (reputation level 12)
+
+Each can be upgraded to level 5. Upgrades increase market income, stock capacity and the scene’s visual glow. Existing Taler and purchases are preserved for returning players.
+
+Completing a grammar lesson gives **+10 Taler**; completing a whole unit gives **+1 grammar star**. Stars and Taler synthesize five permanent charms: Case Star, Verb Bell, Sentence Star, Preposition Lantern and Sound Angel.
 
 ## Files
 

@@ -305,6 +305,8 @@
       newDone: 0,
       beans: 0,
       beansBonus: 0,
+      visitors: 0,
+      visitorsBonus: 0,
       start: Date.now(),
       missed: [],
       practice: !!opts.practice,
@@ -532,6 +534,8 @@
       state: updated.state,
       beans: reward.beans,
       bonus: reward.bonus,
+      visitors: reward.visitors,
+      visitorsBonus: reward.visitorsBonus,
       selectedIndex: app.last && app.last.selectedIndex != null ? app.last.selectedIndex : null,
       mode: app.mode,
     };
@@ -539,6 +543,8 @@
     s.done++;
     s.beans = (s.beans || 0) + reward.beans;
     s.beansBonus = (s.beansBonus || 0) + reward.bonus;
+    s.visitors = (s.visitors || 0) + (reward.visitors || 0);
+    s.visitorsBonus = (s.visitorsBonus || 0) + (reward.visitorsBonus || 0);
     if (correct) s.correct++;
     else {
       s.wrong++;
@@ -806,7 +812,7 @@
       "</section>" +
       '<section class="cafe-mini-strip">' +
       '<div class="cafe-mini-art">🎄</div>' +
-      '<div><h2>Weihnachtsmarkt · Level ' + level + "</h2><p>" + (cafe.beans || 0) + " Taler · " + itemCount + " / " + Cafe.items.length + " items · " + wordsTouched + " words touched</p></div>" +
+      '<div><h2>Weihnachtsmarkt · Level ' + level + "</h2><p>" + (cafe.beans || 0) + " Taler · " + (cafe.visitors || 0) + " visitors waiting · " + itemCount + " / " + Cafe.items.length + " stalls</p></div>" +
       '<button class="btn btn-soft" data-action="cafe">Visit Christmas market ' + icon("arrow") + "</button>" +
       "</section>" +
       '<section class="cafe-mini-strip grammar-mini-strip">' +
@@ -865,7 +871,7 @@
       '<div class="study-top">' +
       '<button class="icon-btn" data-action="exit" aria-label="Exit study">' + icon("back") + "</button>" +
       '<div class="study-progress"><div class="track"><div class="fill" style="width:' + progress + '%"></div></div>' +
-      '<div class="meta"><span>' + s.done + " done · " + s.queue.length + " left</span><span>" + (direction === "reverse" ? "Recall" : "Recognize") + " · " + (s.beans || 0) + " Taler earned</span></div></div>" +
+      '<div class="meta"><span>' + s.done + " done · " + s.queue.length + " left</span><span>" + (direction === "reverse" ? "Recall" : "Recognize") + " · " + (s.beans || 0) + " Taler · " + (s.visitors || 0) + " visitors</span></div></div>" +
       audioButton +
       "</div>" +
       '<div class="study-card' + (app.mode === "front" ? "" : " no-enter") + '">' + content + "</div>" +
@@ -993,16 +999,17 @@
   function renderRating(c, direction) {
     var map = direction === "reverse" ? app.state.reverseCards : app.state.cards;
     var preview = FSRS.preview(map[c.id] || FSRS.newCard(c.id));
-    var labels = ["Again", "Hard", "Good", "Easy"];
-    var classes = ["again", "hard", "good", "easy"];
+    var labels = ["Again", "Hard"];
+    var classes = ["again", "hard"];
     return (
-      '<div><div class="rating-label">How well did you know it?</div><div class="rating-row">' +
+      '<div><div class="rating-label">How well did you know it?</div><div class="rating-row two">' +
       preview
+        .slice(0, 2)
         .map(function (p, i) {
           return '<button class="rate-btn ' + classes[i] + '" data-action="rate" data-grade="' + (i + 1) + '">' + labels[i] + "<small>" + FSRS.formatInterval(p.intervalDays) + "</small></button>";
         })
         .join("") +
-      "</div></div>"
+      '</div><p class="rating-hint">Know it well? Use “I know it · test me” instead — Good and Easy are earned in the quiz.</p></div>'
     );
   }
 
@@ -1028,12 +1035,13 @@
     var last = app.last || { correct: false, dueLabel: "", grade: 3, mode: "back" };
     var isMCQ = last.mode === "mcq" || (app.mcq && last.selectedIndex != null);
     var beans = last.beans ? '<span class="pill" style="margin-left:8px;background:var(--surface-2);color:var(--gold)">+' + last.beans + " Taler</span>" : "";
+    var visitorsPill = last.visitors ? '<span class="pill" style="margin-left:6px;background:var(--teal-soft);color:var(--teal)">+' + last.visitors + " visitor" + (last.visitors === 1 ? "" : "s") + "</span>" : "";
     var againRating = Number(last.grade) === 1 && last.mode !== "mcq";
     var banner = againRating
-      ? '<div class="result-banner again">' + icon("clock") + "Again — this card will come back in a few cards." + beans + "</div>"
+      ? '<div class="result-banner again">' + icon("clock") + "Again — this card will come back in a few cards." + beans + visitorsPill + "</div>"
       : last.correct
-      ? '<div class="result-banner good">' + icon("check") + "Correct — next review in " + esc(last.dueLabel) + beans + "</div>"
-      : '<div class="result-banner bad">' + icon("x") + "Not quite — this card will come back in a few cards." + beans + "</div>";
+      ? '<div class="result-banner good">' + icon("check") + "Correct — next review in " + esc(last.dueLabel) + beans + visitorsPill + "</div>"
+      : '<div class="result-banner bad">' + icon("x") + "Not quite — this card will come back in a few cards." + beans + visitorsPill + "</div>";
     var options = "";
     if (isMCQ && app.mcq) {
       options =
@@ -1083,12 +1091,13 @@
       '<div class="summary-card">' +
       '<p class="eyebrow">' + (direction === "reverse" ? "Recall session complete" : "Recognition session complete") + "</p>" +
       "<h1>" + (s.practice ? "Nice practice." : "Well done.") + "</h1>" +
-      "<p>You studied " + total + " card" + (total === 1 ? "" : "s") + " in " + approxTime(secs) + " and earned <strong>" + (s.beans || 0) + " Taler</strong> for the Christmas market.</p>" +
+      "<p>You studied " + total + " card" + (total === 1 ? "" : "s") + " in " + approxTime(secs) + ", earned <strong>" + (s.beans || 0) + " Taler</strong> and attracted <strong>" + (s.visitors || 0) + " visitor" + ((s.visitors || 0) === 1 ? "" : "s") + "</strong> to the Christmas market.</p>" +
       '<div class="summary-stats">' +
       '<div class="summary-stat"><strong>' + total + "</strong><span>cards</span></div>" +
       '<div class="summary-stat"><strong>' + accuracy + "%</strong><span>accuracy</span></div>" +
       '<div class="summary-stat"><strong>' + s.newDone + "</strong><span>new words</span></div>" +
       '<div class="summary-stat"><strong>' + (s.beans || 0) + "</strong><span>Taler</span></div>" +
+      '<div class="summary-stat"><strong>' + (s.visitors || 0) + "</strong><span>visitors</span></div>" +
       "</div>" +
       (missed.length
         ? '<div class="missed-list"><div class="rating-label" style="text-align:left">Worth another look</div>' +
@@ -1109,53 +1118,78 @@
   }
 
   function renderCafe() {
-    var cafe = app.state.cafe || { beans: 0, items: {}, totalEarned: 0, stars: 0, charms: {}, starUnits: {} };
+    var cafe = app.state.cafe || {};
     var level = Store.cafeLevel(app.state);
-    var earned = cafe.totalEarned || 0;
-    var intoLevel = earned % 200;
-    var levelPct = Math.round((intoLevel / 200) * 100);
+    var reputation = Number(cafe.reputation) || 0;
+    var intoLevel = reputation % 50;
+    var levelPct = Math.round((intoLevel / 50) * 100);
     var owned = cafe.items || {};
-    var learnedWords = Deck.all.filter(function (c) {
-      return app.state.cards[c.id].state !== "new" || app.state.reverseCards[c.id].state !== "new";
-    }).length;
-    var ownedCount = Cafe.items.filter(function (i) {
-      return owned[i.id];
-    }).length;
-    var beans = cafe.beans || 0;
-    var stars = cafe.stars || 0;
+    var upgrades = cafe.upgrades || {};
+    var beans = Number(cafe.beans) || 0;
+    var stock = Math.max(0, Math.floor(Number(cafe.stock) || 0));
+    var visitors = Math.max(0, Math.floor(Number(cafe.visitors) || 0));
+    var stockCap = Store.marketStockCap(app.state);
+    var yieldPer = Store.marketYield(app.state);
+    var stars = Number(cafe.stars) || 0;
     var starStats = Store.grammarStars(app.state);
     var charms = cafe.charms || {};
-    var charmCatalog = Cafe.charms || [];
     var charmCount = Object.keys(charms).length;
+    var ownedCount = Cafe.items.filter(function (i) {
+      return !!owned[i.id];
+    }).length;
+    var today = Store.dateKey();
+    var servedToday = cafe.lastMarketDay === today ? Number(cafe.servedToday) || 0 : 0;
+    var revenueToday = cafe.lastMarketDay === today ? Number(cafe.revenueToday) || 0 : 0;
+    var report = cafe.lastMarketReport;
+    var canServe = visitors > 0 && stock > 0;
+    var stockSpace = Math.max(0, stockCap - stock);
+    var buyQty = Math.min(Cafe.supplyPack, stockSpace);
+    var buyCost = Math.ceil((buyQty * Cafe.supplyCost) / Cafe.supplyPack);
     var cafeQueue = buildQueue(app.dashboardDirection);
     var studyAction = cafeQueue.length ? "start" : "practice";
+
     var shop = Cafe.items
       .map(function (item) {
         var has = !!owned[item.id];
+        var itemLevel = Math.max(1, Math.min(5, Number(upgrades[item.id]) || 1));
         var locked = level < item.level;
-        var afford = beans >= item.cost;
-        var action = has
-          ? '<span class="pill mature">Owned</span>'
-          : locked
-          ? '<span class="pill">Level ' + item.level + "</span>"
-          : '<button class="btn ' + (afford ? "btn-soft" : "btn-ghost") + '" data-action="buy-item" data-item="' + item.id + '"' + (afford ? "" : " disabled") + ">Buy</button>";
+        var action;
+        var price = item.cost;
+        var levelNote = "";
+        if (!has) {
+          action = locked
+            ? '<span class="pill">Reputation level ' + item.level + "</span>"
+            : '<button class="btn ' + (beans >= item.cost ? "btn-soft" : "btn-ghost") + '" data-action="buy-item" data-item="' + item.id + '"' + (beans >= item.cost ? "" : " disabled") + ">Buy</button>";
+        } else if (itemLevel >= 5) {
+          action = '<span class="pill mature">Max level</span>';
+          price = null;
+        } else {
+          var required = item.level + itemLevel;
+          var cost = Store.upgradeCost(item, itemLevel);
+          price = cost;
+          var canUpgrade = level >= required && beans >= cost;
+          levelNote = level < required ? "Needs reputation level " + required : "Level " + itemLevel + " / 5";
+          action = '<button class="btn ' + (canUpgrade ? "btn-soft" : "btn-ghost") + '" data-action="upgrade-item" data-item="' + item.id + '"' + (canUpgrade ? "" : " disabled") + ">Upgrade</button>";
+        }
         return (
           '<div class="shop-card ' + (has ? "owned" : "") + " " + (locked ? "locked" : "") + '">' +
           '<div class="shop-icon">' + item.icon + "</div>" +
           "<h3>" + esc(item.name) + "</h3>" +
           "<p>" + esc(item.desc) + "</p>" +
-          '<div class="shop-meta"><span class="cost">' + icon("bean") + item.cost + "</span>" + action + "</div>" +
+          '<div class="shop-level">' + (has ? "Level " + itemLevel + " / 5" : levelNote || "Not built") + "</div>" +
+          '<div class="shop-meta">' + (price == null ? "" : '<span class="cost">' + icon("bean") + price + "</span>") + action + "</div>" +
           "</div>"
         );
       })
       .join("");
-    var charmCards = charmCatalog
+
+    var charmCards = (Cafe.charms || [])
       .map(function (item) {
         var has = !!charms[item.id];
         var can = stars >= item.stars && beans >= item.beans;
         var action = has
           ? '<span class="pill mature">Synthesized</span>'
-          : '<button class="btn ' + (can ? "btn-soft" : "btn-ghost") + '" data-action="synth-item" data-item="' + item.id + '" title="Costs ' + item.stars + ' stars and ' + item.beans + ' beans"' + (can ? "" : " disabled") + ">Synthesize</button>";
+          : '<button class="btn ' + (can ? "btn-soft" : "btn-ghost") + '" data-action="synth-item" data-item="' + item.id + '" title="Costs ' + item.stars + ' stars and ' + item.beans + ' Taler"' + (can ? "" : " disabled") + ">Synthesize</button>";
         return (
           '<div class="shop-card charm-card ' + (has ? "owned" : "") + '">' +
           '<div class="charm-glyph" style="background:' + esc(item.color) + '">' + esc(item.glyph) + "</div>" +
@@ -1166,28 +1200,52 @@
         );
       })
       .join("");
+
+    var reportHtml = report
+      ? '<div class="market-report"><div class="market-report-head"><strong>Last market day</strong><span>' + (report.levelAfter > report.levelBefore ? "Level up! → " + report.levelAfter : "Level " + (report.levelAfter || level)) + '</span></div>' +
+        '<div class="market-report-grid"><span><b>+' + report.revenue + '</b> Taler</span><span><b>' + report.served + '</b> served</span><span><b>' + report.missed + '</b> missed</span><span><b>+' + report.reputation + '</b> reputation</span></div></div>'
+      : "";
+
     return (
       '<div class="cafe-page">' +
-      '<div class="page-head"><div><p class="eyebrow">Your little corner</p><h1>Weihnachtsmarkt</h1><p>Every review earns Taler; every completed grammar unit earns a star.</p></div>' +
+      '<div class="page-head"><div><p class="eyebrow">Market office</p><h1>Weihnachtsmarkt</h1><p>Reviews attract visitors. Serve the queue, restock the stalls, and build a market worth visiting.</p></div>' +
       '<div class="cafe-wallet">' +
       '<div class="bean-pill" style="font-size:14px;padding:10px 14px">' + icon("bean") + " " + beans.toLocaleString() + " Taler</div>" +
+      '<div class="bean-pill" style="font-size:14px;padding:10px 14px">👥 ' + visitors + " waiting</div>" +
       '<div class="bean-pill star-pill" style="font-size:14px;padding:10px 14px">' + icon("star") + " " + stars + " " + starWord(stars) + "</div>" +
       "</div></div>" +
       '<div class="cafe-layout">' +
       "<div>" +
-      Cafe.scene(owned, learnedWords, level, charms) +
-      '<div class="cafe-scene-footer"><div><strong>Level ' + level + "</strong><span> · " + learnedWords + " regulars · " + ownedCount + " / " + Cafe.items.length + " items · " + charmCount + " " + (charmCount === 1 ? "charm" : "charms") + "</span></div>" +
-      '<button class="btn btn-ghost btn-sm" data-action="' + studyAction + '">Study for more Taler ' + icon("arrow") + "</button></div>" +
+      Cafe.scene(owned, visitors, level, charms, upgrades) +
+      '<div class="cafe-scene-footer"><div><strong>Level ' + level + "</strong><span> · " + visitors + " visitors · " + stock + " / " + stockCap + " supplies · " + ownedCount + " / " + Cafe.items.length + " stalls</span></div>" +
+      '<button class="btn btn-ghost btn-sm" data-action="' + studyAction + '">Study for more visitors ' + icon("arrow") + "</button></div>" +
+      '<div class="market-operation">' +
+      '<div class="market-op-head"><div><p class="eyebrow">Today\'s market</p><h2>Open the stalls</h2></div><span class="market-level-pill">Level ' + level + '</span></div>' +
+      '<div class="market-stat-grid">' +
+      '<div class="market-stat"><strong>' + visitors + "</strong><span>visitors waiting</span></div>" +
+      '<div class="market-stat"><strong>' + stock + "</strong><span>supplies</span></div>" +
+      '<div class="market-stat"><strong>' + yieldPer + "</strong><span>Taler / visitor</span></div>" +
+      '<div class="market-stat"><strong>' + servedToday + "</strong><span>served today</span></div>" +
+      "</div>" +
+      '<div class="market-actions">' +
+      '<button class="btn btn-primary" data-action="serve-market"' + (canServe ? "" : " disabled") + ">" + (visitors > 0 && stock === 0 ? "Buy supplies first" : "Serve " + Math.min(visitors, stock) + " visitors") + "</button>" +
+      '<button class="btn btn-soft" data-action="buy-stock"' + (buyQty > 0 && beans >= buyCost ? "" : " disabled") + ">" + (buyQty > 0 ? "Buy " + buyQty + " supplies · " + buyCost + " Taler" : "Stockroom full") + "</button>" +
+      "</div>" +
+      '<p class="market-help">' + (visitors === 0 ? "No visitors yet — study a few cards to attract a crowd." : stock === 0 ? "The shelves are empty. Buy supplies before serving visitors." : "Each visitor buys one supply and pays " + yieldPer + " Taler. Missed visitors are lost.") + "</p>" +
+      '<div class="level-line"><div class="level-track"><div class="level-fill" style="width:' + levelPct + '%"></div></div><div class="level-meta"><span>Reputation ' + reputation + '</span><span>' + intoLevel + " / 50 to level " + (level + 1) + "</span></div></div>" +
+      reportHtml +
+      "</div>" +
+      '<div class="market-today"><span>Today: ' + servedToday + " served · " + revenueToday + " Taler earned · " + stock + " supplies left</span><span>Every review attracts a visitor; correct answers add a Taler.</span></div>" +
       "</div>" +
       '<div class="cafe-side">' +
       '<div class="cafe-balance">' +
-      '<div class="row"><div><h2>Your wallet</h2><p>Taler from reviews; stars from grammar units.</p></div><div class="beans-big">' + icon("bean") + beans.toLocaleString() + "</div></div>" +
+      '<div class="row"><div><h2>Your wallet</h2><p>Taler from market sales; stars from grammar units.</p></div><div class="beans-big">' + icon("bean") + beans.toLocaleString() + "</div></div>" +
       '<div class="level-line"><div class="level-track"><div class="level-fill" style="width:' + levelPct + '%"></div></div>' +
-      '<div class="level-meta"><span>Level ' + level + "</span><span>" + intoLevel + " / 200 to level " + (level + 1) + "</span></div></div>" +
+      '<div class="level-meta"><span>Market level ' + level + "</span><span>" + intoLevel + " / 50 reputation</span></div></div>" +
       '<div class="cafe-star-balance"><span>' + icon("star") + " " + stars + " grammar " + starWord(stars) + "</span><span>" + starStats.units + " / " + starStats.total + " units complete</span></div>" +
-      '<p class="about-box" style="margin:14px 0 0">Review +1 Taler · correct +1 · new word +2<br>First review of the day +5 · daily goal +15<br>Complete a grammar unit +1 star</p>' +
+      '<p class="about-box" style="margin:14px 0 0">Correct review +1 Taler · card +1 visitor · new card +1 visitor<br>First review +5 visitors · daily goal +10 visitors<br>Serve visitors to earn Taler and reputation.</p>' +
       "</div>" +
-      '<div class="shop-panel"><h2>Furnish the Christmas market</h2><p>Buy something cozy. Items stay forever.</p><div class="shop-grid">' + shop + "</div></div>" +
+      '<div class="shop-panel"><h2>Build & upgrade the market</h2><p>Stalls increase your income and stock capacity. Upgrades need reputation, so keep serving.</p><div class="shop-grid">' + shop + "</div></div>" +
       "</div>" +
       "</div>" +
       '<div class="shop-panel atelier-panel" id="atelier"><div class="panel-head"><h2>Grammar atelier</h2><span>' + stars + " " + starWord(stars) + " · " + starStats.units + " / " + starStats.total + " units</span></div>" +
@@ -2610,6 +2668,44 @@
           toast("Reach level " + item.level + " to unlock that item.");
         }
         break;
+      case "upgrade-item":
+        var upgradeId = btn.getAttribute("data-item");
+        var upgradeTarget = Cafe.items.filter(function (i) { return i.id === upgradeId; })[0];
+        if (!upgradeTarget) break;
+        var upgraded = Store.upgradeItem(app.state, upgradeTarget);
+        if (upgraded.ok) {
+          toast(upgradeTarget.name + " upgraded to level " + upgraded.level + "!");
+          render();
+        } else if (upgraded.reason === "level") {
+          toast("Reach reputation level " + upgraded.required + " to upgrade that stall.");
+        } else if (upgraded.reason === "beans") {
+          toast("Not enough Taler for that upgrade.");
+        } else if (upgraded.reason === "max") {
+          toast("That stall is already at maximum level.");
+        }
+        break;
+      case "serve-market":
+        var served = Store.serveMarket(app.state);
+        if (served.ok) {
+          toast("Market day: +" + served.revenue + " Taler · " + served.served + " visitors served · +" + served.reputation + " reputation");
+          render();
+        } else if (served.reason === "stock") {
+          toast("The shelves are empty — buy supplies first.");
+        } else {
+          toast("No visitors yet — study a few cards first.");
+        }
+        break;
+      case "buy-stock":
+        var stockBought = Store.buyStock(app.state, Cafe.supplyPack);
+        if (stockBought.ok) {
+          toast(stockBought.quantity + " supplies bought for " + stockBought.cost + " Taler.");
+          render();
+        } else if (stockBought.reason === "full") {
+          toast("The stockroom is full.");
+        } else {
+          toast("Not enough Taler for supplies.");
+        }
+        break;
       case "browse":
         navigate("#/browse");
         break;
@@ -2863,7 +2959,8 @@
         selectOption(Number(e.key) - 1);
       } else if (app.mode === "back") {
         e.preventDefault();
-        rate(Number(e.key));
+        var rating = Number(e.key);
+        if (rating <= 2) rate(rating);
       }
       return;
     }
