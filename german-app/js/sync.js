@@ -173,6 +173,11 @@
     var aAt = Number(a.marketUpdatedAt) || 0;
     var bAt = Number(b.marketUpdatedAt) || 0;
     var newer = bAt > aAt ? b : a;
+    // Taler and stars are spendable. Max-merging them refunds purchases the
+    // moment another device syncs, so the latest wallet wins. Only two legacy
+    // saves with no timestamp fall back to max so an old cloud balance is
+    // never wiped by a fresh install.
+    var legacyBoth = !aAt && !bAt;
     var aReport = a.lastMarketReport;
     var bReport = b.lastMarketReport;
     var latestReport =
@@ -184,9 +189,13 @@
       charms: charms,
       starUnits: starUnits,
       upgrades: upgrades,
-      beans: Math.max(Number(a.beans) || 0, Number(b.beans) || 0),
+      beans: legacyBoth
+        ? Math.max(Number(a.beans) || 0, Number(b.beans) || 0)
+        : Math.max(0, Number(newer.beans) || 0),
       totalEarned: Math.max(Number(a.totalEarned) || 0, Number(b.totalEarned) || 0),
-      stars: Math.max(Number(a.stars) || 0, Number(b.stars) || 0),
+      stars: legacyBoth
+        ? Math.max(Number(a.stars) || 0, Number(b.stars) || 0)
+        : Math.max(0, Number(newer.stars) || 0),
       starsEarned: Math.max(Number(a.starsEarned) || 0, Number(b.starsEarned) || 0),
       visitors: Math.max(0, Number(newer.visitors) || 0),
       stock: Math.max(0, Number(newer.stock) || 0),

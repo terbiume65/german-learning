@@ -355,6 +355,7 @@
     if (cafe.beans < cost) return { ok: false, reason: "beans", cost: cost };
     cafe.beans -= cost;
     cafe.upgrades[item.id] = current + 1;
+    cafe.marketUpdatedAt = Date.now();
     save(state);
     return { ok: true, level: current + 1, cost: cost };
   }
@@ -363,6 +364,7 @@
     var cafe = ensureCafe(state);
     cafe.beans += amount;
     cafe.totalEarned += amount;
+    cafe.marketUpdatedAt = Date.now();
     save(state);
     return cafe.beans;
   }
@@ -389,7 +391,10 @@
       cafe.starsEarned += 1;
       changed = true;
     });
-    if (changed) save(state);
+    if (changed) {
+      cafe.marketUpdatedAt = Date.now();
+      save(state);
+    }
     return changed;
   }
 
@@ -457,6 +462,7 @@
       cafe.starUnits[unitId] = true;
       cafe.stars += 1;
       cafe.starsEarned += 1;
+      cafe.marketUpdatedAt = Date.now();
       starEarned = true;
     }
     save(state);
@@ -484,6 +490,7 @@
     cafe.beans -= item.cost;
     cafe.items[item.id] = true;
     if (!cafe.upgrades[item.id]) cafe.upgrades[item.id] = 1;
+    cafe.marketUpdatedAt = Date.now();
     save(state);
     return { ok: true };
   }
@@ -496,6 +503,7 @@
     cafe.stars -= charm.stars;
     cafe.beans -= charm.beans;
     cafe.charms[charm.id] = true;
+    cafe.marketUpdatedAt = Date.now();
     save(state);
     return { ok: true };
   }
